@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIRASAT — The Heritage of India | Interactive Cultural Journey</title>
+  <meta name="description" content="Virasat is an interactive journey through India's living heritage — discover the traditions, stories, festivals, art, music, food and regional identities that make every state unique.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Cinzel Decorative, Cinzel, Plus Jakarta Sans, Rozha One -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=earthy4">
+  <link rel="icon" type="image/png" href="assets/emblem_clean.png">
+</head>
+<body>
+
+  <!-- MAIN WRAPPER WITH LAAL FORT BACKGROUND -->
+  <div class="virasat-canvas">
+    
+    <!-- Red Fort Hero Background with Layered Depth Overlays -->
+    <div class="laal-fort-bg-container" aria-hidden="true">
+      <img src="assets/red_fort_source.png" alt="Historic Red Fort at sunset" class="laal-fort-img" id="laalFortImg">
+      <div class="bg-vignette-overlay"></div>
+      <div class="bg-parchment-gradient"></div>
+      <div class="bg-ornamental-arch"></div>
+      <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+    </div>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="virasat-header" id="mainHeader">
+      <div class="header-container">
+        
+        <!-- Prominent Brand Identity in Top-Left Corner with White Background Badge -->
+        <a href="#hero" class="brand-link" id="brandHomeLink" aria-label="Virasat Home">
+          <div class="brand-logo-frame">
+            <img src="assets/emblem_clean.png" alt="Virasat Emblem" class="brand-logo-emblem">
+          </div>
+          <div class="brand-text-group">
+            <span class="brand-name-top">VIRASAT</span>
+            <span class="brand-sub-top">The Heritage of India</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <nav class="main-nav" aria-label="Primary Navigation">
+          <a href="#pillarsSection" class="nav-link">
+            <span class="nav-num">01</span> Discover
+          </a>
+          <a href="#pillarsSection" class="nav-link" data-pillar="experience">
+            <span class="nav-num">02</span> Experience
+          </a>
+          <a href="#pillarsSection" class="nav-link" data-pillar="play">
+            <span class="nav-num">03</span> Play
+          </a>
+          <a href="#projectOverview" class="nav-link">
+            <span class="nav-num">04</span> About
+          </a>
+        </nav>
+
+        <!-- Entry Actions & Integrated Ambience Pill (Zero Overlap) -->
+        <div class="header-actions">
+          <!-- Ambient Sound Generator Pill (Inline inside Header Actions) -->
+          <button id="ambientSoundToggle" class="audio-pill-btn" aria-label="Toggle Cultural Soundscape" title="Atmosphere: Tanpura Ambience">
+            <span class="audio-icon-wave">
+              <span></span><span></span><span></span><span></span>
+            </span>
+            <span class="audio-label">Ambience</span>
+            <span class="audio-status" id="audioStatusText">Off</span>
+          </button>
+
+          <!-- Frictionless Quick Guest Entry -->
+          <button class="btn-guest-quick" id="quickGuestBtn" title="Explore immediately without signing in">
+            <span class="guest-dot"></span>
+            Continue as Guest
+          </button>
+
+          <!-- Sign In Button -->
+          <button class="btn-signin-nav" id="navSignInBtn">
+            <svg class="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Sign In
+          </button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main class="hero-section" id="hero">
+      
+      <div class="hero-content-wrapper">
+
+        <!-- Grand Project Identity Positioned Directly Above the Flag in the Sky -->
+        <div class="hero-sky-identity">
+          <div class="devanagari-sky-badge">
+            <span class="devanagari-text">विरासत</span>
+            <span class="sky-divider">•</span>
+            <span class="sky-badge-label">The Living Heritage of India</span>
+          </div>
+          
+          <!-- VIRASAT Title as the Strongest Typographic Element -->
+          <h1 class="hero-title-virasat" id="heroVirasatTitle">
+            VIRASAT
+          </h1>
+          
+          <p class="hero-tagline-text">The Heritage of India</p>
+        </div>
+
+        <!-- PRIMARY CALL TO ACTION -->
+        <div class="hero-cta-group">
+          
+          <button class="btn-primary-cta" id="primaryCtaBtn" aria-label="Try Virasat - Begin your cultural journey">
+            <span class="cta-shimmer"></span>
+            <span class="cta-content">
+              <span class="cta-title">Try Virasat</span>
+              <span class="cta-subtitle">Begin your cultural journey</span>
+            </span>
+            <span class="cta-icon-wrapper">
+              <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </span>
+          </button>
+
+          <!-- Explicit Guest Pill Beside Hero CTA -->
+          <div class="cta-secondary-row">
+            <button class="btn-guest-subtle" id="heroGuestBtn">
+              <span class="sparkle-icon">✦</span>
+              <span>Instant Access: <strong>Continue as Guest</strong></span>
+              <span class="badge-free">No Sign Up Needed</span>
+            </button>
+            <span class="or-separator">or</span>
+            <button class="btn-signin-link" id="heroSignInLink">
+              Sign In to save progress
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- FIRST-IMPRESSION TRIAD: DISCOVER, EXPERIENCE, PLAY -->
+    <section class="pillars-section" id="pillarsSection">
+      
+      <div class="section-ornament-header">
+        <div class="ornament-line"></div>
+        <div class="ornament-lotus">
+          <svg viewBox="0 0 32 32" width="24" height="24" fill="currentColor">
+            <path d="M16 2 C16 9 10 14 6 18 C10 18 14 16 16 12 C18 16 22 18 26 18 C22 14 16 9 16 2 Z M16 13 C14 17 9 20 4 21 C8 23 13 22 16 18 C19 22 24 23 28 21 C23 20 18 17 16 13 Z M16 19 C13 23 9 25 3 26 C9 28 14 27 16 23 C18 27 23 28 29 26 C23 25 19 23 16 19 Z"/>
+          </svg>
+        </div>
+        <div class="ornament-line"></div>
+      </div>
+
+      <div class="pillars-container">
+        
+        <div class="pillars-intro">
+          <span class="section-eyebrow">THE VIRASAT EXPERIENCE</span>
+          <h2 class="section-title">A Living World of Heritage</h2>
+          <p class="section-desc">Experience India not as static history, but through immersive regional narratives, living crafts, and interactive quests.</p>
+        </div>
+
+        <!-- The 3 Core Pillars -->
+        <div class="pillars-grid">
+
+          <!-- PILLAR 1: DISCOVER -->
+          <div class="pillar-card" id="cardDiscover" tabindex="0">
+            <div class="pillar-card-border"></div>
+            <div class="pillar-accent-glow pillar-glow-gold"></div>
+            
+            <div class="pillar-header">
+              <div class="pillar-icon-box icon-discover">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                  <line x1="8" y1="2" x2="8" y2="18"></line>
+                  <line x1="16" y1="6" x2="16" y2="22"></line>
+                </svg>
+              </div>
+              <span class="pillar-tag">PILLAR 01</span>
+            </div>
+
+            <div class="pillar-body">
+              <h3 class="pillar-title">DISCOVER</h3>
+              <p class="pillar-highlight">Explore India's Diverse Regions</p>
+              <p class="pillar-text">
+                Traverse interactive regional maps from the high passes of Ladakh to Kerala’s sacred groves. Unlock states, districts, and indigenous tribal belts rich in architecture and lore.
+              </p>
+            </div>
+
+            <div class="pillar-footer">
+              <span class="pillar-action-pill">
+                <span>Explore Cultural Atlas</span>
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- PILLAR 2: EXPERIENCE -->
+          <div class="pillar-card" id="cardExperience" tabindex="0">
+            <div class="pillar-card-border"></div>
+            <div class="pillar-accent-glow pillar-glow-terracotta"></div>
+            
+            <div class="pillar-header">
+              <div class="pillar-icon-box icon-experience">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <span class="pillar-tag">PILLAR 02</span>
+            </div>
+
+            <div class="pillar-body">
+              <h3 class="pillar-title">EXPERIENCE</h3>
+              <p class="pillar-highlight">Stories, Traditions & Sensory Arts</p>
+              <p class="pillar-text">
+                Witness Ghoomar rhythms, taste Rajasthani spices, decode temple sculpture mudras, and listen to master artisans keep centuries-old handloom crafts alive.
+              </p>
+            </div>
+
+            <div class="pillar-footer">
+              <span class="pillar-action-pill">
+                <span>Living Journeys</span>
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- PILLAR 3: PLAY -->
+          <div class="pillar-card" id="cardPlay" tabindex="0">
+            <div class="pillar-card-border"></div>
+            <div class="pillar-accent-glow pillar-glow-indigo"></div>
+            
+            <div class="pillar-header">
+              <div class="pillar-icon-box icon-play">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              </div>
+              <span class="pillar-tag">PILLAR 03</span>
+            </div>
+
+            <div class="pillar-body">
+              <h3 class="pillar-title">PLAY</h3>
+              <p class="pillar-highlight">Quizzes, Quests & Cultural Badges</p>
+              <p class="pillar-text">
+                Test your knowledge through visual challenges, solve folklore puzzles, complete streaks, and collect authentic digital heritage cards and cultural avatar regalia.
+              </p>
+            </div>
+
+            <div class="pillar-footer">
+              <span class="pillar-action-pill">
+                <span>Badges & Challenges</span>
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROJECT OVERVIEW / MANIFESTO SECTION -->
+    <section class="project-overview-section" id="projectOverview">
+      <div class="overview-container">
+        
+        <div class="overview-grid">
+          
+          <div class="overview-text-side">
+            <span class="section-eyebrow">OUR PHILOSOPHY</span>
+            <h2 class="overview-title">Learning Heritage as a Living World</h2>
+            <p class="overview-quote">
+              “India is not a single monolith of the past — it is a vibrant tapestry of living expressions, indigenous ingenuity, and timeless wisdom.”
+            </p>
+            <p class="overview-paragraph">
+              Virasat reimagines cultural documentation. Instead of fragmented encyclopedias or dry textbook pages, we unite verified historical archives, regional folk arts, indigenous tribal practices, and AI-guided conversational companionship into one cohesive digital journey.
+            </p>
+            <div class="features-checklist">
+              <div class="check-item">
+                <span class="check-bullet">✦</span>
+                <span>Vetted by cultural historians & traditional practitioners</span>
+              </div>
+              <div class="check-item">
+                <span class="check-bullet">✦</span>
+                <span>Respectful, authentic regional avatar customization</span>
+              </div>
+              <div class="check-item">
+                <span class="check-bullet">✦</span>
+                <span>Frictionless entry for students, travelers & enthusiasts</span>
+              </div>
+            </div>
+            
+            <div class="overview-cta-box">
+              <button class="btn-primary-cta sm" id="overviewCtaBtn">
+                <span class="cta-content">
+                  <span class="cta-title">Enter Virasat</span>
+                </span>
+                <span class="cta-icon-wrapper">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </button>
+              <button class="btn-guest-inline" id="overviewGuestBtn">
+                or continue directly as Guest
+              </button>
+            </div>
+
+          </div>
+
+          <div class="overview-visual-side">
+            <!-- Royal Heritage Card Frame displaying the Logo & Fort details -->
+            <div class="heritage-showcase-frame">
+              <div class="frame-inner-border">
+                <div class="showcase-logo-badge">
+                  <img src="assets/emblem_clean.png" alt="Emblem" class="showcase-emblem">
+                </div>
+                <h4 class="showcase-title">VIRASAT</h4>
+                <p class="showcase-subtitle">The Heritage of India</p>
+                
+                <div class="showcase-pillars-summary">
+                  <div class="summary-pill">
+                    <span class="dot-gold"></span> Tangible & Intangible Heritage
+                  </div>
+                  <div class="summary-pill">
+                    <span class="dot-terracotta"></span> 28 States & 8 UTs
+                  </div>
+                  <div class="summary-pill">
+                    <span class="dot-indigo"></span> Gamified Quest Journeys
+                  </div>
+                </div>
+
+                <div class="showcase-card-footer">
+                  <span class="monument-caption">Featured Gateway: Lal Qila (Red Fort), Delhi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="virasat-footer">
+      <div class="footer-container">
+        <div class="footer-brand-side">
+          <div class="footer-brand">
+            <div class="footer-logo-frame">
+              <img src="assets/emblem_clean.png" alt="Virasat" class="footer-logo">
+            </div>
+            <div>
+              <span class="footer-title">VIRASAT</span>
+              <span class="footer-sub">The Heritage of India</span>
+            </div>
+          </div>
+          <p class="footer-mission">
+            Preserving, celebrating, and experiencing India's rich cultural tapestry through modern digital exploration.
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <span class="footer-heading">Platform</span>
+            <a href="#hero" class="f-link">Home</a>
+            <a href="#pillarsSection" class="f-link">Discover</a>
+            <a href="#pillarsSection" class="f-link">Experience</a>
+            <a href="#pillarsSection" class="f-link">Play</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-heading">Access</span>
+            <button class="f-link-btn" id="footerGuestBtn">Continue as Guest</button>
+            <button class="f-link-btn" id="footerSignInBtn">Sign In</button>
+            <a href="#projectOverview" class="f-link">About Project</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-heading">Authenticity</span>
+            <span class="f-text">National Cultural Repository</span>
+            <span class="f-text">Ministry of Culture Guidelines</span>
+            <span class="f-text">INTACH Research Protocols</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="copyright-text">© 2026 Virasat — The Heritage of India. Designed for timeless cultural discovery.</p>
+        <div class="footer-devanagari">सत्यमेव जयते • विविधता में एकता</div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- ============================================== -->
+  <!-- ENTRY EXPERIENCE MODAL (SIGN IN / GUEST FLOW) -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="entryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    
+    <div class="modal-sheet">
+      
+      <!-- Close Button -->
+      <button class="modal-close-btn" id="closeModalBtn" aria-label="Close modal">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="6"></line>
+        </svg>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-badge-wrapper">
+          <img src="assets/emblem_clean.png" alt="Virasat Emblem" class="modal-emblem">
+        </div>
+        <h3 class="modal-title" id="modalTitle">Begin Your Journey</h3>
+        <p class="modal-subtitle">Welcome to <strong>VIRASAT</strong> — The Heritage of India</p>
+      </div>
+
+      <!-- High-Visibility Guest Option (Frictionless) -->
+      <div class="guest-entry-spotlight">
+        <div class="guest-spotlight-content">
+          <div class="guest-tag-row">
+            <span class="pill-featured">Instant & Frictionless</span>
+            <span class="pill-time">No Password Required</span>
+          </div>
+          <h4 class="guest-callout-heading">Continue as Guest</h4>
+          <p class="guest-callout-sub">
+            Explore 28 states, discover folklore, attempt cultural challenges, and earn temporary badges without creating an account.
+          </p>
+        </div>
+        <button class="btn-guest-enter" id="modalGuestEnterBtn">
+          <span>Enter as Guest</span>
+          <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- OR Divider -->
+      <div class="modal-divider">
+        <span>OR SIGN IN TO SAVE PERMANENT PROGRESS</span>
+      </div>
+
+      <!-- Tab Switcher (Sign In vs Create Account) -->
+      <div class="auth-tabs" role="tablist">
+        <button class="auth-tab active" id="tabSignIn" role="tab" aria-selected="true">Sign In</button>
+        <button class="auth-tab" id="tabSignUp" role="tab" aria-selected="false">Create Account</button>
+      </div>
+
+      <!-- Auth Form Container -->
+      <form class="auth-form" id="authForm" onsubmit="event.preventDefault();">
+        
+        <div class="form-group">
+          <label for="inputEmail" class="form-label">Email or Phone Number</label>
+          <div class="input-wrapper">
+            <input type="email" id="inputEmail" class="form-input" placeholder="traveler@virasat.org" required>
+            <span class="input-icon">✉</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="label-split">
+            <label for="inputPassword" class="form-label">Password</label>
+            <a href="#" class="forgot-link" tabindex="-1">Forgot?</a>
+          </div>
+          <div class="input-wrapper">
+            <input type="password" id="inputPassword" class="form-input" placeholder="••••••••••••" required>
+            <span class="input-icon">🔒</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-auth-submit" id="authSubmitBtn">
+          <span id="authBtnText">Sign In to Virasat</span>
+        </button>
+
+      </form>
+
+      <!-- Traveler Archetypes Preview Teaser -->
+      <div class="avatar-archetypes-teaser">
+        <span class="teaser-title">Choose your cultural explorer archetype upon entry:</span>
+        <div class="archetype-chips">
+          <span class="archetype-chip">🏛 The Chronicler</span>
+          <span class="archetype-chip">🎨 The Folk Artisan</span>
+          <span class="archetype-chip">🏔 The Himalayan Nomad</span>
+          <span class="archetype-chip">📜 The Manuscript Scholar</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Interactive Guest Welcome Toast / Feedback -->
+  <div class="welcome-toast" id="welcomeToast" role="status" aria-live="polite">
+    <div class="toast-icon">✨</div>
+    <div class="toast-content">
+      <h5 class="toast-title" id="toastTitle">Welcome, Guest Explorer!</h5>
+      <p class="toast-desc" id="toastDesc">Starting your journey through India's living heritage...</p>
+    </div>
+  </div>
+
+  <!-- Interactive Pillar Preview Modal -->
+  <div class="modal-backdrop" id="pillarModal" role="dialog" aria-modal="true" hidden>
+    <div class="modal-sheet pillar-modal-sheet">
+      <button class="modal-close-btn" id="closePillarModalBtn" aria-label="Close modal">✕</button>
+      <div class="pillar-modal-content" id="pillarModalContent">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
