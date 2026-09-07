@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIRASAT — Interactive Cultural Atlas of India | Explore Heritage, Art & Traditions</title>
+  <meta name="description" content="Explore India's living cultural heritage through an interactive cultural atlas. Traverse regional forts, classical dances, ancient temples, folk festivals, and living crafts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Cinzel Decorative, Cinzel, Plus Jakarta Sans, Rozha One, Cormorant Garamond -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=home1">
+  <link rel="stylesheet" href="home.css?v=home1">
+  <link rel="icon" type="image/png" href="assets/emblem_clean.png">
+</head>
+<body class="home-page-body">
+
+  <!-- =========================================================
+       1. HERITAGE NAVBAR (Consistent with Virasat Visual Truth)
+       ========================================================= -->
+  <header class="home-header" id="homeHeader">
+    <div class="home-header-container">
+      
+      <!-- Brand Link: Virasat Logo + Typography -->
+      <a href="home.html" class="home-brand-link" aria-label="Virasat Home">
+        <div class="home-brand-logo-frame">
+          <img src="assets/emblem_clean.png" alt="Virasat Emblem" class="home-brand-emblem">
+        </div>
+        <div class="home-brand-text">
+          <span class="home-brand-name">VIRASAT</span>
+          <span class="home-brand-sub">The Heritage of India</span>
+        </div>
+      </a>
+
+      <!-- Center Primary Navigation -->
+      <nav class="home-nav-links" aria-label="Cultural Navigation">
+        <a href="#culturalAtlasSection" class="home-nav-link active">
+          <span class="nav-num">01</span> Discover
+        </a>
+        <a href="#featuredHeritageSection" class="home-nav-link">
+          <span class="nav-num">02</span> Experience
+        </a>
+        <a href="#didYouKnowSection" class="home-nav-link">
+          <span class="nav-num">03</span> Stories
+        </a>
+        <a href="index.html#projectOverview" class="home-nav-link">
+          <span class="nav-num">04</span> About
+        </a>
+      </nav>
+
+      <!-- Right Header Actions: Ambience + Search + Profile -->
+      <div class="home-header-actions">
+        
+        <!-- Ambience Soundscape Toggle Pill -->
+        <button id="homeAudioToggle" class="audio-pill-btn" aria-label="Toggle Cultural Soundscape" title="Atmosphere: Tanpura Drone">
+          <span class="audio-icon-wave">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span class="audio-label">Ambience</span>
+          <span class="audio-status" id="homeAudioStatus">Off</span>
+        </button>
+
+        <!-- Integrated Cultural Search Bar -->
+        <div class="search-wrapper" id="searchWrapper">
+          <div class="search-input-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input 
+              type="text" 
+              class="search-input" 
+              id="headerSearchInput" 
+              placeholder="Search a place or heritage..." 
+              autocomplete="off"
+              aria-label="Search places, monuments, arts, or traditions"
+            >
+            <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search input">✕</button>
+            <kbd class="search-kbd">⌘K</kbd>
+          </div>
+
+          <!-- Autocomplete Suggestions Dropdown -->
+          <div class="search-results-dropdown" id="searchResultsDropdown" role="listbox">
+            <!-- Dynamically populated via home.js -->
+          </div>
+        </div>
+
+        <!-- Profile Control & Explorer Status Dropdown -->
+        <div class="profile-menu-container" id="profileMenuContainer">
+          <button class="profile-btn" id="profileToggleBtn" aria-label="Open Explorer Profile" aria-expanded="false">
+            <div class="profile-avatar-circle">GE</div>
+            <div class="profile-label-group">
+              <span class="profile-name">Guest Explorer</span>
+              <span class="profile-role-badge">Level 1 • Novice</span>
+            </div>
+            <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" style="opacity: 0.7;">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+
+          <!-- Profile Dropdown Content -->
+          <div class="profile-dropdown-menu" id="profileDropdown">
+            <div class="profile-header-card">
+              <span class="profile-h-title">Cultural Pass</span>
+              <span class="profile-h-sub">Guest Explorer Account</span>
+            </div>
+            <div class="profile-stats-row">
+              <div class="profile-stat-box">
+                <span class="profile-stat-val">3</span>
+                <span class="profile-stat-lbl">Explored</span>
+              </div>
+              <div class="profile-stat-box">
+                <span class="profile-stat-val">3</span>
+                <span class="profile-stat-lbl">Badges</span>
+              </div>
+              <div class="profile-stat-box">
+                <span class="profile-stat-val">43%</span>
+                <span class="profile-stat-lbl">Journey</span>
+              </div>
+            </div>
+            <a href="index.html#hero" class="btn-profile-signin" style="display:block; text-align:center; text-decoration:none;">
+              Sign In to Save Permanent Progress
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MAIN FEATURE: CULTURAL ATLAS & JOURNEY SECTION
+       ========================================================= -->
+  <section class="cultural-atlas-section" id="culturalAtlasSection">
+    
+    <!-- Section Title & Zone Selector Strip -->
+    <div class="atlas-section-header">
+      <span class="atlas-eyebrow">INTERACTIVE CULTURAL ATLAS</span>
+      <h2 class="atlas-title">Explore India</h2>
+      <p class="atlas-subtitle">Choose a region and begin your cultural journey.</p>
+      
+      <!-- Zone Filter Pills -->
+      <div class="zone-filters-strip" id="zoneFiltersStrip" role="tablist">
+        <button class="zone-filter-pill active" data-zone="all">All Regions</button>
+        <button class="zone-filter-pill" data-zone="north">Northern Valleys</button>
+        <button class="zone-filter-pill" data-zone="west">Western Desert & Coast</button>
+        <button class="zone-filter-pill" data-zone="central">Central Heartland</button>
+        <button class="zone-filter-pill" data-zone="east">Eastern Delta</button>
+        <button class="zone-filter-pill" data-zone="south">Southern Peninsula</button>
+        <button class="zone-filter-pill" data-zone="northeast">Northeastern Hills</button>
+      </div>
+    </div>
+
+    <!-- Main Spatial Layout (Map on Left, Journey & Avatar on Right) -->
+    <div class="atlas-composition-layout">
+      
+      <!-- ── Left: India Map Stage ── -->
+      <div class="atlas-map-card">
+        
+        <div class="map-frame-header">
+          <div class="map-frame-title-group">
+            <svg class="map-frame-compass-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+            <div>
+              <h3 class="map-frame-title">Cultural Atlas of Bharat</h3>
+              <span class="map-frame-subtitle">भारत का सांस्कृतिक मानचित्र</span>
+            </div>
+          </div>
+          <span class="map-instructions-pill">✦ Hover region to preview • Click to explore</span>
+        </div>
+
+        <!-- The Visual India Map Canvas Container -->
+        <div class="map-canvas-container" id="mapCanvasContainer">
+          
+          <!-- Provided India Map Image Asset -->
+          <img 
+            src="assets/india_map_cultural.jpg" 
+            alt="Textured cultural map of India featuring highlighted regional states" 
+            class="map-base-image" 
+            id="mapBaseImage"
+          >
+
+          <!-- Interactive Overlay Layer for Hotspot Beacons -->
+          <div class="map-interactive-layer" id="mapInteractiveLayer">
+            <!-- Dynamically populated with region beacons by home.js -->
+          </div>
+
+          <!-- Dynamic Region Tooltip / Popover Card -->
+          <div class="region-popover-card" id="regionPopover" role="tooltip">
+            <!-- Populated on hover via home.js -->
+          </div>
+
+        </div>
+
+        <!-- Pilot Regions Quick Jump Strip -->
+        <div class="map-quick-regions-bar" id="quickRegionsBar">
+          <span class="quick-regions-label">Pilot Regions:</span>
+          <button class="quick-region-pill" data-region="rajasthan">Rajasthan</button>
+          <button class="quick-region-pill" data-region="maharashtra">Maharashtra</button>
+          <button class="quick-region-pill" data-region="tamil-nadu">Tamil Nadu</button>
+          <button class="quick-region-pill" data-region="kerala">Kerala</button>
+          <button class="quick-region-pill" data-region="jammu-kashmir">Jammu & Kashmir</button>
+          <button class="quick-region-pill" data-region="west-bengal">West Bengal</button>
+          <button class="quick-region-pill" data-region="gujarat">Gujarat</button>
+          <button class="quick-region-pill" data-region="madhya-pradesh">Madhya Pradesh</button>
+          <button class="quick-region-pill" data-region="odisha">Odisha</button>
+          <button class="quick-region-pill" data-region="assam">Assam</button>
+        </div>
+
+      </div>
+
+      <!-- ── Right: Journey & Guides Column ── -->
+      <div class="atlas-journey-column">
+        
+        <!-- 1. Cultural Guides Avatar (Namaste Asset - Visible Immediately) -->
+        <div class="cultural-guides-card">
+          <div class="guides-header">
+            <h3 class="guides-title">Cultural Guides</h3>
+            <span class="guides-badge">Living Bharat</span>
+          </div>
+
+          <!-- Speech Bubble Greeting with Voiceover -->
+          <div class="avatar-speech-bubble" id="avatarSpeechBubble">
+            <div class="bubble-actions-row">
+              <button class="btn-cycle-greeting" id="cycleGreetingBtn" title="Switch Greeting Language" aria-label="Switch greeting language">
+                <span>↻ Switch</span>
+              </button>
+              <button class="btn-voiceover-greeting" id="playVoiceoverBtn" title="Listen to Voiceover" aria-label="Listen to voiceover greeting">
+                <span>🔊</span>
+                <span id="voiceStatusText">Listen</span>
+              </button>
+            </div>
+            <div class="bubble-greeting-native" id="avatarGreetingNative">
+              नमस्ते! भारत की जीवंत सांस्कृतिक धरोहर में आपका स्वागत है।
+            </div>
+            <div class="bubble-greeting-roman" id="avatarGreetingRoman">
+              Namaste! Choose a region on the map to begin exploring.
+            </div>
+            <div class="voice-wave-indicator" id="voiceWaveIndicator" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <!-- Upright Un-distorted Avatar Presentation (Clickable for Voiceover) -->
+          <div class="avatar-frame" id="avatarFrame" title="Tap avatar to hear the cultural greeting" tabindex="0" role="button" aria-label="Tap avatar to hear greeting">
+            <img 
+              src="assets/namaste_avatar.jpg" 
+              alt="Diverse cultural guides of India with folded hands in Namaste greeting" 
+              class="avatar-image" 
+              id="avatarImage"
+            >
+            <div class="avatar-caption-bar">
+              Cultural Harmony • 5 Living Traditions of India
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Your Journey / Progress Panel -->
+        <div class="journey-progress-card">
+          <div class="journey-card-header">
+            <div class="journey-title-group">
+              <svg class="journey-compass-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+              <h3 class="journey-title">Your Journey</h3>
+            </div>
+            <span class="journey-rank-badge">Heritage Explorer</span>
+          </div>
+
+          <div class="journey-stat-row">
+            <div>
+              <span class="journey-count-text" id="journeyCountText">3 / 7</span>
+              <span class="journey-count-sub">regions explored</span>
+            </div>
+            <span class="journey-percent-text" id="journeyPercentText">43% Discovered</span>
+          </div>
+
+          <!-- Progress Track Bar -->
+          <div class="journey-progress-track">
+            <div class="journey-progress-fill" id="journeyProgressFill"></div>
+          </div>
+
+          <!-- Next Milestone / Reward Box -->
+          <div class="milestone-reward-box">
+            <div class="reward-icon-badge">🏰</div>
+            <div class="reward-info-group">
+              <span class="reward-label">Next Reward Unlocked</span>
+              <span class="reward-name">Mehrangarh Royal Seal Card</span>
+              <span class="reward-sub">Explore Rajasthan to claim full regalia badge</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       4. DID YOU KNOW? CULTURAL TRIVIA SECTION
+       ========================================================= -->
+  <section class="did-you-know-section" id="didYouKnowSection">
+    <div class="dyk-card">
+      
+      <div class="dyk-content-side">
+        <div class="dyk-badge-row">
+          <span class="dyk-eyebrow">
+            <span>💡</span> DID YOU KNOW?
+          </span>
+          <span class="dyk-region-pill" id="dykRegion">Mithila, Bihar</span>
+        </div>
+
+        <h3 class="dyk-quote" id="dykQuote">
+          “Madhubani painting originated in the Mithila region of Bihar.”
+        </h3>
+
+        <p class="dyk-description" id="dykDesc">
+          Traditionally painted by village women on fresh mud walls during festivals, artists use natural pigments ground from turmeric, indigo, soot, and marigolds with twig brushes to illustrate sacred nature and ancient folklore.
+        </p>
+
+        <div class="dyk-actions">
+          <a href="explore.html?region=west-bengal&topic=madhubani" class="dyk-story-link" id="dykStoryLink">
+            <span>Explore this story</span>
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <button class="btn-dyk-next" id="dykNextBtn">
+            <span>Next Heritage Fact</span>
+            <span>↻</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="dyk-visual-side">
+        <div class="dyk-diya-badge">
+          🪔
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       5. FEATURED HERITAGE SECTION
+       ========================================================= -->
+  <section class="featured-heritage-section" id="featuredHeritageSection">
+    <div class="featured-section-header">
+      <span class="featured-eyebrow">CURATED EXPLORATIONS</span>
+      <h2 class="featured-title">Featured Heritage</h2>
+      <p class="featured-subtitle">Explore living arts, ancient sanctums, and timeless celebrations.</p>
+    </div>
+
+    <div class="featured-cards-grid">
+      
+      <!-- Card 1: Indian Classical Dance -->
+      <a href="explore.html?feature=classical-dance" class="heritage-card">
+        <div class="card-image-box">
+          <img src="assets/featured_dance.jpg" alt="Indian Classical Bharatanatyam Dance performance in golden temple glow" class="card-img">
+          <span class="card-category-badge">Performing Arts</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Indian Classical Dance</h3>
+          <span class="card-subtitle">The Natya Shastra & Living Mudras</span>
+          <p class="card-summary">
+            Discover the 8 classical dance traditions codified over 2,000 years ago, where intricate footwork and mudras narrate sacred epics.
+          </p>
+          <div class="card-footer-row">
+            <span class="card-read-time">5 min exploration</span>
+            <div class="card-explore-arrow">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2: Ancient Sacred Temples -->
+      <a href="explore.html?feature=ancient-temples" class="heritage-card">
+        <div class="card-image-box">
+          <img src="assets/featured_temples.jpg" alt="Ancient carved granite temple Gopuram tower in golden hour sunlight" class="card-img">
+          <span class="card-category-badge">Sacred Architecture</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Ancient Sacred Temples</h3>
+          <span class="card-subtitle">Monolithic Spires & Living Dynasties</span>
+          <p class="card-summary">
+            Explore rock-hewn sanctums, towering sculpted gopurams, and acoustic stone pillars engineered across the Chola and Vijayanagara eras.
+          </p>
+          <div class="card-footer-row">
+            <span class="card-read-time">7 min exploration</span>
+            <div class="card-explore-arrow">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3: Folk Festivals -->
+      <a href="explore.html?feature=folk-festivals" class="heritage-card">
+        <div class="card-image-box">
+          <img src="assets/featured_festivals.jpg" alt="Joyous celebration of Indian folk festival with dancers and glowing diyas" class="card-img">
+          <span class="card-category-badge">Living Traditions</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Folk Festivals & Rituals</h3>
+          <span class="card-subtitle">Communal Celebrations & Rhythms</span>
+          <p class="card-summary">
+            Step inside vibrant communal celebrations, from ecstatic Garba circles and Pushkar's camel gathering to Kerala's trance-like Theyyam nights.
+          </p>
+          <div class="card-footer-row">
+            <span class="card-read-time">6 min exploration</span>
+            <div class="card-explore-arrow">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4: Regional Cuisine -->
+      <a href="explore.html?feature=regional-cuisine" class="heritage-card">
+        <div class="card-image-box">
+          <img src="assets/featured_cuisine.jpg" alt="Rich Indian regional thali feast served in traditional bronze kansa tableware" class="card-img">
+          <span class="card-category-badge">Culinary Heritage</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Regional Living Cuisine</h3>
+          <span class="card-subtitle">Spice Routes & Ceremonial Thalis</span>
+          <p class="card-summary">
+            Taste ancient spice routes across diverse regional thalis, temple prasad recipes, slow-cooked royal Wazwan, and coastal delicacies.
+          </p>
+          <div class="card-footer-row">
+            <span class="card-read-time">4 min exploration</span>
+            <div class="card-explore-arrow">
+              <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       6. AUTHENTIC FOOTER (Reused from Virasat Design Truth)
+       ========================================================= -->
+  <footer class="virasat-footer">
+    <div class="footer-container">
+      <div class="footer-brand-side">
+        <div class="footer-brand">
+          <div class="footer-logo-frame">
+            <img src="assets/emblem_clean.png" alt="Virasat Emblem" class="footer-logo">
+          </div>
+          <div>
+            <span class="footer-title">VIRASAT</span>
+            <span class="footer-sub">The Heritage of India</span>
+          </div>
+        </div>
+        <p class="footer-mission">
+          Preserving, celebrating, and experiencing India's rich cultural tapestry through modern digital exploration.
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <span class="footer-heading">Platform</span>
+          <a href="home.html" class="f-link">Home (Atlas)</a>
+          <a href="#culturalAtlasSection" class="f-link">Discover</a>
+          <a href="#featuredHeritageSection" class="f-link">Experience</a>
+          <a href="#didYouKnowSection" class="f-link">Did You Know?</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-heading">Access</span>
+          <a href="home.html" class="f-link">Guest Exploration</a>
+          <a href="index.html#hero" class="f-link">Sign In / Account</a>
+          <a href="index.html#projectOverview" class="f-link">About Virasat</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-heading">Authenticity</span>
+          <span class="f-text">National Cultural Repository</span>
+          <span class="f-text">Ministry of Culture Guidelines</span>
+          <span class="f-text">INTACH Research Protocols</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p class="copyright-text">© 2026 Virasat — The Heritage of India. Designed for timeless cultural discovery.</p>
+      <div class="footer-devanagari">सत्यमेव जयते • विविधता में एकता</div>
+    </div>
+  </footer>
+
+  <!-- Core Data & Page Scripts -->
+  <script src="data.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIRASAT — Regional Exploration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=explore1">
+  <link rel="stylesheet" href="home.css?v=explore1">
+  <link rel="icon" type="image/png" href="assets/emblem_clean.png">
+  <style>
+    .explore-hero-card {
+      max-width: 1080px;
+      margin: 3rem auto;
+      background: var(--ei-bg-cream);
+      border: 1.5px solid var(--color-gold);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--ei-shadow-lg), 0 0 35px rgba(212, 175, 55, 0.2);
+      text-align: center;
+      position: relative;
+    }
+    .explore-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--ei-terracotta);
+      font-family: var(--font-serif);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      transition: transform var(--transition-fast);
+    }
+    .explore-back-btn:hover {
+      transform: translateX(-4px);
+      color: var(--color-terracotta-glow);
+    }
+    .explore-region-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: var(--ei-brown);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.2rem;
+    }
+    .explore-region-devanagari {
+      font-family: var(--font-accent);
+      font-size: 1.5rem;
+      color: var(--color-gold-dark);
+      margin-bottom: 0.8rem;
+    }
+    .explore-tagline-text {
+      font-family: var(--font-sub);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--ei-olive);
+      margin-bottom: 1.5rem;
+    }
+    .explore-pills-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+    .explore-pill {
+      background: #FFFFFF;
+      border: 1px solid var(--ei-taupe);
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ei-brown);
+    }
+    .explore-summary-box {
+      max-width: 740px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--ei-olive-dark);
+    }
+    .explore-highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+      text-align: left;
+    }
+    .highlight-card {
+      background: #FFFFFF;
+      border: 1px solid var(--ei-taupe);
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+      box-shadow: var(--ei-shadow-sm);
+    }
+    .highlight-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .highlight-title {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ei-brown);
+      margin-bottom: 0.2rem;
+    }
+    .highlight-sub {
+      font-size: 0.78rem;
+      color: var(--ei-sage);
+    }
+    .status-notice-box {
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px dashed var(--color-gold-dark);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      font-size: 0.88rem;
+      color: var(--ei-olive-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body class="home-page-body">
+
+  <!-- Header -->
+  <header class="home-header">
+    <div class="home-header-container">
+      <a href="home.html" class="home-brand-link">
+        <div class="home-brand-logo-frame">
+          <img src="assets/emblem_clean.png" alt="Virasat Emblem" class="home-brand-emblem">
+        </div>
+        <div class="home-brand-text">
+          <span class="home-brand-name">VIRASAT</span>
+          <span class="home-brand-sub">The Heritage of India</span>
+        </div>
+      </a>
+      <a href="home.html#culturalAtlasSection" class="btn-intro-cta" style="padding: 0.45rem 1.1rem; font-size: 0.82rem;">
+        <span>← Cultural Atlas</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Exploration Container -->
+  <main style="flex: 1; padding: 1rem 2rem;">
+    <div class="explore-hero-card">
+      <a href="home.html#culturalAtlasSection" class="explore-back-btn">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
+        </svg>
+        <span>Back to Interactive Cultural Atlas</span>
+      </a>
+
+      <div class="home-sky-badge" style="margin-bottom: 0.5rem;">
+        <span class="devanagari-text" id="expDevanagari">राजस्थान</span>
+        <span class="sky-divider">•</span>
+        <span class="sky-label" id="expBadge">Pilot Region</span>
+      </div>
+
+      <h1 class="explore-region-title" id="expTitle">Rajasthan</h1>
+      <p class="explore-tagline-text" id="expTagline">Forts • Folk Art • Cuisine</p>
+
+      <div class="explore-pills-row" id="expCategories">
+        <span class="explore-pill">Royal Hill Forts</span>
+        <span class="explore-pill">Ghoomar & Kalbelia</span>
+        <span class="explore-pill">Thar Desert Lore</span>
+        <span class="explore-pill">Dal Baati Churma</span>
+      </div>
+
+      <p class="explore-summary-box" id="expSummary">
+        Explore the desert realm of Rajput chivalry, impenetrable sandstone forts, vibrant block-printing, and soulful Manganiyar melodies.
+      </p>
+
+      <div class="status-notice-box">
+        <span style="font-size: 1.2rem;">🏛</span>
+        <span>
+          <strong>Pilot Cultural Preview:</strong> This regional module is currently in active curation by cultural historians. Interactive 3D monument walkthroughs and regional quests will unlock soon!
+        </span>
+      </div>
+
+      <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--ei-brown); margin-bottom: 1rem; text-align: left;">
+        Featured Cultural Highlights
+      </h3>
+
+      <div class="explore-highlights-grid" id="expHighlights">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <a href="home.html#culturalAtlasSection" class="btn-intro-cta">
+        <span>← Explore Other Regions on Map</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="virasat-footer">
+    <div class="footer-container">
+      <div class="footer-brand-side">
+        <div class="footer-brand">
+          <div class="footer-logo-frame">
+            <img src="assets/emblem_clean.png" alt="Virasat Emblem" class="footer-logo">
+          </div>
+          <div>
+            <span class="footer-title">VIRASAT</span>
+            <span class="footer-sub">The Heritage of India</span>
+          </div>
+        </div>
+        <p class="footer-mission">
+          Preserving, celebrating, and experiencing India's rich cultural tapestry through modern digital exploration.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      <p class="copyright-text">© 2026 Virasat — The Heritage of India. Designed for timeless cultural discovery.</p>
+      <div class="footer-devanagari">सत्यमेव जयते • विविधता में एकता</div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const data = window.VIRASAT_DATA;
+      if (!data) return;
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const regionId = urlParams.get('region') || 'rajasthan';
+
+      const region = data.regions.find(r => r.id === regionId) || data.regions[0];
+      if (!region) return;
+
+      document.title = `VIRASAT — Explore ${region.name} | Living Heritage`;
+      document.getElementById('expTitle').textContent = region.name;
+      document.getElementById('expDevanagari').textContent = region.devanagari || region.name;
+      document.getElementById('expBadge').textContent = region.badge || 'Regional Focus';
+      document.getElementById('expTagline').textContent = region.tagline || '';
+      document.getElementById('expSummary').textContent = region.summary || '';
+
+      const catContainer = document.getElementById('expCategories');
+      if (catContainer && region.categories) {
+        catContainer.innerHTML = region.categories.map(c => `<span class="explore-pill">${c}</span>`).join('');
+      }
+
+      const highlightsGrid = document.getElementById('expHighlights');
+      if (highlightsGrid && region.highlights) {
+        const icons = ['🏰', '🎭', '🛕', '🎨'];
+        highlightsGrid.innerHTML = region.highlights.map((h, i) => `
+          <div class="highlight-card">
+            <div class="highlight-icon">${icons[i % icons.length]}</div>
+            <h4 class="highlight-title">${h}</h4>
+            <span class="highlight-sub">${region.name} Heritage Archive</span>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

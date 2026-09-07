@@ -1,0 +1,1710 @@
+/* =========================================================
+   VIRASAT — The Heritage of India
+   Home Page: Interactive Cultural Atlas Stylesheet
+   Inherits design tokens and base styles from style.css
+   ========================================================= */
+
+/* ── Home Page Root Theme Overrides & Additions ── */
+:root {
+  --atlas-map-aspect: 1000 / 667;
+  --atlas-gold-glow: 0 0 24px rgba(212, 175, 55, 0.4);
+  --atlas-terracotta-glow: 0 0 24px rgba(200, 90, 50, 0.4);
+}
+
+body.home-page-body {
+  background-color: var(--ei-bg-parchment);
+  color: var(--ei-brown);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Fixed/Sticky Heritage Navbar ── */
+.home-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(22, 18, 14, 0.94);
+  border-bottom: 1px solid var(--border-gold-subtle);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all var(--transition-fast);
+}
+
+.home-header-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Brand Link */
+.home-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.home-brand-logo-frame {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition-fast);
+}
+
+.home-brand-link:hover .home-brand-logo-frame {
+  transform: scale(1.04);
+}
+
+.home-brand-emblem {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.home-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-brand-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--color-gold);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.home-brand-sub {
+  font-family: var(--font-serif);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  color: var(--color-parchment-muted);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Primary Navigation Links */
+.home-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.home-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-parchment-muted);
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
+  position: relative;
+  padding: 0.4rem 0;
+}
+
+.home-nav-link .nav-num {
+  font-family: var(--font-serif);
+  font-size: 0.72rem;
+  color: var(--color-gold);
+  opacity: 0.85;
+}
+
+.home-nav-link:hover {
+  color: var(--color-parchment);
+}
+
+.home-nav-link.active {
+  color: var(--color-gold-light);
+}
+
+.home-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-terracotta));
+  border-radius: 2px;
+}
+
+/* Header Right Actions (Search + Ambience + Profile) */
+.home-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Integrated Cultural Search Bar ── */
+.search-wrapper {
+  position: relative;
+  width: 280px;
+  transition: width var(--transition-fast);
+}
+
+.search-wrapper:focus-within {
+  width: 340px;
+}
+
+.search-input-box {
+  display: flex;
+  align-items: center;
+  background: rgba(36, 28, 22, 0.88);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-full);
+  padding: 0.42rem 0.9rem;
+  gap: 0.6rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-fast);
+}
+
+.search-input-box:focus-within {
+  border-color: var(--color-gold);
+  background: rgba(45, 36, 28, 0.96);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.25);
+}
+
+.search-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--color-parchment);
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: rgba(217, 210, 195, 0.6);
+  font-size: 0.82rem;
+}
+
+.search-kbd {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.38rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+  color: var(--color-parchment-muted);
+  font-family: monospace;
+}
+
+.search-clear-btn {
+  background: none;
+  border: none;
+  color: var(--color-parchment-muted);
+  cursor: pointer;
+  padding: 0.1rem;
+  display: none;
+}
+
+.search-clear-btn.visible {
+  display: block;
+}
+
+/* Search Dropdown Results Menu */
+.search-results-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  min-width: 320px;
+  max-height: 380px;
+  overflow-y: auto;
+  background: rgba(26, 20, 16, 0.98);
+  border: 1px solid var(--border-gold-medium);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(20px);
+  z-index: 200;
+  display: none;
+  padding: 0.5rem 0;
+}
+
+.search-results-dropdown.active {
+  display: block;
+  animation: fadeInDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.search-category-group {
+  padding: 0.4rem 0;
+}
+
+.search-category-title {
+  padding: 0.25rem 1rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.search-item:hover,
+.search-item.highlighted {
+  background: rgba(212, 175, 55, 0.14);
+}
+
+.search-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-item-title {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  color: var(--color-parchment);
+  font-weight: 600;
+}
+
+.search-item-sub {
+  font-size: 0.72rem;
+  color: var(--color-parchment-muted);
+}
+
+.search-item-type {
+  font-size: 0.68rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-full);
+  background: rgba(151, 87, 44, 0.35);
+  border: 1px solid rgba(200, 90, 50, 0.4);
+  color: #F3E0A3;
+  font-weight: 600;
+}
+
+.search-empty-state {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: var(--color-parchment-muted);
+  font-size: 0.84rem;
+}
+
+/* ── Profile Control & Dropdown ── */
+.profile-menu-container {
+  position: relative;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(36, 28, 22, 0.88);
+  border: 1px solid var(--border-gold-subtle);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.85rem 0.35rem 0.4rem;
+  color: var(--color-parchment);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.profile-btn:hover {
+  border-color: var(--color-gold);
+  background: rgba(45, 36, 28, 0.95);
+}
+
+.profile-avatar-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ei-terracotta), var(--color-gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.profile-label-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.profile-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-parchment);
+  line-height: 1.1;
+}
+
+.profile-role-badge {
+  font-size: 0.64rem;
+  color: var(--color-gold-light);
+  letter-spacing: 0.04em;
+}
+
+.profile-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 270px;
+  background: rgba(24, 18, 14, 0.98);
+  border: 1px solid var(--border-gold-medium);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(20px);
+  padding: 1.2rem;
+  display: none;
+  z-index: 200;
+}
+
+.profile-dropdown-menu.active {
+  display: block;
+  animation: fadeInDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-header-card {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.profile-h-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+.profile-h-sub {
+  font-size: 0.76rem;
+  color: var(--color-parchment-muted);
+}
+
+.profile-stats-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.profile-stat-box {
+  text-align: center;
+}
+
+.profile-stat-val {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-parchment);
+  font-weight: 700;
+}
+
+.profile-stat-lbl {
+  font-size: 0.65rem;
+  color: var(--color-parchment-muted);
+  text-transform: uppercase;
+}
+
+.btn-profile-signin {
+  width: 100%;
+  padding: 0.55rem;
+  background: linear-gradient(135deg, var(--ei-terracotta), var(--color-gold-dark));
+  border: 1px solid rgba(255, 230, 160, 0.4);
+  border-radius: var(--radius-full);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.btn-profile-signin:hover {
+  transform: translateY(-1px);
+}
+
+/* ── SMALL HERO / INTRODUCTION SECTION ── */
+.home-intro-section {
+  padding: 2.5rem 2rem 1.8rem;
+  text-align: center;
+  background: radial-gradient(circle at 50% 30%, rgba(249, 245, 236, 0.95) 0%, var(--ei-bg-parchment) 100%);
+  position: relative;
+}
+
+.intro-container {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-sky-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.28rem 1.1rem;
+  border-radius: var(--radius-full);
+  background: #FFFFFF;
+  border: 1px solid var(--ei-taupe);
+  box-shadow: var(--ei-shadow-sm);
+  margin-bottom: 0.9rem;
+}
+
+.home-sky-badge .devanagari-text {
+  font-family: var(--font-accent);
+  font-size: 1.2rem;
+  color: var(--ei-terracotta);
+}
+
+.home-sky-badge .sky-divider {
+  color: var(--color-gold);
+}
+
+.home-sky-badge .sky-label {
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  color: var(--ei-olive);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.home-intro-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ei-brown);
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
+}
+
+.home-intro-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ei-olive);
+  max-width: 680px;
+  margin-bottom: 1.4rem;
+}
+
+.btn-intro-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1.8rem;
+  background: linear-gradient(135deg, var(--ei-terracotta) 0%, #C85A32 50%, var(--color-gold-dark) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: var(--radius-full);
+  color: #FFFFFF;
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--ei-shadow-md);
+  transition: all var(--transition-fast);
+}
+
+.btn-intro-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ei-shadow-lg), 0 0 20px rgba(200, 90, 50, 0.3);
+}
+
+.btn-intro-cta svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-intro-cta:hover svg {
+  transform: translateY(3px);
+}
+
+/* ── CULTURAL ATLAS MAIN SECTION (Primary Top View) ── */
+.cultural-atlas-section {
+  padding: 2.2rem 2rem 3.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.atlas-section-header {
+  margin-bottom: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.atlas-eyebrow {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ei-terracotta);
+  margin-bottom: 0.35rem;
+}
+
+.atlas-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  color: var(--ei-brown);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.atlas-subtitle {
+  font-size: 0.96rem;
+  color: var(--ei-olive);
+  margin-bottom: 1.2rem;
+}
+
+/* Zone Filter Pills */
+.zone-filters-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.zone-filter-pill {
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  background: var(--ei-bg-cream);
+  border: 1px solid var(--ei-taupe);
+  color: var(--ei-olive-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.zone-filter-pill:hover {
+  border-color: var(--ei-terracotta);
+  color: var(--ei-terracotta);
+  background: #FFFFFF;
+}
+
+.zone-filter-pill.active {
+  background: var(--ei-terracotta);
+  border-color: var(--ei-terracotta);
+  color: #FFFFFF;
+  box-shadow: var(--ei-shadow-sm);
+}
+
+/* Atlas Main Composition Layout (Map on Left, Journey + Avatar on Right) */
+.atlas-composition-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 0.9fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ── Left Side: The Interactive India Map Stage ── */
+.atlas-map-card {
+  background: var(--ei-bg-cream);
+  border: 1.5px solid var(--ei-taupe);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--ei-shadow-md);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heritage Frame Embellishments */
+.map-frame-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ei-taupe-light);
+  padding-bottom: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.map-frame-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.map-frame-compass-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--color-gold-dark);
+}
+
+.map-frame-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ei-brown);
+  text-transform: uppercase;
+}
+
+.map-frame-subtitle {
+  font-size: 0.72rem;
+  color: var(--ei-sage);
+  letter-spacing: 0.08em;
+}
+
+.map-instructions-pill {
+  font-size: 0.72rem;
+  padding: 0.25rem 0.7rem;
+  background: rgba(151, 87, 44, 0.08);
+  border: 1px solid rgba(151, 87, 44, 0.25);
+  border-radius: var(--radius-full);
+  color: var(--ei-terracotta);
+  font-weight: 600;
+}
+
+/* Map Canvas Container */
+.map-canvas-container {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #F4EEDF;
+  border: 1px solid rgba(134, 124, 90, 0.25);
+  box-shadow: inset 0 0 25px rgba(88, 83, 52, 0.08);
+  user-select: none;
+}
+
+.map-base-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Interactive Region Hotspot Beacons Layer */
+.map-interactive-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+/* Pulsing State Beacon */
+.region-beacon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 20;
+  background: none;
+  border: none;
+  padding: 0.3rem;
+  outline: none;
+}
+
+.beacon-core {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beacon-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--ei-terracotta);
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 8px rgba(151, 87, 44, 0.6);
+  z-index: 2;
+  transition: all var(--transition-fast);
+}
+
+.beacon-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(200, 90, 50, 0.45);
+  animation: beaconWave 2.2s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes beaconWave {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.beacon-label {
+  font-family: var(--font-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: rgba(36, 28, 22, 0.88);
+  color: #FFFFFF;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: all var(--transition-fast);
+}
+
+/* Hover & Active States on Beacon */
+.region-beacon:hover .beacon-dot,
+.region-beacon:focus .beacon-dot,
+.region-beacon.active .beacon-dot {
+  transform: scale(1.35);
+  background: var(--color-gold);
+  box-shadow: 0 0 14px var(--color-gold);
+}
+
+.region-beacon:hover .beacon-label,
+.region-beacon:focus .beacon-label,
+.region-beacon.active .beacon-label {
+  background: rgba(151, 87, 44, 0.95);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Dim non-highlighted beacons when a zone filter is active */
+.region-beacon.dimmed {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ── Interactive Popover / Tooltip Card ── */
+.region-popover-card {
+  position: absolute;
+  width: 290px;
+  background: rgba(24, 18, 14, 0.96);
+  border: 1.5px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  color: var(--color-parchment);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 175, 55, 0.25);
+  backdrop-filter: blur(16px);
+  z-index: 50;
+  pointer-events: auto;
+  display: none;
+  transform: translate(-50%, -100%);
+  margin-top: -16px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.region-popover-card.active {
+  display: block;
+  animation: popoverFade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popoverFade {
+  from { opacity: 0; transform: translate(-50%, -90%); }
+  to { opacity: 1; transform: translate(-50%, -100%); }
+}
+
+.popover-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.65rem;
+}
+
+.popover-name-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.popover-region-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-gold-light);
+  line-height: 1.1;
+}
+
+.popover-devanagari {
+  font-family: var(--font-accent);
+  font-size: 0.82rem;
+  color: var(--color-gold);
+}
+
+.popover-status-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: rgba(200, 90, 50, 0.3);
+  border: 1px solid var(--color-terracotta);
+  color: #F3E0A3;
+  text-transform: uppercase;
+}
+
+.popover-tagline {
+  font-family: var(--font-sub);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--color-parchment-muted);
+  margin-bottom: 0.65rem;
+}
+
+.popover-categories-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.popover-category-chip {
+  font-size: 0.68rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 0.18rem 0.48rem;
+  border-radius: 4px;
+  color: var(--color-parchment);
+}
+
+.popover-explore-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.55rem 0.9rem;
+  background: linear-gradient(135deg, var(--ei-terracotta), var(--color-gold-dark));
+  border: 1px solid rgba(255, 230, 160, 0.4);
+  border-radius: var(--radius-full);
+  color: #FFFFFF;
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.popover-explore-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(200, 90, 50, 0.5);
+}
+
+/* Map Stage Footer (Pilot Regions Quick Pill Strip) */
+.map-quick-regions-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--ei-taupe-light);
+}
+
+.quick-regions-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ei-olive);
+  letter-spacing: 0.06em;
+  margin-right: 0.2rem;
+}
+
+.quick-region-pill {
+  font-size: 0.74rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: #FFFFFF;
+  border: 1px solid var(--ei-taupe);
+  color: var(--ei-brown);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.quick-region-pill:hover,
+.quick-region-pill.active {
+  background: var(--ei-terracotta);
+  border-color: var(--ei-terracotta);
+  color: #FFFFFF;
+}
+
+/* ── Right Side: Journey & Guides Column ── */
+.atlas-journey-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Your Journey / Progress Panel ── */
+.journey-progress-card {
+  background: var(--ei-bg-cream);
+  border: 1.5px solid var(--ei-taupe);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--ei-shadow-md);
+  position: relative;
+}
+
+.journey-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.journey-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.journey-compass-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--ei-terracotta);
+}
+
+.journey-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ei-brown);
+  letter-spacing: 0.05em;
+}
+
+.journey-rank-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.18);
+  border: 1px solid var(--color-gold-dark);
+  color: var(--ei-brown);
+}
+
+/* Progress Indicator Bar */
+.journey-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.45rem;
+}
+
+.journey-count-text {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ei-terracotta);
+}
+
+.journey-count-sub {
+  font-size: 0.8rem;
+  color: var(--ei-olive);
+  font-weight: 600;
+}
+
+.journey-percent-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ei-olive-dark);
+}
+
+.journey-progress-track {
+  width: 100%;
+  height: 10px;
+  background: var(--ei-taupe-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--ei-taupe);
+}
+
+.journey-progress-fill {
+  height: 100%;
+  width: 43%;
+  background: linear-gradient(90deg, var(--ei-terracotta), var(--color-gold));
+  border-radius: var(--radius-full);
+  transition: width 0.8s ease;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* Milestone Reward Box */
+.milestone-reward-box {
+  background: #FFFFFF;
+  border: 1px solid var(--ei-taupe);
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.reward-icon-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #FFF5DE, #FFE29F);
+  border: 1px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  box-shadow: var(--ei-shadow-sm);
+}
+
+.reward-info-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.reward-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ei-terracotta);
+}
+
+.reward-name {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ei-brown);
+}
+
+.reward-sub {
+  font-size: 0.74rem;
+  color: var(--ei-olive);
+}
+
+/* ── Namaste Cultural Guides Avatar Card ── */
+.cultural-guides-card {
+  background: var(--ei-bg-cream);
+  border: 1.5px solid var(--ei-taupe);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+  box-shadow: var(--ei-shadow-md);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.guides-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.guides-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ei-brown);
+}
+
+.guides-badge {
+  font-size: 0.68rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  background: rgba(28, 72, 52, 0.1);
+  border: 1px solid rgba(28, 72, 52, 0.3);
+  color: var(--color-emerald);
+  font-weight: 600;
+}
+
+/* Interactive Namaste Speech Bubble */
+.avatar-speech-bubble {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid var(--ei-taupe);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.1rem;
+  box-shadow: var(--ei-shadow-sm);
+}
+
+.avatar-speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 36px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #FFFFFF;
+}
+
+.bubble-greeting-native {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ei-terracotta);
+  margin-bottom: 0.2rem;
+}
+
+.bubble-greeting-roman {
+  font-size: 0.82rem;
+  color: var(--ei-olive);
+  line-height: 1.4;
+}
+
+.bubble-actions-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  float: right;
+  margin-left: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.btn-voiceover-greeting {
+  background: rgba(151, 87, 44, 0.12);
+  border: 1px solid rgba(151, 87, 44, 0.35);
+  border-radius: var(--radius-full);
+  color: var(--ei-terracotta);
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-voiceover-greeting:hover {
+  background: var(--ei-terracotta);
+  color: #FFFFFF;
+  border-color: var(--ei-terracotta);
+}
+
+.btn-voiceover-greeting.speaking {
+  background: linear-gradient(135deg, var(--ei-terracotta), var(--color-gold-dark));
+  color: #FFFFFF;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+  animation: pulseVoice 1.4s infinite ease-in-out;
+}
+
+@keyframes pulseVoice {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.btn-cycle-greeting {
+  background: rgba(88, 83, 52, 0.08);
+  border: 1px solid rgba(88, 83, 52, 0.2);
+  border-radius: var(--radius-full);
+  color: var(--ei-olive-dark);
+  cursor: pointer;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-cycle-greeting:hover {
+  color: var(--ei-terracotta);
+  border-color: var(--ei-terracotta);
+  background: #FFFFFF;
+}
+
+.avatar-speech-bubble.speaking {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.35);
+}
+
+.voice-wave-indicator {
+  display: none;
+  align-items: center;
+  gap: 3px;
+  height: 12px;
+  margin-top: 0.5rem;
+}
+
+.avatar-speech-bubble.speaking .voice-wave-indicator {
+  display: inline-flex;
+}
+
+.voice-wave-indicator span {
+  width: 2.5px;
+  height: 5px;
+  background: var(--ei-terracotta);
+  border-radius: 1px;
+  animation: voiceBarWave 0.9s infinite ease-in-out;
+}
+
+.voice-wave-indicator span:nth-child(2) { animation-delay: 0.15s; }
+.voice-wave-indicator span:nth-child(3) { animation-delay: 0.3s; }
+.voice-wave-indicator span:nth-child(4) { animation-delay: 0.45s; }
+.voice-wave-indicator span:nth-child(5) { animation-delay: 0.6s; }
+
+@keyframes voiceBarWave {
+  0%, 100% { height: 4px; }
+  50% { height: 12px; background: var(--color-gold-dark); }
+}
+
+/* Upright Natural Avatar Presentation Frame */
+.avatar-frame {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1.5px solid var(--color-gold-muted);
+  box-shadow: var(--ei-shadow-sm);
+  background: #FAF8F2;
+  cursor: pointer;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.avatar-frame:hover,
+.avatar-frame:focus-visible {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+.avatar-image {
+  width: 100%;
+  height: auto;
+  max-height: 310px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.avatar-frame:hover .avatar-image {
+  transform: scale(1.02);
+}
+
+.avatar-caption-bar {
+  padding: 0.55rem 0.8rem;
+  background: rgba(36, 28, 22, 0.9);
+  color: var(--color-parchment);
+  font-size: 0.74rem;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* ── DID YOU KNOW? SECTION ── */
+.did-you-know-section {
+  padding: 2rem 2rem 3rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dyk-card {
+  background: linear-gradient(135deg, #FAF4E8 0%, #F5E8D3 100%);
+  border: 1.5px solid var(--color-gold-muted);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem 2.5rem;
+  box-shadow: var(--ei-shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dyk-card::before {
+  content: '“';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-family: var(--font-display);
+  font-size: 9rem;
+  color: rgba(212, 175, 55, 0.12);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.dyk-content-side {
+  max-width: 820px;
+}
+
+.dyk-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.dyk-eyebrow {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--ei-terracotta);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dyk-region-pill {
+  font-size: 0.72rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--ei-taupe);
+  color: var(--ei-olive);
+  font-weight: 600;
+}
+
+.dyk-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--ei-brown);
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+}
+
+.dyk-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ei-olive-dark);
+  margin-bottom: 1.1rem;
+}
+
+.dyk-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.dyk-story-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ei-terracotta);
+  text-decoration: none;
+  transition: gap var(--transition-fast);
+}
+
+.dyk-story-link:hover {
+  gap: 0.8rem;
+  color: var(--color-terracotta-glow);
+}
+
+.btn-dyk-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: #FFFFFF;
+  border: 1px solid var(--ei-taupe);
+  color: var(--ei-olive-dark);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-dyk-next:hover {
+  border-color: var(--ei-terracotta);
+  color: var(--ei-terracotta);
+}
+
+.dyk-visual-side {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dyk-diya-badge {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFF7E6 0%, #F5D378 60%, #C99E39 100%);
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+}
+
+/* ── FEATURED HERITAGE SECTION ── */
+.featured-heritage-section {
+  padding: 2.5rem 2rem 4.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.featured-section-header {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.featured-eyebrow {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ei-terracotta);
+  margin-bottom: 0.35rem;
+}
+
+.featured-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  color: var(--ei-brown);
+  margin-bottom: 0.4rem;
+}
+
+.featured-subtitle {
+  font-size: 0.95rem;
+  color: var(--ei-olive);
+}
+
+/* 4 Heritage Cards Grid */
+.featured-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.heritage-card {
+  background: var(--ei-bg-cream);
+  border: 1.5px solid var(--ei-taupe);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ei-shadow-md);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.heritage-card:hover,
+.heritage-card:focus {
+  transform: translateY(-6px);
+  border-color: var(--color-gold);
+  box-shadow: var(--ei-shadow-lg), 0 0 25px rgba(212, 175, 55, 0.25);
+}
+
+.card-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #231C15;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.heritage-card:hover .card-img {
+  transform: scale(1.08);
+}
+
+.card-category-badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  padding: 0.25rem 0.65rem;
+  background: rgba(24, 18, 14, 0.85);
+  border: 1px solid var(--border-gold-medium);
+  border-radius: var(--radius-full);
+  color: #F3E0A3;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(8px);
+}
+
+.card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--ei-brown);
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+}
+
+.card-subtitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ei-terracotta);
+  margin-bottom: 0.65rem;
+}
+
+.card-summary {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--ei-olive);
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.card-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--ei-taupe-light);
+  padding-top: 0.75rem;
+}
+
+.card-read-time {
+  font-size: 0.72rem;
+  color: var(--ei-sage);
+}
+
+.card-explore-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid var(--ei-taupe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ei-terracotta);
+  transition: all var(--transition-fast);
+}
+
+.heritage-card:hover .card-explore-arrow {
+  background: var(--ei-terracotta);
+  border-color: var(--ei-terracotta);
+  color: #FFFFFF;
+  transform: translateX(3px);
+}
+
+/* ── RESPONSIVE DESIGN (Desktop, Tablet, Mobile) ── */
+@media (max-width: 1200px) {
+  .atlas-composition-layout {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+  }
+  .featured-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .home-header-container {
+    padding: 0.75rem 1.2rem;
+  }
+  .home-nav-links {
+    display: none; /* Mobile nav menu */
+  }
+  .search-wrapper {
+    width: 210px;
+  }
+  .search-wrapper:focus-within {
+    width: 250px;
+  }
+  .atlas-composition-layout {
+    grid-template-columns: 1fr;
+  }
+  .dyk-card {
+    flex-direction: column;
+    padding: 1.8rem;
+    text-align: left;
+  }
+  .dyk-visual-side {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-header-container {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .search-wrapper {
+    width: 100%;
+    order: 3;
+  }
+  .search-wrapper:focus-within {
+    width: 100%;
+  }
+  .home-intro-section {
+    padding: 1.8rem 1rem;
+  }
+  .cultural-atlas-section {
+    padding: 1rem 1rem 2.5rem;
+  }
+  .atlas-map-card {
+    padding: 1rem;
+  }
+  .region-popover-card {
+    width: 260px;
+  }
+  .featured-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .featured-heritage-section {
+    padding: 2rem 1rem;
+  }
+}
