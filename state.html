@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maharashtra — Cultural Heritage Exploration | VIRASAT</title>
+  <meta name="description" content="Explore Maharashtra's living heritage on Virasat — from ancient rock-cut caves and Maratha fortresses to vibrant folk arts, sacred traditions, and master crafts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts matching master design system -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="state.css">
+  <link rel="icon" type="image/png" href="assets/emblem_clean.png">
+</head>
+<body>
+
+  <div class="state-page-wrapper">
+
+    <!-- ============================================== -->
+    <!-- 1. VIRASAT NAVIGATION HEADER                   -->
+    <!-- ============================================== -->
+    <header class="virasat-header" id="mainHeader">
+      <div class="header-container">
+        
+        <!-- Brand Identity -->
+        <a href="index.html" class="brand-link" id="brandHomeLink" aria-label="Virasat Home">
+          <div class="brand-logo-frame">
+            <img src="assets/emblem_clean.png" alt="Virasat Emblem" class="brand-logo-emblem">
+          </div>
+          <div class="brand-text-group">
+            <span class="brand-name-top">VIRASAT</span>
+            <span class="brand-sub-top">The Heritage of India</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <nav class="main-nav" aria-label="Primary Navigation">
+          <a href="index.html#pillarsSection" class="nav-link">
+            <span class="nav-num">01</span> Discover
+          </a>
+          <a href="index.html#pillarsSection" class="nav-link">
+            <span class="nav-num">02</span> Experience
+          </a>
+          <a href="index.html#pillarsSection" class="nav-link">
+            <span class="nav-num">03</span> Play
+          </a>
+          <a href="index.html#projectOverview" class="nav-link">
+            <span class="nav-num">04</span> About
+          </a>
+        </nav>
+
+        <!-- Entry Actions & Ambience Pill -->
+        <div class="header-actions">
+          <!-- Ambient Sound Generator Pill -->
+          <button id="ambientSoundToggle" class="audio-pill-btn" aria-label="Toggle Cultural Soundscape" title="Atmosphere: Tanpura Ambience">
+            <span class="audio-icon-wave">
+              <span></span><span></span><span></span><span></span>
+            </span>
+            <span class="audio-label">Ambience</span>
+            <span class="audio-status" id="audioStatusText">Off</span>
+          </button>
+
+          <!-- Guest Explorer Status Pill -->
+          <div class="btn-guest-quick" title="Exploring in Guest Mode">
+            <span class="guest-dot"></span>
+            Guest Explorer
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+
+    <!-- ============================================== -->
+    <!-- 2. STATE INTRODUCTION / HEADER                 -->
+    <!-- ============================================== -->
+    <section class="state-hero-header" id="stateHero">
+      <div class="state-hero-container">
+        
+        <!-- Breadcrumb -->
+        <nav class="state-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="index.html#pillarsSection" class="breadcrumb-link">Cultural Atlas</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current" id="breadcrumbStateName">Maharashtra</span>
+        </nav>
+
+        <!-- State Identity & Key Statistics -->
+        <div class="state-identity-row">
+          
+          <div class="state-title-block">
+            <div class="state-badge-row">
+              <div class="state-devanagari-pill">
+                <span class="devanagari-script" id="stateDevanagari">महाराष्ट्र</span>
+              </div>
+              <span class="state-region-tag" id="stateRegion">Western India</span>
+            </div>
+
+            <h1 class="state-name-heading" id="stateHeading">Maharashtra</h1>
+            
+            <p class="state-tagline" id="stateTagline">
+              Land of Sahyadri Citadels, Sacred Rivers & Timeless Traditions
+            </p>
+
+            <p class="state-intro-text" id="stateIntroText">
+              Nestled between the rugged Sahyadri ranges and the Arabian Sea, Maharashtra presents a grand continuum of civilization. From the UNESCO World Heritage rock-cut cave sanctums of Ajanta and Ellora to the invincible coastal sea forts of Shivaji Maharaj and the devotion of the Pandharpur Wari, Maharashtra’s living heritage weaves deep spiritual philosophy with vibrant folk celebrations.
+            </p>
+          </div>
+
+          <!-- Quick Heritage Highlights Card -->
+          <div class="state-stats-card" id="stateStatsCard">
+            <div class="stat-item">
+              <span class="stat-value">5 Sites</span>
+              <span class="stat-label">UNESCO World Heritage</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">350+</span>
+              <span class="stat-label">Hill & Sea Forts</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">720 km</span>
+              <span class="stat-label">Konkan Coastline</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">Marathi</span>
+              <span class="stat-label">Official Language</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================== -->
+    <!-- 3. THREE-COLUMN EXPLORATION LAYOUT             -->
+    <!-- ============================================== -->
+    <main class="state-main-layout">
+      <div class="state-exploration-grid">
+
+        <!-- ========================================== -->
+        <!-- COLUMN 1: CATEGORY NAVIGATION (LEFT)       -->
+        <!-- ========================================== -->
+        <aside class="category-nav-sidebar" aria-label="Cultural Categories Navigation">
+          <div class="cat-nav-header">
+            <span class="cat-nav-title">Categories</span>
+            <span class="cat-nav-badge">9 Facets</span>
+          </div>
+
+          <ul class="cat-nav-list" id="categoryNavList">
+            
+            <li class="cat-nav-item">
+              <button class="cat-nav-btn active" data-category="culture">
+                <span class="cat-btn-content">
+                  <svg class="cat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                  <span class="cat-name">Culture</span>
+                </span>
+                <span class="cat-count-subtle">Core</span>
+              </button>
+            </li>
+
+            <li class="cat-nav-item">
+              <button class="cat-nav-btn" data-category="language">
+                <span class="cat-btn-content">
+                  <svg class="cat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                  </svg>
+                  <span class="cat-name">Language</span>
+                </span>
+                <span class="cat-count-subtle">Marathi</span>
+              </button>
+            </li>
+
+            <li class="cat-nav-item">
+              <button class="cat-nav-btn" data-category="art">
+                <span class="cat-btn-content">
+                  <svg class="cat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+                    <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+                    <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+                    <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+                  </svg>
+                  <span class="cat-name">Art</span>
+                </span>
+                <span class="cat-count-subtle">Warli</span>
+              </button>
+            </li>
+
+            <li class="cat-nav-item">
+              <button class="cat-nav-btn" data-category="music">
+                <span class="cat-btn-content">
+                  <svg class="cat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18V5l12-2v13"/>
+                    <circle cx="6" cy="18" r="3"/>
+                    <circle cx="18" cy="16" r="3"/>
+                  </svg>
+                  <span class="cat-name">Music</span>
+                </span>
+                <span class="cat-count-subtle">Natya</span>
+              </button>
+            </li>
+
+            <li class="cat-nav-item">
+              <button class="cat-nav-btn" data-category="dance">
+                <span class="cat-btn-content">
+                  <svg class="cat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                    <path d="M18 10l-4-2-2 4-2-4-4 2"/>
+                    <path d="M10 14l-2 8M14 14l2 8"/>
+                  </svg>
+                  <span class="cat-name">Dance</span>
+                </span>
+                <span class="cat-count-subtle">Lavani</span>
+              </button>
+            </li>
+
+            <li class="cat-nav-item">
+              <button class="cat-nav-btn" data-category="attire">
+                <span class="cat-btn-content">
+                  <svg class="cat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.38 3.46L16 2 12 5.5 8 2l-4.38 1.46a2 2 0 0 0-1.34 1.9v15.28a2 2 0 0 0 2.68 1.9L8 21l4-1.5 4 1.5 3.04-1.54a2 2 0 0 0 1.28-1.82V5.36a2 2 0 0 0-1.94-1.9z"/>
+                  </svg>
+                  <span class="cat-name">Attire</span>
+                </span>
+                <span class="cat-count-subtle">Paithani</span>
+              </button>
+            </li>
+
+            <li class="cat-nav-item">
+              <button class="cat-nav-btn" data-category="cuisine">
+                <span class="cat-btn-content">
+                  <svg class="cat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                    <line x1="6" y1="1" x2="6" y2="4"/>
+                    <line x1="10" y1="1" x2="10" y2="4"/>
+                    <line x1="14" y1="1" x2="14" y2="4"/>
+                  </svg>
+                  <span class="cat-name">Cuisine</span>
+                </span>
+                <span class="cat-count-subtle">Flavors</span>
+              </button>
+            </li>
+
+            <li class="cat-nav-item">
+              <button class="cat-nav-btn" data-category="festivals">
+                <span class="cat-btn-content">
+                  <svg class="cat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                  </svg>
+                  <span class="cat-name">Festivals</span>
+                </span>
+                <span class="cat-count-subtle">Ganesh</span>
+              </button>
+            </li>
+
+            <li class="cat-nav-item">
+              <button class="cat-nav-btn" data-category="places">
+                <span class="cat-btn-content">
+                  <svg class="cat-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  <span class="cat-name">Places</span>
+                </span>
+                <span class="cat-count-subtle">Forts</span>
+              </button>
+            </li>
+
+          </ul>
+        </aside>
+
+
+        <!-- ========================================== -->
+        <!-- COLUMN 2: CULTURAL CONTENT AREA (CENTER)   -->
+        <!-- ========================================== -->
+        <section class="cultural-content-area" id="culturalContentArea">
+          
+          <!-- Section Heading -->
+          <div class="content-section-header">
+            <span class="content-eyebrow" id="contentCategoryEyebrow">EXPLORATION • CULTURE & LIVING TRADITIONS</span>
+            <h2 class="content-main-title" id="contentMainTitle">Foundations of Maharashtrian Heritage</h2>
+            <p class="content-main-desc" id="contentMainDesc">
+              Explore key pillars that define Maharashtra's historical continuity — where ancient stone cave monasteries meet enduring saint traditions and defensive citadel architectures.
+            </p>
+          </div>
+
+          <!-- Structured Facet Cards Grid (Visual & Organized, No Wall of Text) -->
+          <div class="cultural-facets-grid" id="facetsGrid">
+            
+            <!-- Card 1: Cave Architecture -->
+            <article class="heritage-facet-card">
+              <div class="card-top-row">
+                <span class="facet-tag">Monumental Architecture</span>
+                <span class="facet-badge-pill">UNESCO Heritage</span>
+              </div>
+              <div class="card-title-group">
+                <h3 class="facet-title">Ajanta & Ellora Rock-Cut Caves</h3>
+                <span class="facet-subtitle">Aurangabad (Chhatrapati Sambhaji Nagar) • 2nd c. BCE – 10th c. CE</span>
+              </div>
+              <p class="facet-desc">
+                Thirty rock-hewn Buddhist cave monuments at Ajanta preserving world-renowned tempera murals, paired with Ellora's monolithic Kailash Temple carved top-down from a single volcanic basalt cliff.
+              </p>
+              <div class="facet-aspects-list">
+                <span class="aspect-chip"><span class="aspect-dot"></span>Kailash Temple Monolith</span>
+                <span class="aspect-chip"><span class="aspect-dot"></span>Ajanta Fresco Murals</span>
+                <span class="aspect-chip"><span class="aspect-dot"></span>Tri-Religious Harmony</span>
+              </div>
+            </article>
+
+            <!-- Card 2: Fortress Architecture -->
+            <article class="heritage-facet-card">
+              <div class="card-top-row">
+                <span class="facet-tag">Warrior Heritage & Defense</span>
+                <span class="facet-badge-pill">Maratha Architecture</span>
+              </div>
+              <div class="card-title-group">
+                <h3 class="facet-title">Sahyadri & Coastal Fort Network</h3>
+                <span class="facet-subtitle">Raigad, Murud-Janjira, Sinhagad & Sindhudurg</span>
+              </div>
+              <p class="facet-desc">
+                An ingenious defense system engineered by Chhatrapati Shivaji Maharaj, blending mountain ridge bastions with deep-sea impregnable marine fortresses designed in harmony with monsoon weather patterns.
+              </p>
+              <div class="facet-aspects-list">
+                <span class="aspect-chip"><span class="aspect-dot"></span>High-Altitude Cisterns</span>
+                <span class="aspect-chip"><span class="aspect-dot"></span>Marine Bastion Engineering</span>
+                <span class="aspect-chip"><span class="aspect-dot"></span>Guerilla Geography</span>
+              </div>
+            </article>
+
+            <!-- Card 3: Sacred Pilgrimage -->
+            <article class="heritage-facet-card">
+              <div class="card-top-row">
+                <span class="facet-tag">Sacred Living Tradition</span>
+                <span class="facet-badge-pill">Intangible Heritage</span>
+              </div>
+              <div class="card-title-group">
+                <h3 class="facet-title">The Pandharpur Wari Pilgrimage</h3>
+                <span class="facet-subtitle">800-Year-Old Sacred Walking Pilgrimage</span>
+              </div>
+              <p class="facet-desc">
+                Over a million pilgrims (Varkaris) walk hundreds of kilometers singing the abhangs of Saint Dnyaneshwar and Saint Tukaram to reach the sanctum of Lord Vithoba, celebrating egalitarian brotherhood.
+              </p>
+              <div class="facet-aspects-list">
+                <span class="aspect-chip"><span class="aspect-dot"></span>Abhang Devotional Poetry</span>
+                <span class="aspect-chip"><span class="aspect-dot"></span>Taal & Chipli Instruments</span>
+                <span class="aspect-chip"><span class="aspect-dot"></span>Egalitarian Brotherhood</span>
+              </div>
+            </article>
+
+            <!-- Card 4: Crafts & Arts -->
+            <article class="heritage-facet-card">
+              <div class="card-top-row">
+                <span class="facet-tag">Indigenous Folk Art</span>
+                <span class="facet-badge-pill">Master Craft Traditions</span>
+              </div>
+              <div class="card-title-group">
+                <h3 class="facet-title">Warli Tribal Art & Paithani Silk</h3>
+                <span class="facet-subtitle">North Sahyadri Belt & Paithan Handloom Weavers</span>
+              </div>
+              <p class="facet-desc">
+                Warli geometric pictorial language capturing Mother Earth and the Tarpa dance, alongside 2,000-year-old royal Paithani pure silk tapestries featuring peacock and lotus zari borders.
+              </p>
+              <div class="facet-aspects-list">
+                <span class="aspect-chip"><span class="aspect-dot"></span>Rice-Paste Pigments</span>
+                <span class="aspect-chip"><span class="aspect-dot"></span>Pure Gold Thread Zari</span>
+                <span class="aspect-chip"><span class="aspect-dot"></span>Geographical Indication (GI)</span>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Section Lotus Ornament -->
+          <div class="state-ornament-divider">
+            <div class="ornament-line"></div>
+            <div class="ornament-lotus">
+              <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor">
+                <path d="M16 2 C16 9 10 14 6 18 C10 18 14 16 16 12 C18 16 22 18 26 18 C22 14 16 9 16 2 Z M16 13 C14 17 9 20 4 21 C8 23 13 22 16 18 C19 22 24 23 28 21 C23 20 18 17 16 13 Z M16 19 C13 23 9 25 3 26 C9 28 14 27 16 23 C18 27 23 28 29 26 C23 25 19 23 16 19 Z"/>
+              </svg>
+            </div>
+            <div class="ornament-line"></div>
+          </div>
+
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- COLUMN 3: VIRASAT CULTURAL GUIDE (RIGHT)   -->
+        <!-- ========================================== -->
+        <aside class="cultural-guide-sidebar" aria-label="Virasat Cultural Guide">
+          
+          <!-- Guide Persona Header -->
+          <div class="guide-profile-card">
+            <div class="guide-avatar-frame">
+              <span class="avatar-initials" id="guideInitials">AM</span>
+              <span class="guide-status-dot" title="Cultural Guide Online"></span>
+            </div>
+            <div class="guide-info-block">
+              <h4 class="guide-name" id="guideName">Acharya Madhav</h4>
+              <span class="guide-title" id="guideTitle">Virasat Cultural Guide</span>
+              <span class="guide-archetype-tag" id="guideArchetype">Sahyadri Chronicler</span>
+            </div>
+          </div>
+
+          <!-- Conversational Dialogue Bubble -->
+          <div class="guide-speech-bubble" id="guideSpeechBubble">
+            “Namaskar! I am your cultural companion for Maharashtra. Traverse the basalt ramparts, decode ancient cave frescoes, or explore the rhythms of Lavani with me.”
+          </div>
+
+          <!-- Quick Interactive Inquiry Prompts -->
+          <div class="guide-prompts-section">
+            <span class="prompts-heading">Ask the Cultural Guide</span>
+            <div class="prompt-chips-list" id="promptChipsList">
+              <button class="prompt-chip-btn" data-prompt="Ajanta & Ellora architecture">
+                <span>Architecture of Ajanta & Ellora</span>
+                <span class="prompt-arrow">→</span>
+              </button>
+              <button class="prompt-chip-btn" data-prompt="Pandharpur Wari history">
+                <span>Why is Pandharpur Wari historic?</span>
+                <span class="prompt-arrow">→</span>
+              </button>
+              <button class="prompt-chip-btn" data-prompt="Paithani silk craft">
+                <span>What makes Paithani silk rare?</span>
+                <span class="prompt-arrow">→</span>
+              </button>
+              <button class="prompt-chip-btn" data-prompt="Dhol Tasha tradition">
+                <span>Story behind Dhol-Tasha drums</span>
+                <span class="prompt-arrow">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cultural Wisdom Quote -->
+          <div class="guide-quote-box">
+            <p class="guide-quote-text" id="guideQuoteText">
+              “The rocks of the Sahyadri were carved not merely with chisels, but with unwavering devotion and centuries of patient mastery.”
+            </p>
+          </div>
+
+        </aside>
+
+      </div>
+    </main>
+
+
+    <!-- ============================================== -->
+    <!-- 4. VIRASAT FOOTER                              -->
+    <!-- ============================================== -->
+    <footer class="virasat-footer">
+      <div class="footer-container">
+        <div class="footer-brand-side">
+          <div class="footer-brand">
+            <div class="footer-logo-frame">
+              <img src="assets/emblem_clean.png" alt="Virasat" class="footer-logo">
+            </div>
+            <div>
+              <span class="footer-title">VIRASAT</span>
+              <span class="footer-sub">The Heritage of India</span>
+            </div>
+          </div>
+          <p class="footer-mission">
+            Preserving, celebrating, and experiencing India's rich cultural tapestry through modern digital exploration.
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <span class="footer-heading">Navigation</span>
+            <a href="index.html" class="f-link">Home</a>
+            <a href="index.html#pillarsSection" class="f-link">Cultural Atlas</a>
+            <a href="index.html#pillarsSection" class="f-link">Living Traditions</a>
+            <a href="index.html#projectOverview" class="f-link">About Project</a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-heading">State Facets</span>
+            <span class="f-text">28 States & 8 UTs</span>
+            <span class="f-text">Monumental Heritage</span>
+            <span class="f-text">Master Crafts & Textiles</span>
+            <span class="f-text">Folk & Performing Arts</span>
+          </div>
+          <div class="footer-col">
+            <span class="footer-heading">Authenticity</span>
+            <span class="f-text">National Cultural Repository</span>
+            <span class="f-text">Ministry of Culture Guidelines</span>
+            <span class="f-text">INTACH Research Protocols</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="copyright-text">© 2026 Virasat — The Heritage of India. Designed for timeless cultural discovery.</p>
+        <div class="footer-devanagari">सत्यमेव जयते • विविधता में एकता</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="state-data.js"></script>
+  <script src="state.js"></script>
+</body>
+</html>

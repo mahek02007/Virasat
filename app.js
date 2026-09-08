@@ -229,10 +229,19 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         `).join('')}
       </div>
-      <div style="margin-top: 1rem; display: flex; gap: 0.8rem; align-items: center;">
-        <button class="btn-guest-enter" id="pmExploreBtn" style="padding: 0.6rem 1.2rem; font-size: 0.88rem;">
-          Try This Feature as Guest
-        </button>
+      <div style="margin-top: 1rem; display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
+        ${pillarKey === 'discover' ? `
+          <a href="state.html?state=maharashtra" class="btn-guest-enter" id="pmExploreBtn" style="padding: 0.6rem 1.2rem; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+            <span>Explore Maharashtra (Cultural Atlas)</span>
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+        ` : `
+          <button class="btn-guest-enter" id="pmExploreBtn" style="padding: 0.6rem 1.2rem; font-size: 0.88rem;">
+            Try This Feature as Guest
+          </button>
+        `}
       </div>
     `;
 
@@ -241,10 +250,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hook the inner CTA
     const pmExploreBtn = document.getElementById('pmExploreBtn');
-    if (pmExploreBtn) {
+    if (pmExploreBtn && pillarKey !== 'discover') {
       pmExploreBtn.addEventListener('click', () => triggerGuestAccess());
     }
   }
+
+  // Global state navigation handler
+  window.navigateToState = function(stateId = 'maharashtra') {
+    window.location.href = `state.html?state=${encodeURIComponent(stateId)}`;
+  };
+
+  // State click delegator for any state elements
+  document.addEventListener('click', (e) => {
+    const stateEl = e.target.closest('[data-state]');
+    if (stateEl && !stateEl.closest('.pillar-card')) {
+      const stateId = stateEl.getAttribute('data-state') || 'maharashtra';
+      window.navigateToState(stateId);
+    }
+  });
 
   function closePillarModal() {
     if (!pillarModal) return;

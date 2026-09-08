@@ -1,0 +1,740 @@
+/* =========================================================
+   VIRASAT — State / Cultural Exploration Page
+   Dedicated Stylesheet strictly extending the Earthy India Design System
+   ========================================================= */
+
+/* Main Exploration Wrapper */
+.state-page-wrapper {
+  min-height: 100vh;
+  background-color: var(--ei-bg-parchment);
+  color: var(--ei-brown);
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================================
+   1. STATE INTRODUCTION & HERITAGE HEADER
+   ========================================================= */
+.state-hero-header {
+  position: relative;
+  background: linear-gradient(180deg, rgba(88, 83, 52, 0.08) 0%, rgba(245, 235, 217, 0.95) 100%),
+              radial-gradient(ellipse at 50% 0%, rgba(193, 131, 75, 0.15) 0%, transparent 75%);
+  border-bottom: 2px solid var(--ei-taupe);
+  padding: 2.4rem 2rem 2.8rem;
+  overflow: hidden;
+}
+
+.state-hero-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--ei-olive), var(--ei-terracotta), var(--color-gold), var(--ei-olive));
+}
+
+.state-hero-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* Breadcrumb Navigation */
+.state-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--ei-sage);
+  font-weight: 500;
+}
+
+.breadcrumb-link {
+  color: var(--ei-sage);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb-link:hover {
+  color: var(--ei-terracotta);
+}
+
+.breadcrumb-sep {
+  color: var(--ei-taupe);
+  font-size: 0.75rem;
+}
+
+.breadcrumb-current {
+  color: var(--ei-olive);
+  font-weight: 700;
+}
+
+/* State Title and Identity Group */
+.state-identity-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.state-title-block {
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.state-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.state-devanagari-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.9rem;
+  background: var(--ei-bg-cream);
+  border: 1.5px solid var(--ei-taupe);
+  border-radius: var(--radius-full);
+  box-shadow: var(--ei-shadow-sm);
+}
+
+.devanagari-script {
+  font-family: var(--font-accent);
+  font-size: 1.25rem;
+  color: var(--ei-terracotta);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.state-region-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--ei-sage);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.state-name-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 700;
+  color: var(--ei-olive);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+}
+
+.state-tagline {
+  font-family: var(--font-sub);
+  font-size: 1.22rem;
+  font-style: italic;
+  color: var(--ei-terracotta);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.state-intro-text {
+  font-size: 0.98rem;
+  line-height: 1.68;
+  color: var(--ei-brown);
+  opacity: 0.9;
+  max-width: 780px;
+  margin-top: 0.2rem;
+}
+
+/* Quick Facts / Stat Ribbon */
+.state-stats-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  background: var(--ei-bg-cream);
+  border: 1.5px solid var(--ei-taupe);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.4rem;
+  box-shadow: var(--ei-shadow-sm);
+  min-width: 290px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat-value {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ei-olive);
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ei-sage);
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   2. THREE-COLUMN EXPLORATION LAYOUT
+   ========================================================= */
+.state-main-layout {
+  flex: 1;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4.5rem;
+}
+
+.state-exploration-grid {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 300px;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+
+/* =========================================================
+   COLUMN 1: CATEGORY NAVIGATION (LEFT)
+   ========================================================= */
+.category-nav-sidebar {
+  position: sticky;
+  top: 90px;
+  background: var(--ei-bg-cream);
+  border: 1.5px solid var(--ei-taupe);
+  border-radius: var(--radius-lg);
+  padding: 1.3rem 1rem;
+  box-shadow: var(--ei-shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cat-nav-header {
+  padding: 0 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--ei-taupe);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cat-nav-title {
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ei-olive);
+}
+
+.cat-nav-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ei-terracotta);
+  background: var(--ei-bg-parchment);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--ei-taupe);
+}
+
+.cat-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cat-nav-item {
+  position: relative;
+}
+
+.cat-nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.85rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--ei-brown);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.cat-btn-content {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.cat-icon-svg {
+  width: 18px;
+  height: 18px;
+  color: var(--ei-sage);
+  flex-shrink: 0;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.cat-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.cat-count-subtle {
+  font-size: 0.72rem;
+  color: var(--ei-sage);
+  opacity: 0.8;
+}
+
+/* Hover & Active States */
+.cat-nav-btn:hover {
+  background: var(--ei-bg-cream-alt);
+  color: var(--ei-olive);
+  border-color: var(--ei-taupe);
+  transform: translateX(2px);
+}
+
+.cat-nav-btn:hover .cat-icon-svg {
+  color: var(--ei-terracotta);
+}
+
+.cat-nav-btn.active {
+  background: var(--ei-bg-parchment);
+  color: var(--ei-olive);
+  border-color: var(--ei-terracotta);
+  box-shadow: var(--ei-shadow-sm);
+  font-weight: 700;
+}
+
+.cat-nav-btn.active .cat-icon-svg {
+  color: var(--ei-terracotta);
+  transform: scale(1.1);
+}
+
+.cat-nav-btn.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 3px;
+  background: var(--ei-terracotta);
+  border-radius: 0 4px 4px 0;
+}
+
+
+/* =========================================================
+   COLUMN 2: CULTURAL CONTENT AREA (CENTER)
+   ========================================================= */
+.cultural-content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-width: 0;
+}
+
+/* Category Intro Banner */
+.content-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.content-eyebrow {
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--ei-terracotta);
+  text-transform: uppercase;
+}
+
+.content-main-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--ei-olive);
+}
+
+.content-main-desc {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--ei-brown);
+  opacity: 0.85;
+}
+
+/* Structured Facet Cards Grid */
+.cultural-facets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+.heritage-facet-card {
+  background: var(--ei-bg-cream);
+  border: 1.5px solid var(--ei-taupe);
+  border-radius: var(--radius-md);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--ei-shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.heritage-facet-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ei-olive), var(--ei-terracotta));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.heritage-facet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ei-shadow-md);
+  border-color: var(--ei-sage);
+}
+
+.heritage-facet-card:hover::before {
+  opacity: 1;
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.facet-tag {
+  font-family: var(--font-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ei-sage);
+  text-transform: uppercase;
+}
+
+.facet-badge-pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ei-olive);
+  background: var(--ei-bg-parchment);
+  border: 1px solid var(--ei-taupe);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.card-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.facet-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ei-olive);
+  line-height: 1.3;
+}
+
+.facet-subtitle {
+  font-size: 0.82rem;
+  color: var(--ei-terracotta);
+  font-weight: 600;
+}
+
+.facet-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ei-brown);
+  opacity: 0.85;
+}
+
+/* Key Aspects List / Chips */
+.facet-aspects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--ei-taupe-light);
+}
+
+.aspect-chip {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ei-brown);
+  background: var(--ei-bg-parchment);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--ei-taupe);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.aspect-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ei-terracotta);
+}
+
+/* Section Ornament in State Page */
+.state-ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0 0.5rem;
+}
+
+
+/* =========================================================
+   COLUMN 3: VIRASAT CULTURAL GUIDE (RIGHT)
+   ========================================================= */
+.cultural-guide-sidebar {
+  position: sticky;
+  top: 90px;
+  background: var(--ei-bg-cream);
+  border: 1.5px solid var(--ei-taupe);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.3rem;
+  box-shadow: var(--ei-shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+/* Guide Persona Card */
+.guide-profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.8rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--ei-taupe);
+}
+
+.guide-avatar-frame {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--ei-olive) 0%, var(--ei-sage) 100%);
+  border: 2px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(88, 83, 52, 0.25);
+}
+
+.avatar-initials {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-parchment);
+}
+
+.guide-status-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2E7D32;
+  border: 2px solid var(--ei-bg-cream);
+  box-shadow: 0 0 6px rgba(46, 125, 50, 0.6);
+}
+
+.guide-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.guide-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ei-olive);
+}
+
+.guide-title {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ei-terracotta);
+  text-transform: uppercase;
+}
+
+.guide-archetype-tag {
+  font-size: 0.72rem;
+  color: var(--ei-sage);
+  margin-top: 0.1rem;
+}
+
+/* Guide Speech Bubble */
+.guide-speech-bubble {
+  position: relative;
+  background: var(--ei-bg-parchment);
+  border: 1px solid var(--ei-taupe);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--ei-brown);
+  box-shadow: var(--ei-shadow-sm);
+}
+
+/* Quick Inquiry Prompts */
+.guide-prompts-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.prompts-heading {
+  font-family: var(--font-serif);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ei-sage);
+  text-transform: uppercase;
+}
+
+.prompt-chips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.prompt-chip-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  padding: 0.55rem 0.8rem;
+  background: var(--ei-bg-parchment);
+  border: 1px solid var(--ei-taupe);
+  border-radius: var(--radius-sm);
+  color: var(--ei-brown);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.prompt-chip-btn:hover {
+  background: var(--ei-bg-cream-alt);
+  border-color: var(--ei-terracotta);
+  color: var(--ei-olive);
+  transform: translateX(2px);
+}
+
+.prompt-arrow {
+  color: var(--ei-terracotta);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Guide Wisdom Quote */
+.guide-quote-box {
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--ei-taupe);
+}
+
+.guide-quote-text {
+  font-family: var(--font-sub);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ei-sage);
+  line-height: 1.45;
+  text-align: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================================= */
+@media (max-width: 1180px) {
+  .state-exploration-grid {
+    grid-template-columns: 210px minmax(0, 1fr) 260px;
+    gap: 1.4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .state-exploration-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .category-nav-sidebar {
+    position: static;
+  }
+
+  .cat-nav-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .cultural-guide-sidebar {
+    position: static;
+  }
+
+  .cultural-facets-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .state-hero-header {
+    padding: 1.8rem 1rem 2rem;
+  }
+
+  .state-identity-row {
+    flex-direction: column;
+  }
+
+  .state-stats-card {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .state-main-layout {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .cat-nav-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
