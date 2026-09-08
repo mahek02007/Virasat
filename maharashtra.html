@@ -8,30 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="regional-content.css?v=mh2">
+    <link rel="stylesheet" href="regional-content.css?v=mh1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/emblem_clean.png">
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const reg = (params.get('region') || params.get('state') || '').toLowerCase();
-        if (reg === 'odisha' || reg === 'puri') {
-            window.location.replace('odisha.html' + window.location.hash);
-        } else if (reg === 'maharashtra') {
-            window.location.replace('maharashtra.html' + window.location.hash);
-        }
-    </script>
 </head>
 <body>
     <!-- Left Sidebar - Cultural Navigation -->
     <aside class="cultural-sidebar">
         <div class="sidebar-header">
-            <div class="virasat-logo">
+            <a href="home.html" class="virasat-logo" aria-label="Return to Virasat Home">
                 <img src="assets/logo_source.jpg" alt="Virasat — Heritage of India" class="virasat-full-logo">
-            </div>
-            <div class="region-selector-pills">
-                <button class="region-pill-btn active" data-region="maharashtra">Maharashtra</button>
-                <button class="region-pill-btn" data-region="odisha">Odisha (Puri)</button>
-            </div>
+            </a>
         </div>
 
         <nav class="cultural-navigation">
@@ -859,7 +846,7 @@
         <!-- Regional Avatar -->
         <div class="regional-avatar-container">
             <div class="avatar-display">
-                <img src="assets/avatars/avatar-gpt.png" alt="Maharashtra Cultural Guide" class="regional-avatar">
+                <img src="assets/maharashtra/avatar_maharashtra.jpg" alt="Maharashtra Cultural Guide" class="regional-avatar">
             </div>
             <div class="avatar-info">
                 <h3 class="avatar-region">Maharashtra</h3>
@@ -871,7 +858,7 @@
         <div class="ai-guide-container">
             <div class="ai-guide-header">
                 <div class="ai-avatar">
-                    <img src="assets/avatars/avatar-gpt.png" alt="Shrishti AI Guide" class="ai-avatar-img">
+                    <img src="assets/maharashtra/avatar_maharashtra.jpg" alt="Shrishti AI Guide" class="ai-avatar-img">
                 </div>
                 <div class="ai-title">
                     <h3>SHRISHTI</h3>
@@ -885,7 +872,7 @@
                 </div>
 
                 <div class="chat-messages">
-                    <!-- Chat messages will appear here dynamically -->
+                    <!-- Chat messages appear dynamically -->
                 </div>
 
                 <div class="suggested-questions">
@@ -914,7 +901,7 @@
 
                 <div class="chat-input-container">
                     <input type="text" class="chat-input" placeholder="Ask Shrishti about Maharashtra...">
-                    <button class="send-btn">
+                    <button class="send-btn" aria-label="Send message">
                         <i class="fas fa-paper-plane"></i>
                     </button>
                 </div>
@@ -922,6 +909,6 @@
         </div>
     </aside>
 
-    <script src="regional-content.js"></script>
+    <script src="maharashtra.js"></script>
 </body>
 </html>

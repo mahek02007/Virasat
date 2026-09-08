@@ -162,21 +162,21 @@ const VIRASAT_DATA = {
   // Comprehensive Search Index (Regions, Sites, Performing Arts, Festivals, Crafts)
   searchIndex: [
     { title: "Rajasthan", type: "Region", subtitle: "Western India • Forts, Folk Music & Cuisine", queryMatch: ["rajasthan", "rajput", "desert", "jaipur", "jodhpur"], url: "explore.html?region=rajasthan", regionId: "rajasthan" },
-    { title: "Maharashtra", type: "Region", subtitle: "Western India • Caves, Maratha Forts & Lavani", queryMatch: ["maharashtra", "mumbai", "pune", "maratha", "shivaji"], url: "regional-content.html?region=maharashtra", regionId: "maharashtra" },
+    { title: "Maharashtra", type: "Region", subtitle: "Western India • Caves, Maratha Forts & Lavani", queryMatch: ["maharashtra", "mumbai", "pune", "maratha", "shivaji"], url: "maharashtra.html", regionId: "maharashtra" },
     { title: "Tamil Nadu", type: "Region", subtitle: "Southern India • Dravidian Temples & Carnatic Arts", queryMatch: ["tamil nadu", "tamil", "chennai", "chola", "dravidian"], url: "explore.html?region=tamil-nadu", regionId: "tamil-nadu" },
     { title: "Kerala", type: "Region", subtitle: "Southern Coast • Backwaters, Kathakali & Ayurveda", queryMatch: ["kerala", "malabar", "cochin", "trivandrum", "ayurveda"], url: "explore.html?region=kerala", regionId: "kerala" },
     { title: "Jammu & Kashmir", type: "Region", subtitle: "Northern Valleys • Sufiana Kalam & Pashmina Crafts", queryMatch: ["jammu", "kashmir", "srinagar", "himalayas", "chinar"], url: "explore.html?region=jammu-kashmir", regionId: "jammu-kashmir" },
     { title: "West Bengal", type: "Region", subtitle: "Eastern India • Bishnupur Terracotta & Baul Lore", queryMatch: ["west bengal", "bengal", "kolkata", "durga", "baul"], url: "explore.html?region=west-bengal", regionId: "west-bengal" },
     { title: "Gujarat", type: "Region", subtitle: "Western India • Stepwells, Garba & Textile Weaving", queryMatch: ["gujarat", "ahmedabad", "kutch", "garba", "patola"], url: "explore.html?region=gujarat", regionId: "gujarat" },
     { title: "Madhya Pradesh", type: "Region", subtitle: "Central Heart • Khajuraho Spire Reliefs & Gond Art", queryMatch: ["madhya pradesh", "bhopal", "khajuraho", "sanchi", "gond"], url: "explore.html?region=madhya-pradesh", regionId: "madhya-pradesh" },
-    { title: "Odisha", type: "Region", subtitle: "Eastern Coast • Konark Sun Temple & Odissi Dance", queryMatch: ["odisha", "orissa", "konark", "puri", "bhubaneswar"], url: "regional-content.html?region=odisha", regionId: "odisha" },
+    { title: "Odisha", type: "Region", subtitle: "Eastern Coast • Konark Sun Temple & Odissi Dance", queryMatch: ["odisha", "orissa", "konark", "puri", "bhubaneswar"], url: "odisha.html", regionId: "odisha" },
     { title: "Assam", type: "Region", subtitle: "Northeastern Valley • Bihu Folk & Muga Golden Silk", queryMatch: ["assam", "guwahati", "majuli", "bihu", "brahmaputra"], url: "explore.html?region=assam", regionId: "assam" },
 
     // Monuments & Heritage Sites
-    { title: "Ajanta Caves", type: "Monument", subtitle: "Rock-cut Buddhist cave monuments with ancient frescoes", queryMatch: ["ajanta", "ajanta caves", "frescoes", "buddhist art", "caves"], url: "regional-content.html?region=maharashtra#monuments", regionId: "maharashtra" },
+    { title: "Ajanta Caves", type: "Monument", subtitle: "Rock-cut Buddhist cave monuments with ancient frescoes", queryMatch: ["ajanta", "ajanta caves", "frescoes", "buddhist art", "caves"], url: "maharashtra.html#monuments", regionId: "maharashtra" },
     { title: "Brihadeeswarar Temple", type: "Monument", subtitle: "Great Living Chola Temple with 80-tonne granite dome", queryMatch: ["brihadeeswarar", "tanjore", "thanjavur", "chola temple", "big temple"], url: "explore.html?region=tamil-nadu&focus=brihadeeswarar", regionId: "tamil-nadu" },
     { title: "Mehrangarh Fort", type: "Monument", subtitle: "Towering 15th-century cliffside fort in Jodhpur", queryMatch: ["mehrangarh", "mehrangarh fort", "jodhpur fort", "blue city"], url: "explore.html?region=rajasthan&focus=mehrangarh", regionId: "rajasthan" },
-    { title: "Konark Sun Temple", type: "Monument", subtitle: "13th-century chariot of Surya with 24 carved stone wheels", queryMatch: ["konark", "sun temple", "black pagoda", "odisha temple"], url: "regional-content.html?region=odisha#monuments", regionId: "odisha" },
+    { title: "Konark Sun Temple", type: "Monument", subtitle: "13th-century chariot of Surya with 24 carved stone wheels", queryMatch: ["konark", "sun temple", "black pagoda", "odisha temple"], url: "odisha.html#monuments", regionId: "odisha" },
     { title: "Khajuraho Monuments", type: "Monument", subtitle: "UNESCO Nagara-style temples with celestial sculptures", queryMatch: ["khajuraho", "chandelas", "sculptures", "temples of love"], url: "explore.html?region=madhya-pradesh&focus=khajuraho", regionId: "madhya-pradesh" },
 
     // Performing Arts & Dance
@@ -193,7 +193,7 @@ const VIRASAT_DATA = {
     // Folk Arts & Living Crafts
     { title: "Madhubani Painting", type: "Folk Craft", subtitle: "Folk painting of Bihar created using natural pigments and twigs", queryMatch: ["madhubani", "mithila", "folk art", "bihar painting", "natural dyes"], url: "explore.html?region=west-bengal&focus=madhubani", regionId: "west-bengal" },
     { title: "Pashmina Weaving", type: "Master Craft", subtitle: "Ultra-fine cashmere wool hand-woven in Kashmir valleys", queryMatch: ["pashmina", "cashmere", "shawls", "kashmiri wool", "charkha"], url: "explore.html?region=jammu-kashmir&focus=pashmina", regionId: "jammu-kashmir" },
-    { title: "Pattachitra", type: "Master Craft", subtitle: "Intricate cloth-based scroll paintings from Raghurajpur, Odisha", queryMatch: ["pattachitra", "patachitra", "odisha painting", "palm leaf"], url: "regional-content.html?region=odisha#crafts", regionId: "odisha" }
+    { title: "Pattachitra", type: "Master Craft", subtitle: "Intricate cloth-based scroll paintings from Raghurajpur, Odisha", queryMatch: ["pattachitra", "patachitra", "odisha painting", "palm leaf"], url: "odisha.html#crafts", regionId: "odisha" }
   ],
 
   // Curated Cultural Facts for "Did You Know?"

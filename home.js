@@ -103,9 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!regionPopover) return;
     activeRegionId = region.id;
 
-    const targetHref = ['maharashtra', 'odisha'].includes(region.id)
-      ? `regional-content.html?region=${region.id}`
-      : `explore.html?region=${region.id}`;
+    let targetHref = `explore.html?region=${region.id}`;
+    if (region.id === 'odisha' || region.id === 'puri') {
+      targetHref = 'odisha.html';
+    } else if (region.id === 'maharashtra') {
+      targetHref = 'maharashtra.html';
+    }
 
     // Populate Popover Content
     regionPopover.innerHTML = `
@@ -179,11 +182,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!regionId) return;
     const cleanId = String(regionId).toLowerCase().trim();
     if (cleanId === 'odisha' || cleanId === 'puri') {
-      window.location.href = 'regional-content.html?region=odisha';
+      window.location.href = 'odisha.html';
       return;
     }
     if (cleanId === 'maharashtra') {
-      window.location.href = 'regional-content.html?region=maharashtra';
+      window.location.href = 'maharashtra.html';
       return;
     }
     // All other regions route to explore.html?region=[id]
