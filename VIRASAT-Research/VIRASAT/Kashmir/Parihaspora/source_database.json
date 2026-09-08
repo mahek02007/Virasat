@@ -1,0 +1,92 @@
+{
+  "sources": [
+    {
+      "id": "SRC_001",
+      "source": "Rajatarangini (The River of Kings)",
+      "author": "Kalhana Pandit",
+      "year": "1148-1149 CE",
+      "type": "Tier 1 — Primary Historical Text",
+      "topic": "Karkota Dynasty & Parihaspora Founding",
+      "url": "https://archive.org/details/rajatarangini",
+      "reliability": "Tier 1 (Textual)",
+      "used_for": "Historical timeline, temple patronage, royal biographies"
+    },
+    {
+      "id": "SRC_002",
+      "source": "Kalhana's Rajatarangini: A Chronicle of the Kings of Kasmir (2 Vols)",
+      "author": "M. Aurel Stein",
+      "year": "1900",
+      "type": "Tier 1 — Critical Annotated Translation",
+      "topic": "Topography & Critical History of Kashmir",
+      "url": "https://archive.org/details/steinrajatarangini",
+      "reliability": "Tier 1 (Academic Standard)",
+      "used_for": "Topographical identification of Parihaspora, notes on Karewa geography"
+    },
+    {
+      "id": "SRC_003",
+      "source": "Annual Report of the Archaeological Survey of India 1912-13",
+      "author": "Daya Ram Sahni",
+      "year": "1914",
+      "type": "Tier 1 — Excavation Report",
+      "topic": "Excavations at Parihaspora (Stupa, Chaitya, Vihara)",
+      "url": "https://asi.nic.in/annual-reports/",
+      "reliability": "Tier 1 (Official Archaeological)",
+      "used_for": "Monument dimensions, floor slab weights, masonry analysis"
+    },
+    {
+      "id": "SRC_004",
+      "source": "Ancient Monuments of Kashmir",
+      "author": "Ram Chandra Kak",
+      "year": "1933",
+      "type": "Tier 1 — Official Archaeological Monograph",
+      "topic": "Architectural Survey of Kashmiri Monuments",
+      "url": "https://archive.org/details/ancientmonumentskashmir",
+      "reliability": "Tier 1 (Primary Survey)",
+      "used_for": "Architectural order, structural measurements, plans of Parihaspora"
+    },
+    {
+      "id": "SRC_005",
+      "source": "Indian Architecture (Buddhist and Hindu Periods)",
+      "author": "Percy Brown",
+      "year": "1942",
+      "type": "Tier 2 — Academic Monograph",
+      "topic": "Kashmiri Classical Architectural Order",
+      "url": "https://archive.org/details/indianarchitecture",
+      "reliability": "Tier 2 (Academic standard)",
+      "used_for": "Trefoil arch, pediments, fluted columns comparative study"
+    },
+    {
+      "id": "SRC_006",
+      "source": "Buddhist Monuments",
+      "author": "Debala Mitra",
+      "year": "1971",
+      "type": "Tier 2 — Academic Survey",
+      "topic": "Buddhist Stupas and Viharas in Kashmir",
+      "url": "https://archive.org/details/buddhistmonuments",
+      "reliability": "Tier 2 (Academic)",
+      "used_for": "Stupa of Cankuna iconography and plan comparison"
+    },
+    {
+      "id": "SRC_007",
+      "source": "Studies in the History and Art of Kashmir and the Indian Himalayas",
+      "author": "Hermann Goetz",
+      "year": "1969",
+      "type": "Tier 2 — Academic Art History",
+      "topic": "Karkota Art and International Contacts",
+      "url": "https://brill.com",
+      "reliability": "Tier 2 (High)",
+      "used_for": "Central Asian, Tang Chinese, and Hellenistic cross-cultural influences"
+    },
+    {
+      "id": "SRC_008",
+      "source": "Early History and Culture of Kashmir",
+      "author": "Sunil Chandra Ray",
+      "year": "1957",
+      "type": "Tier 2 — Academic History",
+      "topic": "Karkota Dynasty Political History",
+      "url": "https://archive.org/details/earlyhistorykashmir",
+      "reliability": "Tier 2 (High)",
+      "used_for": "Lalitaditya reign dates, administrative structure, economic trade"
+    }
+  ]
+}

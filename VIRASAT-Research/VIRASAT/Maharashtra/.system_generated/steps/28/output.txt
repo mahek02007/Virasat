@@ -1,0 +1,23 @@
+
+The command exited with code 0.
+Output:
+COPIED: maharashtra_m1_overview_history.md (10.5 KB)
+COPIED: maharashtra_m8_preservation_ai_quiz.md (13 KB)
+COPIED: maharashtra_m4_food_clothing.md (4.3 KB)
+COPIED: maharashtra_m5_arts_music_dance_literature.md (5.1 KB)
+COPIED: maharashtra_m7_tribal_traditional.md (15.6 KB)
+COPIED: maharashtra_m6_architecture_forts_cities.md (10 KB)
+
+Done. Files in dest:
+
+Name                                            KB
+----                                            --
+maharashtra_m1_overview_history.md            10.5
+maharashtra_m4_food_clothing.md                4.3
+maharashtra_m5_arts_music_dance_literature.md  5.1
+maharashtra_m6_architecture_forts_cities.md     10
+maharashtra_m7_tribal_traditional.md          15.6
+maharashtra_m8_preservation_ai_quiz.md          13
+
+
+

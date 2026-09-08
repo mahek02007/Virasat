@@ -1,0 +1,12 @@
+
+The command exited with code 0.
+Output:
+FOUND: eeba17f3-d58a-42e8-a4fb-2406dbb492ca -> maharashtra_m1_overview_history.md (10.5 KB)
+PENDING: 122fe85c-a289-43ee-9315-2ba3f4cdaacd
+PENDING: e09b78f8-46bc-49af-85b3-ae713a8cfcef
+FOUND: 40221595-185d-4d31-8f0b-f9e2473d801c -> maharashtra_m4_food_clothing.md (4.3 KB)
+FOUND: f3af46c0-f056-4609-8cac-97c7c86909da -> maharashtra_m5_arts_music_dance_literature.md (5.1 KB)
+FOUND: 96e70d45-a53f-41ba-b237-6e42a2582a54 -> maharashtra_m6_architecture_forts_cities.md (10 KB)
+FOUND: 0adfaa49-d1e1-4566-804c-b62cc4d98548 -> maharashtra_m7_tribal_traditional.md (15.6 KB)
+FOUND: 8baafddc-9006-486f-b183-d78239739429 -> maharashtra_m8_preservation_ai_quiz.md (13 KB)
+

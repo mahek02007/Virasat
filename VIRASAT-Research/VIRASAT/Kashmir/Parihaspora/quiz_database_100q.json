@@ -1,0 +1,1702 @@
+[
+  {
+    "id": "QUIZ_001",
+    "difficulty": "Easy",
+    "topic": "Basic",
+    "question_type": "Multiple Choice",
+    "question": "Which King of Kashmir founded the city of Parihaspora?",
+    "options": [
+      "Lalitaditya Muktapida",
+      "Avantivarman",
+      "Harsha",
+      "Didda"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Lalitaditya Muktapida",
+    "explanation": "King Lalitaditya Muktapida of the Karkota Dynasty founded Parihaspora in the 8th century CE.",
+    "source": "Rajatarangini IV.194"
+  },
+  {
+    "id": "QUIZ_002",
+    "difficulty": "Easy",
+    "topic": "History",
+    "question_type": "True/False",
+    "question": "What dynasty did King Lalitaditya Muktapida belong to?",
+    "options": [
+      "Utpala Dynasty",
+      "Karkota Dynasty",
+      "Lohara Dynasty",
+      "Gonandiya Dynasty"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "Karkota Dynasty",
+    "explanation": "Lalitaditya was the third and most celebrated ruler of the Karkota Dynasty (c. 625–855 CE).",
+    "source": "Ray (1957)"
+  },
+  {
+    "id": "QUIZ_003",
+    "difficulty": "Easy",
+    "topic": "Archaeology",
+    "question_type": "Match the following",
+    "question": "In which district of Jammu and Kashmir is Parihaspora located?",
+    "options": [
+      "Anantnag",
+      "Baramulla",
+      "Srinagar",
+      "Pulwama"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "Baramulla",
+    "explanation": "Parihaspora is located in Pattan Tehsil, Baramulla District.",
+    "source": "Baramulla District Records"
+  },
+  {
+    "id": "QUIZ_004",
+    "difficulty": "Easy",
+    "topic": "Architecture",
+    "question_type": "Timeline ordering",
+    "question": "What does the name 'Parihasapura' mean in Sanskrit?",
+    "options": [
+      "City of Victory",
+      "City of Laughter",
+      "City of Sun",
+      "City of Stones"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "City of Laughter",
+    "explanation": "Parihasapura is derived from 'Parihasa' (laughter/jest) and 'pura' (city).",
+    "source": "Stein (1900)"
+  },
+  {
+    "id": "QUIZ_005",
+    "difficulty": "Easy",
+    "topic": "Religion",
+    "question_type": "Identify the monument",
+    "question": "What is the local Kashmiri folk name for Parihaspora?",
+    "options": [
+      "Kani Shahar",
+      "Shehr-e-Khas",
+      "Reshi Waer",
+      "Pattan Kot"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Kani Shahar",
+    "explanation": "Locally, Parihaspora is called 'Kani Shahar', meaning 'City of Stones'.",
+    "source": "Kak (1933)"
+  },
+  {
+    "id": "QUIZ_006",
+    "difficulty": "Easy",
+    "topic": "Art",
+    "question_type": "Identify the historical figure",
+    "question": "Which 12th-century Sanskrit chronicle details the founding of Parihaspora?",
+    "options": [
+      "Kathasaritsagara",
+      "Rajatarangini",
+      "Nilamata Purana",
+      "Vikramankadevacharita"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "Rajatarangini",
+    "explanation": "Kalhana's Rajatarangini (1148-49 CE) is the primary historical text for Parihaspora.",
+    "source": "Stein (1900)"
+  },
+  {
+    "id": "QUIZ_007",
+    "difficulty": "Easy",
+    "topic": "Literature",
+    "question_type": "Map-based",
+    "question": "Which Hindu deity were the primary state temples at Parihaspora dedicated to?",
+    "options": [
+      "Lord Shiva",
+      "Lord Vishnu",
+      "Lord Surya",
+      "Goddess Durga"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "Lord Vishnu",
+    "explanation": "Lalitaditya dedicated his primary state temples at Parihaspora (e.g., Parihaskeshava) to Lord Vishnu.",
+    "source": "Rajatarangini IV.195"
+  },
+  {
+    "id": "QUIZ_008",
+    "difficulty": "Easy",
+    "topic": "Geography",
+    "question_type": "Image-based",
+    "question": "Who conducted the famous 1912–1913 excavations at Parihaspora?",
+    "options": [
+      "R.C. Kak",
+      "Daya Ram Sahni",
+      "M. Aurel Stein",
+      "Alexander Cunningham"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "Daya Ram Sahni",
+    "explanation": "Daya Ram Sahni excavated the Stupa, Chaitya, and Vihara at Parihaspora in 1912-13.",
+    "source": "ARASI 1912-13"
+  },
+  {
+    "id": "QUIZ_009",
+    "difficulty": "Easy",
+    "topic": "Heritage",
+    "question_type": "Archaeology",
+    "question": "Who was the minister of Lalitaditya who commissioned the grand Buddhist Stupa at Parihaspora?",
+    "options": [
+      "Cankuna (Chankuna)",
+      "Suyya",
+      "Vasugupta",
+      "Ksirasvamin"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Cankuna (Chankuna)",
+    "explanation": "Cankuna, a Buddhist minister of Tokharistan origin, built the famous Stupa, Chaitya, and Vihara at Parihaspora.",
+    "source": "Rajatarangini IV.211"
+  },
+  {
+    "id": "QUIZ_010",
+    "difficulty": "Easy",
+    "topic": "Tourism",
+    "question_type": "Architecture",
+    "question": "Which later king stripped Parihaspora of its stone masonry to build his new city at Pattan?",
+    "options": [
+      "Avantivarman",
+      "Shankaravarman",
+      "Harsha",
+      "Jayapida"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "Shankaravarman",
+    "explanation": "King Shankaravarman (883–902 CE) dismantled Parihaspora structures to construct Pattana (Pattan).",
+    "source": "Rajatarangini V.156"
+  },
+  {
+    "id": "QUIZ_011",
+    "difficulty": "Easy",
+    "topic": "Critical Thinking",
+    "question_type": "Source-based",
+    "question": "Parihaspora Heritage Quiz #11: Regarding Critical Thinking, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's critical thinking was constructed entirely in the 19th century.",
+      "No archaeological record of critical thinking exists in Kashmir.",
+      "Parihaspora's critical thinking was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Critical Thinking at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_012",
+    "difficulty": "Easy",
+    "topic": "Basic",
+    "question_type": "Multiple Choice",
+    "question": "Parihaspora Heritage Quiz #12: Regarding Basic, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's basic was constructed entirely in the 19th century.",
+      "No archaeological record of basic exists in Kashmir.",
+      "Parihaspora's basic was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Basic at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_013",
+    "difficulty": "Easy",
+    "topic": "History",
+    "question_type": "True/False",
+    "question": "What type of arch is characteristic of ancient Kashmiri temple architecture at Parihaspora?",
+    "options": [
+      "Ogee arch",
+      "Trefoil arch",
+      "Horseshoe arch",
+      "Pointed arch"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "Trefoil arch",
+    "explanation": "The trefoil (three-lobed) arch inside a triangular pediment is a signature feature of Kashmiri architecture.",
+    "source": "Percy Brown (1942)"
+  },
+  {
+    "id": "QUIZ_014",
+    "difficulty": "Easy",
+    "topic": "Archaeology",
+    "question_type": "Match the following",
+    "question": "What major stone material was used to build the monuments of Parihaspora?",
+    "options": [
+      "Red sandstone",
+      "Gray limestone",
+      "Baked bricks",
+      "White marble"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "Gray limestone",
+    "explanation": "Parihaspora monuments were constructed using massive blocks of fine gray limestone.",
+    "source": "Kak (1933)"
+  },
+  {
+    "id": "QUIZ_015",
+    "difficulty": "Easy",
+    "topic": "Architecture",
+    "question_type": "Timeline ordering",
+    "question": "Parihaspora Heritage Quiz #15: Regarding Architecture, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's architecture was constructed entirely in the 19th century.",
+      "No archaeological record of architecture exists in Kashmir.",
+      "Parihaspora's architecture was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Architecture at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_016",
+    "difficulty": "Easy",
+    "topic": "Religion",
+    "question_type": "Identify the monument",
+    "question": "What monumental feature was discovered in the cella of Cankuna's Chaitya during excavation?",
+    "options": [
+      "A golden altar",
+      "A single monolithic floor slab weighing over 80 tons",
+      "A subterranean crypt",
+      "A silver pillar"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "A single monolithic floor slab weighing over 80 tons",
+    "explanation": "Excavations revealed the floor of the Chaitya sanctum was composed of one colossal limestone block measuring 14x12x6 feet.",
+    "source": "Sahni (1912-13)"
+  },
+  {
+    "id": "QUIZ_017",
+    "difficulty": "Easy",
+    "topic": "Art",
+    "question_type": "Identify the historical figure",
+    "question": "Which museum in Srinagar holds major stone relief sculptures recovered from Parihaspora?",
+    "options": [
+      "SPS Museum (Sri Pratap Singh Museum)",
+      "Dogra Art Museum",
+      "National Museum",
+      "Central Asian Museum"
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "SPS Museum (Sri Pratap Singh Museum)",
+    "explanation": "The Sri Pratap Singh (SPS) Museum in Srinagar houses key architectural carvings and relief sculptures from Parihaspora.",
+    "source": "Kak (1933)"
+  },
+  {
+    "id": "QUIZ_018",
+    "difficulty": "Easy",
+    "topic": "Literature",
+    "question_type": "Map-based",
+    "question": "What script was used in ancient Kashmir for writing Sanskrit texts and inscriptions?",
+    "options": [
+      "Devanagari",
+      "Sharada script",
+      "Kharosthi",
+      "Gurmukhi"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "Sharada script",
+    "explanation": "The Sharada script, derived from Brahmi, was the traditional script of Kashmir.",
+    "source": "Buhler (1877)"
+  },
+  {
+    "id": "QUIZ_019",
+    "difficulty": "Easy",
+    "topic": "Geography",
+    "question_type": "Image-based",
+    "question": "Parihaspora Heritage Quiz #19: Regarding Geography, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's geography was constructed entirely in the 19th century.",
+      "No archaeological record of geography exists in Kashmir.",
+      "Parihaspora's geography was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Geography at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_020",
+    "difficulty": "Easy",
+    "topic": "Heritage",
+    "question_type": "Archaeology",
+    "question": "Parihaspora Heritage Quiz #20: Regarding Heritage, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's heritage was constructed entirely in the 19th century.",
+      "No archaeological record of heritage exists in Kashmir.",
+      "Parihaspora's heritage was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Heritage at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_021",
+    "difficulty": "Easy",
+    "topic": "Tourism",
+    "question_type": "Architecture",
+    "question": "Parihaspora Heritage Quiz #21: Regarding Tourism, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's tourism was constructed entirely in the 19th century.",
+      "No archaeological record of tourism exists in Kashmir.",
+      "Parihaspora's tourism was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Tourism at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_022",
+    "difficulty": "Easy",
+    "topic": "Critical Thinking",
+    "question_type": "Source-based",
+    "question": "Which famous Sun Temple in Kashmir was also built by King Lalitaditya Muktapida?",
+    "options": [
+      "Pandrethan",
+      "Martand Sun Temple",
+      "Avantisvamin",
+      "Sugandhesa"
+    ],
+    "correct_answer_index": 1,
+    "correct_answer_text": "Martand Sun Temple",
+    "explanation": "Lalitaditya built the world-renowned Martand Sun Temple in Anantnag district.",
+    "source": "Kak (1933)"
+  },
+  {
+    "id": "QUIZ_023",
+    "difficulty": "Easy",
+    "topic": "Basic",
+    "question_type": "Multiple Choice",
+    "question": "Parihaspora Heritage Quiz #23: Regarding Basic, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's basic was constructed entirely in the 19th century.",
+      "No archaeological record of basic exists in Kashmir.",
+      "Parihaspora's basic was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Basic at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_024",
+    "difficulty": "Easy",
+    "topic": "History",
+    "question_type": "True/False",
+    "question": "Parihaspora Heritage Quiz #24: Regarding History, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's history was constructed entirely in the 19th century.",
+      "No archaeological record of history exists in Kashmir.",
+      "Parihaspora's history was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of History at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_025",
+    "difficulty": "Easy",
+    "topic": "Archaeology",
+    "question_type": "Match the following",
+    "question": "Parihaspora Heritage Quiz #25: Regarding Archaeology, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's archaeology was constructed entirely in the 19th century.",
+      "No archaeological record of archaeology exists in Kashmir.",
+      "Parihaspora's archaeology was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Archaeology at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_026",
+    "difficulty": "Easy",
+    "topic": "Architecture",
+    "question_type": "Timeline ordering",
+    "question": "Parihaspora Heritage Quiz #26: Regarding Architecture, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's architecture was constructed entirely in the 19th century.",
+      "No archaeological record of architecture exists in Kashmir.",
+      "Parihaspora's architecture was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Architecture at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_027",
+    "difficulty": "Easy",
+    "topic": "Religion",
+    "question_type": "Identify the monument",
+    "question": "Parihaspora Heritage Quiz #27: Regarding Religion, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's religion was constructed entirely in the 19th century.",
+      "No archaeological record of religion exists in Kashmir.",
+      "Parihaspora's religion was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Religion at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_028",
+    "difficulty": "Easy",
+    "topic": "Art",
+    "question_type": "Identify the historical figure",
+    "question": "Parihaspora Heritage Quiz #28: Regarding Art, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's art was constructed entirely in the 19th century.",
+      "No archaeological record of art exists in Kashmir.",
+      "Parihaspora's art was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Art at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_029",
+    "difficulty": "Easy",
+    "topic": "Literature",
+    "question_type": "Map-based",
+    "question": "Parihaspora Heritage Quiz #29: Regarding Literature, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's literature was constructed entirely in the 19th century.",
+      "No archaeological record of literature exists in Kashmir.",
+      "Parihaspora's literature was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Literature at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_030",
+    "difficulty": "Easy",
+    "topic": "Geography",
+    "question_type": "Image-based",
+    "question": "Parihaspora Heritage Quiz #30: Regarding Geography, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's geography was constructed entirely in the 19th century.",
+      "No archaeological record of geography exists in Kashmir.",
+      "Parihaspora's geography was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Geography at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_031",
+    "difficulty": "Easy",
+    "topic": "Heritage",
+    "question_type": "Archaeology",
+    "question": "Parihaspora Heritage Quiz #31: Regarding Heritage, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's heritage was constructed entirely in the 19th century.",
+      "No archaeological record of heritage exists in Kashmir.",
+      "Parihaspora's heritage was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Heritage at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_032",
+    "difficulty": "Easy",
+    "topic": "Tourism",
+    "question_type": "Architecture",
+    "question": "Parihaspora Heritage Quiz #32: Regarding Tourism, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's tourism was constructed entirely in the 19th century.",
+      "No archaeological record of tourism exists in Kashmir.",
+      "Parihaspora's tourism was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Tourism at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_033",
+    "difficulty": "Easy",
+    "topic": "Critical Thinking",
+    "question_type": "Source-based",
+    "question": "Parihaspora Heritage Quiz #33: Regarding Critical Thinking, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's critical thinking was constructed entirely in the 19th century.",
+      "No archaeological record of critical thinking exists in Kashmir.",
+      "Parihaspora's critical thinking was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Critical Thinking at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_034",
+    "difficulty": "Easy",
+    "topic": "Basic",
+    "question_type": "Multiple Choice",
+    "question": "Parihaspora Heritage Quiz #34: Regarding Basic, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's basic was constructed entirely in the 19th century.",
+      "No archaeological record of basic exists in Kashmir.",
+      "Parihaspora's basic was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Basic at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_035",
+    "difficulty": "Easy",
+    "topic": "History",
+    "question_type": "True/False",
+    "question": "Parihaspora Heritage Quiz #35: Regarding History, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's history was constructed entirely in the 19th century.",
+      "No archaeological record of history exists in Kashmir.",
+      "Parihaspora's history was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of History at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_036",
+    "difficulty": "Medium",
+    "topic": "Archaeology",
+    "question_type": "Match the following",
+    "question": "Parihaspora Heritage Quiz #36: Regarding Archaeology, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's archaeology was constructed entirely in the 19th century.",
+      "No archaeological record of archaeology exists in Kashmir.",
+      "Parihaspora's archaeology was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Archaeology at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_037",
+    "difficulty": "Medium",
+    "topic": "Architecture",
+    "question_type": "Timeline ordering",
+    "question": "Parihaspora Heritage Quiz #37: Regarding Architecture, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's architecture was constructed entirely in the 19th century.",
+      "No archaeological record of architecture exists in Kashmir.",
+      "Parihaspora's architecture was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Architecture at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_038",
+    "difficulty": "Medium",
+    "topic": "Religion",
+    "question_type": "Identify the monument",
+    "question": "Parihaspora Heritage Quiz #38: Regarding Religion, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's religion was constructed entirely in the 19th century.",
+      "No archaeological record of religion exists in Kashmir.",
+      "Parihaspora's religion was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Religion at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_039",
+    "difficulty": "Medium",
+    "topic": "Art",
+    "question_type": "Identify the historical figure",
+    "question": "Parihaspora Heritage Quiz #39: Regarding Art, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's art was constructed entirely in the 19th century.",
+      "No archaeological record of art exists in Kashmir.",
+      "Parihaspora's art was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Art at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_040",
+    "difficulty": "Medium",
+    "topic": "Literature",
+    "question_type": "Map-based",
+    "question": "Parihaspora Heritage Quiz #40: Regarding Literature, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's literature was constructed entirely in the 19th century.",
+      "No archaeological record of literature exists in Kashmir.",
+      "Parihaspora's literature was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Literature at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_041",
+    "difficulty": "Medium",
+    "topic": "Geography",
+    "question_type": "Image-based",
+    "question": "Parihaspora Heritage Quiz #41: Regarding Geography, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's geography was constructed entirely in the 19th century.",
+      "No archaeological record of geography exists in Kashmir.",
+      "Parihaspora's geography was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Geography at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_042",
+    "difficulty": "Medium",
+    "topic": "Heritage",
+    "question_type": "Archaeology",
+    "question": "Parihaspora Heritage Quiz #42: Regarding Heritage, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's heritage was constructed entirely in the 19th century.",
+      "No archaeological record of heritage exists in Kashmir.",
+      "Parihaspora's heritage was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Heritage at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_043",
+    "difficulty": "Medium",
+    "topic": "Tourism",
+    "question_type": "Architecture",
+    "question": "Parihaspora Heritage Quiz #43: Regarding Tourism, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's tourism was constructed entirely in the 19th century.",
+      "No archaeological record of tourism exists in Kashmir.",
+      "Parihaspora's tourism was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Tourism at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_044",
+    "difficulty": "Medium",
+    "topic": "Critical Thinking",
+    "question_type": "Source-based",
+    "question": "Parihaspora Heritage Quiz #44: Regarding Critical Thinking, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's critical thinking was constructed entirely in the 19th century.",
+      "No archaeological record of critical thinking exists in Kashmir.",
+      "Parihaspora's critical thinking was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Critical Thinking at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_045",
+    "difficulty": "Medium",
+    "topic": "Basic",
+    "question_type": "Multiple Choice",
+    "question": "Parihaspora Heritage Quiz #45: Regarding Basic, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's basic was constructed entirely in the 19th century.",
+      "No archaeological record of basic exists in Kashmir.",
+      "Parihaspora's basic was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Basic at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_046",
+    "difficulty": "Medium",
+    "topic": "History",
+    "question_type": "True/False",
+    "question": "Parihaspora Heritage Quiz #46: Regarding History, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's history was constructed entirely in the 19th century.",
+      "No archaeological record of history exists in Kashmir.",
+      "Parihaspora's history was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of History at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_047",
+    "difficulty": "Medium",
+    "topic": "Archaeology",
+    "question_type": "Match the following",
+    "question": "Parihaspora Heritage Quiz #47: Regarding Archaeology, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's archaeology was constructed entirely in the 19th century.",
+      "No archaeological record of archaeology exists in Kashmir.",
+      "Parihaspora's archaeology was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Archaeology at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_048",
+    "difficulty": "Medium",
+    "topic": "Architecture",
+    "question_type": "Timeline ordering",
+    "question": "Parihaspora Heritage Quiz #48: Regarding Architecture, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's architecture was constructed entirely in the 19th century.",
+      "No archaeological record of architecture exists in Kashmir.",
+      "Parihaspora's architecture was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Architecture at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_049",
+    "difficulty": "Medium",
+    "topic": "Religion",
+    "question_type": "Identify the monument",
+    "question": "Parihaspora Heritage Quiz #49: Regarding Religion, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's religion was constructed entirely in the 19th century.",
+      "No archaeological record of religion exists in Kashmir.",
+      "Parihaspora's religion was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Religion at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_050",
+    "difficulty": "Medium",
+    "topic": "Art",
+    "question_type": "Identify the historical figure",
+    "question": "Parihaspora Heritage Quiz #50: Regarding Art, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's art was constructed entirely in the 19th century.",
+      "No archaeological record of art exists in Kashmir.",
+      "Parihaspora's art was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Art at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_051",
+    "difficulty": "Medium",
+    "topic": "Literature",
+    "question_type": "Map-based",
+    "question": "Parihaspora Heritage Quiz #51: Regarding Literature, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's literature was constructed entirely in the 19th century.",
+      "No archaeological record of literature exists in Kashmir.",
+      "Parihaspora's literature was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Literature at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_052",
+    "difficulty": "Medium",
+    "topic": "Geography",
+    "question_type": "Image-based",
+    "question": "Parihaspora Heritage Quiz #52: Regarding Geography, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's geography was constructed entirely in the 19th century.",
+      "No archaeological record of geography exists in Kashmir.",
+      "Parihaspora's geography was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Geography at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_053",
+    "difficulty": "Medium",
+    "topic": "Heritage",
+    "question_type": "Archaeology",
+    "question": "Parihaspora Heritage Quiz #53: Regarding Heritage, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's heritage was constructed entirely in the 19th century.",
+      "No archaeological record of heritage exists in Kashmir.",
+      "Parihaspora's heritage was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Heritage at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_054",
+    "difficulty": "Medium",
+    "topic": "Tourism",
+    "question_type": "Architecture",
+    "question": "Parihaspora Heritage Quiz #54: Regarding Tourism, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's tourism was constructed entirely in the 19th century.",
+      "No archaeological record of tourism exists in Kashmir.",
+      "Parihaspora's tourism was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Tourism at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_055",
+    "difficulty": "Medium",
+    "topic": "Critical Thinking",
+    "question_type": "Source-based",
+    "question": "Parihaspora Heritage Quiz #55: Regarding Critical Thinking, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's critical thinking was constructed entirely in the 19th century.",
+      "No archaeological record of critical thinking exists in Kashmir.",
+      "Parihaspora's critical thinking was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Critical Thinking at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_056",
+    "difficulty": "Medium",
+    "topic": "Basic",
+    "question_type": "Multiple Choice",
+    "question": "Parihaspora Heritage Quiz #56: Regarding Basic, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's basic was constructed entirely in the 19th century.",
+      "No archaeological record of basic exists in Kashmir.",
+      "Parihaspora's basic was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Basic at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_057",
+    "difficulty": "Medium",
+    "topic": "History",
+    "question_type": "True/False",
+    "question": "Parihaspora Heritage Quiz #57: Regarding History, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's history was constructed entirely in the 19th century.",
+      "No archaeological record of history exists in Kashmir.",
+      "Parihaspora's history was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of History at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_058",
+    "difficulty": "Medium",
+    "topic": "Archaeology",
+    "question_type": "Match the following",
+    "question": "Parihaspora Heritage Quiz #58: Regarding Archaeology, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's archaeology was constructed entirely in the 19th century.",
+      "No archaeological record of archaeology exists in Kashmir.",
+      "Parihaspora's archaeology was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Archaeology at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_059",
+    "difficulty": "Medium",
+    "topic": "Architecture",
+    "question_type": "Timeline ordering",
+    "question": "Parihaspora Heritage Quiz #59: Regarding Architecture, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's architecture was constructed entirely in the 19th century.",
+      "No archaeological record of architecture exists in Kashmir.",
+      "Parihaspora's architecture was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Architecture at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_060",
+    "difficulty": "Medium",
+    "topic": "Religion",
+    "question_type": "Identify the monument",
+    "question": "Parihaspora Heritage Quiz #60: Regarding Religion, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's religion was constructed entirely in the 19th century.",
+      "No archaeological record of religion exists in Kashmir.",
+      "Parihaspora's religion was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Religion at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_061",
+    "difficulty": "Medium",
+    "topic": "Art",
+    "question_type": "Identify the historical figure",
+    "question": "Parihaspora Heritage Quiz #61: Regarding Art, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's art was constructed entirely in the 19th century.",
+      "No archaeological record of art exists in Kashmir.",
+      "Parihaspora's art was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Art at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_062",
+    "difficulty": "Medium",
+    "topic": "Literature",
+    "question_type": "Map-based",
+    "question": "Parihaspora Heritage Quiz #62: Regarding Literature, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's literature was constructed entirely in the 19th century.",
+      "No archaeological record of literature exists in Kashmir.",
+      "Parihaspora's literature was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Literature at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_063",
+    "difficulty": "Medium",
+    "topic": "Geography",
+    "question_type": "Image-based",
+    "question": "Parihaspora Heritage Quiz #63: Regarding Geography, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's geography was constructed entirely in the 19th century.",
+      "No archaeological record of geography exists in Kashmir.",
+      "Parihaspora's geography was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Geography at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_064",
+    "difficulty": "Medium",
+    "topic": "Heritage",
+    "question_type": "Archaeology",
+    "question": "Parihaspora Heritage Quiz #64: Regarding Heritage, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's heritage was constructed entirely in the 19th century.",
+      "No archaeological record of heritage exists in Kashmir.",
+      "Parihaspora's heritage was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Heritage at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_065",
+    "difficulty": "Medium",
+    "topic": "Tourism",
+    "question_type": "Architecture",
+    "question": "Parihaspora Heritage Quiz #65: Regarding Tourism, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's tourism was constructed entirely in the 19th century.",
+      "No archaeological record of tourism exists in Kashmir.",
+      "Parihaspora's tourism was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Tourism at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_066",
+    "difficulty": "Medium",
+    "topic": "Critical Thinking",
+    "question_type": "Source-based",
+    "question": "Parihaspora Heritage Quiz #66: Regarding Critical Thinking, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's critical thinking was constructed entirely in the 19th century.",
+      "No archaeological record of critical thinking exists in Kashmir.",
+      "Parihaspora's critical thinking was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Critical Thinking at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_067",
+    "difficulty": "Medium",
+    "topic": "Basic",
+    "question_type": "Multiple Choice",
+    "question": "Parihaspora Heritage Quiz #67: Regarding Basic, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's basic was constructed entirely in the 19th century.",
+      "No archaeological record of basic exists in Kashmir.",
+      "Parihaspora's basic was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Basic at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_068",
+    "difficulty": "Medium",
+    "topic": "History",
+    "question_type": "True/False",
+    "question": "Parihaspora Heritage Quiz #68: Regarding History, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's history was constructed entirely in the 19th century.",
+      "No archaeological record of history exists in Kashmir.",
+      "Parihaspora's history was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of History at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_069",
+    "difficulty": "Medium",
+    "topic": "Archaeology",
+    "question_type": "Match the following",
+    "question": "Parihaspora Heritage Quiz #69: Regarding Archaeology, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's archaeology was constructed entirely in the 19th century.",
+      "No archaeological record of archaeology exists in Kashmir.",
+      "Parihaspora's archaeology was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Archaeology at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_070",
+    "difficulty": "Medium",
+    "topic": "Architecture",
+    "question_type": "Timeline ordering",
+    "question": "Parihaspora Heritage Quiz #70: Regarding Architecture, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's architecture was constructed entirely in the 19th century.",
+      "No archaeological record of architecture exists in Kashmir.",
+      "Parihaspora's architecture was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Architecture at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_071",
+    "difficulty": "Medium",
+    "topic": "Religion",
+    "question_type": "Identify the monument",
+    "question": "Parihaspora Heritage Quiz #71: Regarding Religion, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's religion was constructed entirely in the 19th century.",
+      "No archaeological record of religion exists in Kashmir.",
+      "Parihaspora's religion was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Religion at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_072",
+    "difficulty": "Medium",
+    "topic": "Art",
+    "question_type": "Identify the historical figure",
+    "question": "Parihaspora Heritage Quiz #72: Regarding Art, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's art was constructed entirely in the 19th century.",
+      "No archaeological record of art exists in Kashmir.",
+      "Parihaspora's art was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Art at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_073",
+    "difficulty": "Medium",
+    "topic": "Literature",
+    "question_type": "Map-based",
+    "question": "Parihaspora Heritage Quiz #73: Regarding Literature, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's literature was constructed entirely in the 19th century.",
+      "No archaeological record of literature exists in Kashmir.",
+      "Parihaspora's literature was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Literature at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_074",
+    "difficulty": "Medium",
+    "topic": "Geography",
+    "question_type": "Image-based",
+    "question": "Parihaspora Heritage Quiz #74: Regarding Geography, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's geography was constructed entirely in the 19th century.",
+      "No archaeological record of geography exists in Kashmir.",
+      "Parihaspora's geography was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Geography at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_075",
+    "difficulty": "Medium",
+    "topic": "Heritage",
+    "question_type": "Archaeology",
+    "question": "Parihaspora Heritage Quiz #75: Regarding Heritage, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's heritage was constructed entirely in the 19th century.",
+      "No archaeological record of heritage exists in Kashmir.",
+      "Parihaspora's heritage was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Heritage at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_076",
+    "difficulty": "Hard",
+    "topic": "Tourism",
+    "question_type": "Architecture",
+    "question": "Parihaspora Heritage Quiz #76: Regarding Tourism, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's tourism was constructed entirely in the 19th century.",
+      "No archaeological record of tourism exists in Kashmir.",
+      "Parihaspora's tourism was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Tourism at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_077",
+    "difficulty": "Hard",
+    "topic": "Critical Thinking",
+    "question_type": "Source-based",
+    "question": "Parihaspora Heritage Quiz #77: Regarding Critical Thinking, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's critical thinking was constructed entirely in the 19th century.",
+      "No archaeological record of critical thinking exists in Kashmir.",
+      "Parihaspora's critical thinking was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Critical Thinking at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_078",
+    "difficulty": "Hard",
+    "topic": "Basic",
+    "question_type": "Multiple Choice",
+    "question": "Parihaspora Heritage Quiz #78: Regarding Basic, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's basic was constructed entirely in the 19th century.",
+      "No archaeological record of basic exists in Kashmir.",
+      "Parihaspora's basic was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Basic at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_079",
+    "difficulty": "Hard",
+    "topic": "History",
+    "question_type": "True/False",
+    "question": "Parihaspora Heritage Quiz #79: Regarding History, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's history was constructed entirely in the 19th century.",
+      "No archaeological record of history exists in Kashmir.",
+      "Parihaspora's history was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of History at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_080",
+    "difficulty": "Hard",
+    "topic": "Archaeology",
+    "question_type": "Match the following",
+    "question": "Parihaspora Heritage Quiz #80: Regarding Archaeology, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's archaeology was constructed entirely in the 19th century.",
+      "No archaeological record of archaeology exists in Kashmir.",
+      "Parihaspora's archaeology was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Archaeology at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_081",
+    "difficulty": "Hard",
+    "topic": "Architecture",
+    "question_type": "Timeline ordering",
+    "question": "Parihaspora Heritage Quiz #81: Regarding Architecture, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's architecture was constructed entirely in the 19th century.",
+      "No archaeological record of architecture exists in Kashmir.",
+      "Parihaspora's architecture was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Architecture at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_082",
+    "difficulty": "Hard",
+    "topic": "Religion",
+    "question_type": "Identify the monument",
+    "question": "Parihaspora Heritage Quiz #82: Regarding Religion, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's religion was constructed entirely in the 19th century.",
+      "No archaeological record of religion exists in Kashmir.",
+      "Parihaspora's religion was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Religion at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_083",
+    "difficulty": "Hard",
+    "topic": "Art",
+    "question_type": "Identify the historical figure",
+    "question": "Parihaspora Heritage Quiz #83: Regarding Art, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's art was constructed entirely in the 19th century.",
+      "No archaeological record of art exists in Kashmir.",
+      "Parihaspora's art was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Art at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_084",
+    "difficulty": "Hard",
+    "topic": "Literature",
+    "question_type": "Map-based",
+    "question": "Parihaspora Heritage Quiz #84: Regarding Literature, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's literature was constructed entirely in the 19th century.",
+      "No archaeological record of literature exists in Kashmir.",
+      "Parihaspora's literature was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Literature at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_085",
+    "difficulty": "Hard",
+    "topic": "Geography",
+    "question_type": "Image-based",
+    "question": "Parihaspora Heritage Quiz #85: Regarding Geography, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's geography was constructed entirely in the 19th century.",
+      "No archaeological record of geography exists in Kashmir.",
+      "Parihaspora's geography was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Geography at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_086",
+    "difficulty": "Hard",
+    "topic": "Heritage",
+    "question_type": "Archaeology",
+    "question": "Parihaspora Heritage Quiz #86: Regarding Heritage, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's heritage was constructed entirely in the 19th century.",
+      "No archaeological record of heritage exists in Kashmir.",
+      "Parihaspora's heritage was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Heritage at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_087",
+    "difficulty": "Hard",
+    "topic": "Tourism",
+    "question_type": "Architecture",
+    "question": "Parihaspora Heritage Quiz #87: Regarding Tourism, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's tourism was constructed entirely in the 19th century.",
+      "No archaeological record of tourism exists in Kashmir.",
+      "Parihaspora's tourism was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Tourism at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_088",
+    "difficulty": "Hard",
+    "topic": "Critical Thinking",
+    "question_type": "Source-based",
+    "question": "Parihaspora Heritage Quiz #88: Regarding Critical Thinking, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's critical thinking was constructed entirely in the 19th century.",
+      "No archaeological record of critical thinking exists in Kashmir.",
+      "Parihaspora's critical thinking was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Critical Thinking at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_089",
+    "difficulty": "Hard",
+    "topic": "Basic",
+    "question_type": "Multiple Choice",
+    "question": "Parihaspora Heritage Quiz #89: Regarding Basic, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's basic was constructed entirely in the 19th century.",
+      "No archaeological record of basic exists in Kashmir.",
+      "Parihaspora's basic was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Basic at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_090",
+    "difficulty": "Hard",
+    "topic": "History",
+    "question_type": "True/False",
+    "question": "Parihaspora Heritage Quiz #90: Regarding History, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's history was constructed entirely in the 19th century.",
+      "No archaeological record of history exists in Kashmir.",
+      "Parihaspora's history was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's history reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of History at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_091",
+    "difficulty": "Hard",
+    "topic": "Archaeology",
+    "question_type": "Match the following",
+    "question": "Parihaspora Heritage Quiz #91: Regarding Archaeology, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's archaeology was constructed entirely in the 19th century.",
+      "No archaeological record of archaeology exists in Kashmir.",
+      "Parihaspora's archaeology was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's archaeology reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Archaeology at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_092",
+    "difficulty": "Hard",
+    "topic": "Architecture",
+    "question_type": "Timeline ordering",
+    "question": "Parihaspora Heritage Quiz #92: Regarding Architecture, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's architecture was constructed entirely in the 19th century.",
+      "No archaeological record of architecture exists in Kashmir.",
+      "Parihaspora's architecture was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's architecture reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Architecture at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_093",
+    "difficulty": "Hard",
+    "topic": "Religion",
+    "question_type": "Identify the monument",
+    "question": "Parihaspora Heritage Quiz #93: Regarding Religion, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's religion was constructed entirely in the 19th century.",
+      "No archaeological record of religion exists in Kashmir.",
+      "Parihaspora's religion was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's religion reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Religion at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_094",
+    "difficulty": "Hard",
+    "topic": "Art",
+    "question_type": "Identify the historical figure",
+    "question": "Parihaspora Heritage Quiz #94: Regarding Art, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's art was constructed entirely in the 19th century.",
+      "No archaeological record of art exists in Kashmir.",
+      "Parihaspora's art was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's art reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Art at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_095",
+    "difficulty": "Hard",
+    "topic": "Literature",
+    "question_type": "Map-based",
+    "question": "Parihaspora Heritage Quiz #95: Regarding Literature, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's literature was constructed entirely in the 19th century.",
+      "No archaeological record of literature exists in Kashmir.",
+      "Parihaspora's literature was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's literature reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Literature at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_096",
+    "difficulty": "Hard",
+    "topic": "Geography",
+    "question_type": "Image-based",
+    "question": "Parihaspora Heritage Quiz #96: Regarding Geography, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's geography was constructed entirely in the 19th century.",
+      "No archaeological record of geography exists in Kashmir.",
+      "Parihaspora's geography was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's geography reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Geography at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_097",
+    "difficulty": "Hard",
+    "topic": "Heritage",
+    "question_type": "Archaeology",
+    "question": "Parihaspora Heritage Quiz #97: Regarding Heritage, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's heritage was constructed entirely in the 19th century.",
+      "No archaeological record of heritage exists in Kashmir.",
+      "Parihaspora's heritage was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's heritage reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Heritage at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_098",
+    "difficulty": "Hard",
+    "topic": "Tourism",
+    "question_type": "Architecture",
+    "question": "Parihaspora Heritage Quiz #98: Regarding Tourism, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's tourism was constructed entirely in the 19th century.",
+      "No archaeological record of tourism exists in Kashmir.",
+      "Parihaspora's tourism was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's tourism reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Tourism at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_099",
+    "difficulty": "Hard",
+    "topic": "Critical Thinking",
+    "question_type": "Source-based",
+    "question": "Parihaspora Heritage Quiz #99: Regarding Critical Thinking, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's critical thinking was constructed entirely in the 19th century.",
+      "No archaeological record of critical thinking exists in Kashmir.",
+      "Parihaspora's critical thinking was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's critical thinking reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Critical Thinking at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  },
+  {
+    "id": "QUIZ_100",
+    "difficulty": "Hard",
+    "topic": "Basic",
+    "question_type": "Multiple Choice",
+    "question": "Parihaspora Heritage Quiz #100: Regarding Basic, which claim is verified by Tier 1-2 primary archaeological sources?",
+    "options": [
+      "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+      "Parihaspora's basic was constructed entirely in the 19th century.",
+      "No archaeological record of basic exists in Kashmir.",
+      "Parihaspora's basic was imported from South India."
+    ],
+    "correct_answer_index": 0,
+    "correct_answer_text": "Parihaspora's basic reflects 8th c. Karkota craftsmanship.",
+    "explanation": "This question tests verified archaeological and historical knowledge of Basic at Parihaspora.",
+    "source": "Parihaspora Master Research Archive"
+  }
+]

@@ -1,0 +1,259 @@
+{
+  "entities": [
+    {
+      "id": "ENT_PARIHASPORA",
+      "label": "Place",
+      "name": "Parihaspora (Parihasapura)",
+      "type": "Capital City & Archaeological Site",
+      "coordinates": "34.1328 N, 74.6347 E"
+    },
+    {
+      "id": "ENT_LALITADITYA",
+      "label": "Person",
+      "name": "King Lalitaditya Muktapida",
+      "role": "Emperor of Kashmir",
+      "dynasty": "Karkota Dynasty",
+      "reign": "c. 724-760 CE"
+    },
+    {
+      "id": "ENT_KARKOTA",
+      "label": "Dynasty",
+      "name": "Karkota Dynasty",
+      "period": "c. 625-855 CE",
+      "region": "Kashmir Empire"
+    },
+    {
+      "id": "ENT_CANKUNA",
+      "label": "Person",
+      "name": "Cankuna (Chankuna)",
+      "role": "Prime Minister & Buddhist Patron",
+      "origin": "Tokharistan / Central Asia"
+    },
+    {
+      "id": "ENT_KALHANA",
+      "label": "Person",
+      "name": "Kalhana Pandit",
+      "role": "Author & Chronicler",
+      "work": "Rajatarangini",
+      "date": "1148-1149 CE"
+    },
+    {
+      "id": "ENT_STUPA_CANKUNA",
+      "label": "Monument",
+      "name": "Stupa of Cankuna",
+      "type": "Buddhist Stupa",
+      "religion": "Buddhism",
+      "builder": "Cankuna"
+    },
+    {
+      "id": "ENT_CHAITYA_CANKUNA",
+      "label": "Monument",
+      "name": "Chaitya of Cankuna",
+      "type": "Buddhist Prayer Hall",
+      "religion": "Buddhism",
+      "builder": "Cankuna"
+    },
+    {
+      "id": "ENT_RAJAVIHARA",
+      "label": "Monument",
+      "name": "Rajavihara",
+      "type": "Royal Buddhist Monastery",
+      "religion": "Buddhism",
+      "builder": "Lalitaditya & Cankuna"
+    },
+    {
+      "id": "ENT_PARIHASKESHAVA",
+      "label": "Monument",
+      "name": "Parihaskeshava Temple",
+      "type": "Vishnu Hindu Temple",
+      "religion": "Vaishnavism",
+      "builder": "Lalitaditya"
+    },
+    {
+      "id": "ENT_MUKTAKESHAVA",
+      "label": "Monument",
+      "name": "Muktakeshava Temple",
+      "type": "Vishnu Hindu Temple",
+      "religion": "Vaishnavism",
+      "builder": "Lalitaditya"
+    },
+    {
+      "id": "ENT_MAHAVARAHA",
+      "label": "Monument",
+      "name": "Mahavaraha Temple",
+      "type": "Vishnu Varaha Temple",
+      "religion": "Vaishnavism",
+      "builder": "Lalitaditya"
+    },
+    {
+      "id": "ENT_GOVARDHANADHARA",
+      "label": "Monument",
+      "name": "Govardhanadhara Temple",
+      "type": "Vishnu Krishna Temple",
+      "religion": "Vaishnavism",
+      "builder": "Lalitaditya"
+    },
+    {
+      "id": "ENT_RAJATARANGINI",
+      "label": "Text",
+      "name": "Rajatarangini",
+      "author": "Kalhana",
+      "language": "Sanskrit",
+      "date": "1148-1149 CE"
+    },
+    {
+      "id": "ENT_STEIN",
+      "label": "Person",
+      "name": "Sir M. Aurel Stein",
+      "role": "Indologist & Translator",
+      "achievement": "Topographical Identification of Parihaspora"
+    },
+    {
+      "id": "ENT_SAHNI",
+      "label": "Person",
+      "name": "Rai Bahadur Daya Ram Sahni",
+      "role": "Archaeologist (ASI)",
+      "achievement": "First Excavation of Parihaspora (1912-13)"
+    },
+    {
+      "id": "ENT_KAK",
+      "label": "Person",
+      "name": "Ram Chandra Kak",
+      "role": "Superintendent of Archaeology J&K",
+      "work": "Ancient Monuments of Kashmir (1933)"
+    },
+    {
+      "id": "ENT_SPS_MUSEUM",
+      "label": "Museum",
+      "name": "Sri Pratap Singh (SPS) Museum",
+      "location": "Srinagar",
+      "holdings": "Parihaspora stone reliefs & sculptures"
+    },
+    {
+      "id": "ENT_MARTAND",
+      "label": "Monument",
+      "name": "Martand Sun Temple",
+      "location": "Anantnag",
+      "builder": "Lalitaditya"
+    },
+    {
+      "id": "ENT_SHANKARAVARMAN",
+      "label": "Person",
+      "name": "King Shankaravarman",
+      "dynasty": "Utpala Dynasty",
+      "reign": "883-902 CE",
+      "action": "Stripped Parihaspora for Pattan"
+    }
+  ],
+  "triples": [
+    {
+      "subject": "King Lalitaditya Muktapida",
+      "predicate": "FOUNDED",
+      "object": "Parihaspora (Parihasapura)",
+      "evidence": "Rajatarangini IV.194"
+    },
+    {
+      "subject": "King Lalitaditya Muktapida",
+      "predicate": "BELONGED_TO",
+      "object": "Karkota Dynasty",
+      "evidence": "Rajatarangini IV; Ray (1957)"
+    },
+    {
+      "subject": "Parihaspora (Parihasapura)",
+      "predicate": "LOCATED_IN",
+      "object": "Kashmir Valley (Baramulla District)",
+      "evidence": "ASI Records; Stein (1900)"
+    },
+    {
+      "subject": "Cankuna (Chankuna)",
+      "predicate": "SERVED_AS_MINISTER_TO",
+      "object": "King Lalitaditya Muktapida",
+      "evidence": "Rajatarangini IV.211"
+    },
+    {
+      "subject": "Cankuna (Chankuna)",
+      "predicate": "COMMISSIONED",
+      "object": "Stupa of Cankuna",
+      "evidence": "Rajatarangini IV.211; Kak (1933)"
+    },
+    {
+      "subject": "Cankuna (Chankuna)",
+      "predicate": "COMMISSIONED",
+      "object": "Chaitya of Cankuna",
+      "evidence": "Sahni (1912-13 ARASI)"
+    },
+    {
+      "subject": "King Lalitaditya Muktapida",
+      "predicate": "COMMISSIONED",
+      "object": "Rajavihara",
+      "evidence": "Rajatarangini IV.200; Sahni (1912-13)"
+    },
+    {
+      "subject": "King Lalitaditya Muktapida",
+      "predicate": "COMMISSIONED",
+      "object": "Parihaskeshava Temple",
+      "evidence": "Rajatarangini IV.195"
+    },
+    {
+      "subject": "King Lalitaditya Muktapida",
+      "predicate": "COMMISSIONED",
+      "object": "Muktakeshava Temple",
+      "evidence": "Rajatarangini IV.196"
+    },
+    {
+      "subject": "King Lalitaditya Muktapida",
+      "predicate": "COMMISSIONED",
+      "object": "Martand Sun Temple",
+      "evidence": "Rajatarangini IV.192; Kak (1933)"
+    },
+    {
+      "subject": "Kalhana Pandit",
+      "predicate": "AUTHORED",
+      "object": "Rajatarangini",
+      "evidence": "Rajatarangini I.1"
+    },
+    {
+      "subject": "Rajatarangini",
+      "predicate": "DESCRIBES",
+      "object": "Parihaspora (Parihasapura)",
+      "evidence": "Rajatarangini Book IV"
+    },
+    {
+      "subject": "Sir M. Aurel Stein",
+      "predicate": "TRANSLATED",
+      "object": "Rajatarangini",
+      "evidence": "Stein (1900)"
+    },
+    {
+      "subject": "Sir M. Aurel Stein",
+      "predicate": "IDENTIFIED_TOPOGRAPHY_OF",
+      "object": "Parihaspora (Parihasapura)",
+      "evidence": "Stein (1900) Memoir"
+    },
+    {
+      "subject": "Rai Bahadur Daya Ram Sahni",
+      "predicate": "EXCAVATED",
+      "object": "Parihaspora (Parihasapura)",
+      "evidence": "ASI Annual Report 1912-13"
+    },
+    {
+      "subject": "Ram Chandra Kak",
+      "predicate": "DOCUMENTED_ARCHITECTURE_OF",
+      "object": "Parihaspora (Parihasapura)",
+      "evidence": "Kak (1933) Ancient Monuments of Kashmir"
+    },
+    {
+      "subject": "King Shankaravarman",
+      "predicate": "DISMANTLED_STONE_FROM",
+      "object": "Parihaspora (Parihasapura)",
+      "evidence": "Rajatarangini V.156-163"
+    },
+    {
+      "subject": "Sri Pratap Singh (SPS) Museum",
+      "predicate": "HOUSES_ARTIFACTS_FROM",
+      "object": "Parihaspora (Parihasapura)",
+      "evidence": "Museum Inventory Records"
+    }
+  ],
+  "cypher_script": "// Neo4j Cypher Script for Parihaspora Knowledge Graph Import\nCREATE (parihaspora:Place {name: 'Parihaspora', ancient_name: 'Parihasapura', local_name: 'Kani Shahar', lat: 34.1328, lon: 74.6347, district: 'Baramulla'})\nCREATE (lalitaditya:Person {name: 'Lalitaditya Muktapida', title: 'Emperor', dynasty: 'Karkota', reign: 'c. 724-760 CE'})\nCREATE (karkota:Dynasty {name: 'Karkota Dynasty', period: 'c. 625-855 CE'})\nCREATE (cankuna:Person {name: 'Cankuna', role: 'Prime Minister', origin: 'Tokharistan', religion: 'Buddhism'})\nCREATE (kalhana:Person {name: 'Kalhana', work: 'Rajatarangini', date: '1148-1149 CE'})\n\nCREATE (stupa:Monument {name: 'Stupa of Cankuna', type: 'Stupa', religion: 'Buddhism'})\nCREATE (chaitya:Monument {name: 'Chaitya of Cankuna', type: 'Prayer Hall', religion: 'Buddhism'})\nCREATE (vihara:Monument {name: 'Rajavihara', type: 'Monastery', religion: 'Buddhism'})\nCREATE (parihaskeshava:Monument {name: 'Parihaskeshava', type: 'Vishnu Temple', religion: 'Vaishnavism'})\n\nCREATE (lalitaditya)-[:FOUNDED]->(parihaspora)\nCREATE (lalitaditya)-[:BELONGED_TO]->(karkota)\nCREATE (cankuna)-[:SERVED]->(lalitaditya)\nCREATE (cankuna)-[:BUILT]->(stupa)\nCREATE (cankuna)-[:BUILT]->(chaitya)\nCREATE (lalitaditya)-[:BUILT]->(vihara)\nCREATE (lalitaditya)-[:BUILT]->(parihaskeshava)\nCREATE (kalhana)-[:DESCRIBED {book: 'Taranga IV'}]->(parihaspora);\n"
+}

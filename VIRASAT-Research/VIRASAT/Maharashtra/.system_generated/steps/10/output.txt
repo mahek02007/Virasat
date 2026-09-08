@@ -1,0 +1,34 @@
+Created the following subagents:
+{
+  "conversationId": "eeba17f3-d58a-42e8-a4fb-2406dbb492ca",
+  "logAbsoluteUri": "file:///C:/Users/YADAVI/.gemini/antigravity/brain/eeba17f3-d58a-42e8-a4fb-2406dbb492ca/.system_generated/logs/transcript.jsonl"
+}
+{
+  "conversationId": "122fe85c-a289-43ee-9315-2ba3f4cdaacd",
+  "logAbsoluteUri": "file:///C:/Users/YADAVI/.gemini/antigravity/brain/122fe85c-a289-43ee-9315-2ba3f4cdaacd/.system_generated/logs/transcript.jsonl"
+}
+{
+  "conversationId": "e09b78f8-46bc-49af-85b3-ae713a8cfcef",
+  "logAbsoluteUri": "file:///C:/Users/YADAVI/.gemini/antigravity/brain/e09b78f8-46bc-49af-85b3-ae713a8cfcef/.system_generated/logs/transcript.jsonl"
+}
+{
+  "conversationId": "40221595-185d-4d31-8f0b-f9e2473d801c",
+  "logAbsoluteUri": "file:///C:/Users/YADAVI/.gemini/antigravity/brain/40221595-185d-4d31-8f0b-f9e2473d801c/.system_generated/logs/transcript.jsonl"
+}
+{
+  "conversationId": "f3af46c0-f056-4609-8cac-97c7c86909da",
+  "logAbsoluteUri": "file:///C:/Users/YADAVI/.gemini/antigravity/brain/f3af46c0-f056-4609-8cac-97c7c86909da/.system_generated/logs/transcript.jsonl"
+}
+{
+  "conversationId": "96e70d45-a53f-41ba-b237-6e42a2582a54",
+  "logAbsoluteUri": "file:///C:/Users/YADAVI/.gemini/antigravity/brain/96e70d45-a53f-41ba-b237-6e42a2582a54/.system_generated/logs/transcript.jsonl"
+}
+{
+  "conversationId": "0adfaa49-d1e1-4566-804c-b62cc4d98548",
+  "logAbsoluteUri": "file:///C:/Users/YADAVI/.gemini/antigravity/brain/0adfaa49-d1e1-4566-804c-b62cc4d98548/.system_generated/logs/transcript.jsonl"
+}
+{
+  "conversationId": "8baafddc-9006-486f-b183-d78239739429",
+  "logAbsoluteUri": "file:///C:/Users/YADAVI/.gemini/antigravity/brain/8baafddc-9006-486f-b183-d78239739429/.system_generated/logs/transcript.jsonl"
+}
+The subagents will send you a message when they have completed their task or require guidance. There is no need to poll for their responses.

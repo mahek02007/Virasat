@@ -1,0 +1,802 @@
+[
+  {
+    "id": "QA_001",
+    "category": "Basic",
+    "question": "What is Parihaspora?",
+    "answer": "Parihaspora (also spelled Parihaspur, Parihasapura, or locally known as Kani Shahar) was a monumental royal city and capital of Kashmir founded in the 8th century CE by King Lalitaditya Muktapida of the Karkota Dynasty.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini IV.194-205; Kak (1933)"
+  },
+  {
+    "id": "QA_002",
+    "category": "Basic",
+    "question": "Where is Parihaspora located?",
+    "answer": "Parihaspora is situated on a high alluvial plateau (karewa) near Divar village in the Baramulla district of Jammu and Kashmir, approximately 22 to 26 km northwest of Srinagar, overlooking the Jhelum floodplain.",
+    "confidence_level": "High Confidence",
+    "primary_source": "ASI Records; Baramulla District Gazetteer; Stein (1900)"
+  },
+  {
+    "id": "QA_003",
+    "category": "Basic",
+    "question": "When was Parihaspora established?",
+    "answer": "Parihaspora was founded around 725–735 CE during the height of King Lalitaditya Muktapida's reign in the 8th century CE.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini IV.194; Stein (1900) Chronology"
+  },
+  {
+    "id": "QA_004",
+    "category": "Basic",
+    "question": "Who founded the city of Parihaspora?",
+    "answer": "King Lalitaditya Muktapida, the third ruler of the Karkota Dynasty of Kashmir, founded Parihaspora as his imperial political and religious capital.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini IV.194; Ray (1957)"
+  },
+  {
+    "id": "QA_005",
+    "category": "Basic",
+    "question": "What does the name 'Parihasapura' mean?",
+    "answer": "The name 'Parihasapura' translates from Sanskrit as the 'City of Laughter' or 'Smiling City' (from 'Parihasa' meaning laughter/jest and 'pura' meaning city).",
+    "confidence_level": "High Confidence",
+    "primary_source": "Stein (1900) Notes on Rajatarangini"
+  },
+  {
+    "id": "QA_006",
+    "category": "Basic",
+    "question": "What is the local Kashmiri name for Parihaspora and why?",
+    "answer": "Locally, the site is called 'Kani Shahar', which means 'City of Stones' in Kashmiri, referring to the vast scattered mega-limestone plinths and carved architectural blocks.",
+    "confidence_level": "Traditional",
+    "primary_source": "Kak (1933); Local Oral Tradition"
+  },
+  {
+    "id": "QA_007",
+    "category": "Basic",
+    "question": "What was the primary function of Parihaspora upon its creation?",
+    "answer": "Parihaspora served as the grand imperial capital of the Karkota Empire, integrating royal administrative palaces, state mints, grand Hindu temples, and royal Buddhist monastic complexes.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini IV.194-210; Goetz (1969)"
+  },
+  {
+    "id": "QA_008",
+    "category": "Basic",
+    "question": "Is Parihaspora a protected monument today?",
+    "answer": "Yes, the archaeological ruins of Parihaspora are designated as a protected Monument of National Importance under the Archaeological Survey of India (ASI).",
+    "confidence_level": "High Confidence",
+    "primary_source": "ASI Official List of Protected Monuments"
+  },
+  {
+    "id": "QA_009",
+    "category": "Basic",
+    "question": "What are the main surviving structures visible at Parihaspora today?",
+    "answer": "The surviving remains consist of stone foundation plinths and stone blocks of three major Buddhist monuments (Stupa of Cankuna, Cankuna's Chaitya, and the Rajavihara monastery) and several Hindu temple bases.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Sahni (1912-13 ARASI); Kak (1933)"
+  },
+  {
+    "id": "QA_010",
+    "category": "Basic",
+    "question": "Why is Parihaspora historically significant in Indian art and architecture?",
+    "answer": "Parihaspora represents the pinnacle of ancient Kashmiri stone architecture, featuring massive dressed limestone block masonry, trefoil arches, triangular pediments, and a unique synthesis of Hindu and Buddhist monumental art.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Percy Brown (1942); Kak (1933); Meister (1988)"
+  },
+  {
+    "id": "QA_011",
+    "category": "History",
+    "question": "Who was Lalitaditya Muktapida?",
+    "answer": "Lalitaditya Muktapida (r. c. 724–760 CE) was the most prominent emperor of the Karkota Dynasty, renowned for extensive military conquests across North-Western India, Central Asia, and Kanauj, as well as grand architectural patronage.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini IV.126-367; Stein (1900)"
+  },
+  {
+    "id": "QA_012",
+    "category": "History",
+    "question": "What was the Karkota Dynasty?",
+    "answer": "The Karkota Dynasty (c. 625–855 CE) was a powerful Kashmiri ruling house founded by Durlabhavardhana. Under their rule, Kashmir emerged as a major imperial and cultural power in South Asia.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Ray (1957) Early History and Culture of Kashmir"
+  },
+  {
+    "id": "QA_013",
+    "category": "History",
+    "question": "Why did Lalitaditya move his capital from Srinagar to Parihaspora?",
+    "answer": "Lalitaditya sought to establish a brand-new imperial metropolis unencumbered by the old city's constraints, displaying his vast campaign wealth and establishing a dedicated religious and administrative nexus.",
+    "confidence_level": "Medium Confidence",
+    "primary_source": "Goetz (1969); Rajatarangini IV.194"
+  },
+  {
+    "id": "QA_014",
+    "category": "History",
+    "question": "What happened to Parihaspora after Lalitaditya's death?",
+    "answer": "Following Lalitaditya's death, his successor Kuvalayapida and later rulers shifted the royal residence back to Srinagar or other sites. The city gradually lost its political supremacy.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini IV.396+"
+  },
+  {
+    "id": "QA_015",
+    "category": "History",
+    "question": "Which later Kashmiri king stripped Parihaspora of its materials?",
+    "answer": "King Shankaravarman (r. 883–902 CE) of the Utpala Dynasty stripped Parihaspora of its stone materials and metal images to construct his new capital at Pattana (modern Pattan).",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini V.156-163"
+  },
+  {
+    "id": "QA_016",
+    "category": "History",
+    "question": "Did Parihaspora suffer destruction during medieval conflicts?",
+    "answer": "Yes, Kalhana records that during the civil wars of King Harsha (r. 1089–1101 CE) and later medieval conflicts, monuments were damaged and melted down for bullion.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini VII.1095+"
+  },
+  {
+    "id": "QA_017",
+    "category": "History",
+    "question": "How did the shift of the Jhelum River course impact Parihaspora?",
+    "answer": "In the 9th century CE, the famous engineer Suyya under King Avantivarman redirected the confluence of the Vitasta (Jhelum) and Sindhu rivers, altering regional hydrology and trade routes away from Parihaspora.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini V.84-120; Stein (1900)"
+  },
+  {
+    "id": "QA_018",
+    "category": "History",
+    "question": "What role did Central Asian diplomacy play during Lalitaditya's reign?",
+    "answer": "Lalitaditya maintained diplomatic and military ties with the Tang Dynasty of China (recorded in Chinese annals as Muktapida, King of Kashmir) against Arabs and Tibetans.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Tang-shu Annals; Stein (1900); Chavannes (1903)"
+  },
+  {
+    "id": "QA_019",
+    "category": "History",
+    "question": "Who was Cankuna and what was his relationship with Parihaspora?",
+    "answer": "Cankuna (or Chankuna) was Lalitaditya's chief minister (Tuhkhara/Turkic origin) and a devout Buddhist who commissioned the famous Stupa, Chaitya, and Vihara at Parihaspora.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini IV.211-218; Kak (1933)"
+  },
+  {
+    "id": "QA_020",
+    "category": "History",
+    "question": "How long did Parihaspora remain an active political capital?",
+    "answer": "Parihaspora served as the principal political capital for less than half a century (c. 730–760 CE), though its religious monuments remained active for centuries after.",
+    "confidence_level": "Medium Confidence",
+    "primary_source": "Stein (1900); Ray (1957)"
+  },
+  {
+    "id": "QA_021",
+    "category": "Archaeology",
+    "question": "Who first archaeologically identified Parihaspora in modern times?",
+    "answer": "Sir M. Aurel Stein first topographically identified Parihaspora in the late 19th century while preparing his annotated translation of Kalhana's Rajatarangini.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Stein (1900) Memoir on Ancient Geography of Kashmir"
+  },
+  {
+    "id": "QA_022",
+    "category": "Archaeology",
+    "question": "Who conducted the first systematic archaeological excavations at Parihaspora?",
+    "answer": "Rai Bahadur Daya Ram Sahni conducted systematic excavations at Parihaspora in 1912–1913 under Sir John Marshall of the Archaeological Survey of India (ASI).",
+    "confidence_level": "High Confidence",
+    "primary_source": "ASI Annual Report 1912-13; Sahni (1914)"
+  },
+  {
+    "id": "QA_023",
+    "category": "Archaeology",
+    "question": "What were the major findings of Daya Ram Sahni's excavation?",
+    "answer": "Sahni unearthed the massive plinths of the Buddhist Stupa of Cankuna, the cella floor of the Chaitya (formed of a single monolithic stone block), and the quadrangular Rajavihara monastery.",
+    "confidence_level": "High Confidence",
+    "primary_source": "ARASI 1912-13"
+  },
+  {
+    "id": "QA_024",
+    "category": "Archaeology",
+    "question": "What documentation did Ram Chandra Kak add to Parihaspora's archaeology?",
+    "answer": "Ram Chandra Kak, Superintendent of Archaeology for J&K State, published detailed structural measurements, plan drawings, and descriptions in his landmark 1933 work 'Ancient Monuments of Kashmir'.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Kak (1933) Ancient Monuments of Kashmir"
+  },
+  {
+    "id": "QA_025",
+    "category": "Archaeology",
+    "question": "What kind of stone masonry was used in building Parihaspora?",
+    "answer": "The structures were built using huge, finely dressed gray limestone blocks, fitted together without mortar using iron dowels and precise stone joinery.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Kak (1933); Brown (1942)"
+  },
+  {
+    "id": "QA_026",
+    "category": "Archaeology",
+    "question": "How large is the monolithic cella floor stone of Cankuna's Chaitya?",
+    "answer": "The monolithic floor slab of the Chaitya sanctum measures approximately 14 feet long by 12 feet wide and 6 feet thick, weighing over 80 tons.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Sahni (1912-13); Kak (1933)"
+  },
+  {
+    "id": "QA_027",
+    "category": "Archaeology",
+    "question": "What ruined Hindu temples were identified on the Parihaspora plateau?",
+    "answer": "Archaeologists identified foundation platforms attributed to the Parihaskeshava and Muktakeshava Vishnu temples, located on adjacent karewa spurs.",
+    "confidence_level": "Medium Confidence",
+    "primary_source": "Kak (1933); Stein (1900)"
+  },
+  {
+    "id": "QA_028",
+    "category": "Archaeology",
+    "question": "Why are upper architectural elements mostly missing at Parihaspora?",
+    "answer": "Centuries of stone quarrying—particularly in the 19th century for building the Jhelum Cart Road—destroyed the upper walls, pillars, and roofs of the monuments.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Stein (1900); Kak (1933)"
+  },
+  {
+    "id": "QA_029",
+    "category": "Archaeology",
+    "question": "Have any full inscriptions been recovered from Parihaspora?",
+    "answer": "Only fragmentary votive and architectural inscriptions in Sharada script were recovered, but no complete royal foundation charter has been found in-situ.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Sahni (1912-13); Chhabra (1950)"
+  },
+  {
+    "id": "QA_030",
+    "category": "Archaeology",
+    "question": "What metal artifacts were unearthed during excavations?",
+    "answer": "Excavations yielded bronze/copper alloy coins of the Karkota dynasty, structural iron clamps, pottery shards, and carved stone relief fragments.",
+    "confidence_level": "High Confidence",
+    "primary_source": "ARASI 1912-13; Kak (1933)"
+  },
+  {
+    "id": "QA_031",
+    "category": "Architecture",
+    "question": "What are the defining characteristics of the ancient Kashmiri architectural order seen at Parihaspora?",
+    "answer": "Key features include high double-tiered molded plinths, trefoil-arched niches, triangular pediments, fluted pillars with Doric/Ionian influence, and steep pyramidal roofs.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Percy Brown (1942); Kak (1933)"
+  },
+  {
+    "id": "QA_032",
+    "category": "Architecture",
+    "question": "What architectural form did the Stupa of Cankuna possess?",
+    "answer": "The stupa sat on a square double-tiered high plinth with recessed corners, four central projecting staircases on each side, and a circular drum housing the umbrella finial.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Kak (1933); Debala Mitra (1971)"
+  },
+  {
+    "id": "QA_033",
+    "category": "Architecture",
+    "question": "What was the spatial layout of the Rajavihara monastery at Parihaspora?",
+    "answer": "The Rajavihara was a square cell-quadrangle consisting of a large open central courtyard surrounded by 26 residential cells preceded by a pillared verandah.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Sahni (1912-13); Kak (1933)"
+  },
+  {
+    "id": "QA_034",
+    "category": "Architecture",
+    "question": "How did Cankuna's Chaitya differ in plan from typical Indian chaityas?",
+    "answer": "Unlike barrel-vaulted apsidal chaityas of Western India, Parihaspora's Chaitya was a square stone shrine surrounded by an ambulatory passage and entered through a grand portico.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Kak (1933); Brown (1942)"
+  },
+  {
+    "id": "QA_035",
+    "category": "Architecture",
+    "question": "What materials were used for structural binding in Parihaspora's masonry?",
+    "answer": "No lime mortar was used; massive limestone blocks were held in position by gravity, dry-stone fitting, and concealed iron cramps/dowels.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Kak (1933)"
+  },
+  {
+    "id": "QA_036",
+    "category": "Architecture",
+    "question": "How does Parihaspora's architecture compare with the Martand Sun Temple?",
+    "answer": "Both were commissioned by Lalitaditya and share identical masonry techniques, fluted columns, and trefoil arches, but Martand retains more standing walls than Parihaspora.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Goetz (1969); Kak (1933)"
+  },
+  {
+    "id": "QA_037",
+    "category": "Architecture",
+    "question": "What external cultural influences affected Parihaspora's architecture?",
+    "answer": "Architectural historians note synthesis of Classical Hellenistic (fluted columns, capitals), Gandharan (stupa design), and Gupta Indian (sculptural proportions) aesthetic traditions.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Percy Brown (1942); Goetz (1969)"
+  },
+  {
+    "id": "QA_038",
+    "category": "Architecture",
+    "question": "What was the function of trefoil arches in Kashmiri architecture?",
+    "answer": "The trefoil arch served as both a structural load-bearing pediment frame and a symbolic framing motif for deities housed in outer niches.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Kak (1933); Meister (1988)"
+  },
+  {
+    "id": "QA_039",
+    "category": "Architecture",
+    "question": "How large were the foundational stone plinths of Parihaspora's Hindu temples?",
+    "answer": "The foundational plinth of the Parihaskeshava temple measured over 100 feet on each side, supporting a colossal central shrine and surrounding courtyard colonnade.",
+    "confidence_level": "Medium Confidence",
+    "primary_source": "Stein (1900); Kak (1933)"
+  },
+  {
+    "id": "QA_040",
+    "category": "Architecture",
+    "question": "What type of roof structure did Parihaspora's shrines originally feature?",
+    "answer": "Shrines featured high-pitched pyramidal stone roofs built in overlapping stone tiers, designed to withstand Kashmir's heavy winter snowfall.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Percy Brown (1942); Kak (1933)"
+  },
+  {
+    "id": "QA_041",
+    "category": "Religion",
+    "question": "What religious traditions were patronized at Parihaspora?",
+    "answer": "Parihaspora witnessed state-level patronization of Vaishnava Hinduism, Shaiva Hinduism, and Mahayana/Sarvastivada Buddhism.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini IV.194-215; Ray (1957)"
+  },
+  {
+    "id": "QA_042",
+    "category": "Religion",
+    "question": "Which primary Hindu deity did King Lalitaditya dedicate his personal state temples to?",
+    "answer": "Lalitaditya dedicated his primary state temples at Parihaspora (under titles Parihaskeshava, Muktakeshava, Mahavaraha, Govardhanadhara) to Lord Vishnu.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini IV.195-198"
+  },
+  {
+    "id": "QA_043",
+    "category": "Religion",
+    "question": "What was the Parihaskeshava image made of according to Rajatarangini?",
+    "answer": "According to Kalhana, the image of Parihaskeshava was cast from 84,000 palas of pure silver.",
+    "confidence_level": "Literary Narrative",
+    "primary_source": "Rajatarangini IV.195"
+  },
+  {
+    "id": "QA_044",
+    "category": "Religion",
+    "question": "What was the Muktakeshava image made of according to Rajatarangini?",
+    "answer": "Kalhana records that the image of Muktakeshava was made of 84,000 tolas of pure gold.",
+    "confidence_level": "Literary Narrative",
+    "primary_source": "Rajatarangini IV.196"
+  },
+  {
+    "id": "QA_045",
+    "category": "Religion",
+    "question": "Was there a colossal metal Buddha image at Parihaspora?",
+    "answer": "Yes, Kalhana mentions a gigantic copper image of Lord Buddha (Brihadbuddha) installed at the royal monastery, which reached into the sky.",
+    "confidence_level": "Literary Narrative",
+    "primary_source": "Rajatarangini IV.203"
+  },
+  {
+    "id": "QA_046",
+    "category": "Religion",
+    "question": "Did Buddhist ministers hold high power in Lalitaditya's court?",
+    "answer": "Yes, Cankuna, a Buddhist hailing from Tokharistan (Central Asia), served as Prime Minister (Mahapratihara) and built major Buddhist shrines with royal approval.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini IV.211; Stein (1900)"
+  },
+  {
+    "id": "QA_047",
+    "category": "Religion",
+    "question": "What form of Vaishnavism was prevalent in 8th-century Kashmir?",
+    "answer": "Pancharatra Vaishnavism, which emphasized the Vyuha emanations of Vishnu (Vasudeva, Samkarshana, Pradyumna, Aniruddha), was dominant during the Karkota era.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Shah (1985); Goetz (1969)"
+  },
+  {
+    "id": "QA_048",
+    "category": "Religion",
+    "question": "How did royal patronage manage both Hindu and Buddhist institutions?",
+    "answer": "The Karkota state practiced harmonious royal syncretism, distributing war booty, land grants, and state funds equally to Brahminical temples and Buddhist viharas.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Ray (1957); Rajatarangini IV"
+  },
+  {
+    "id": "QA_049",
+    "category": "Religion",
+    "question": "Did Kashmir Shaivism play a role during Parihaspora's golden age?",
+    "answer": "While early Shaivism existed, Kashmir Shaivism as a formalized philosophical system developed slightly later under scholars like Vasugupta and Abhinavagupta (9th-11th c. CE).",
+    "confidence_level": "High Confidence",
+    "primary_source": "Sanderson (2009); Rastogi (1979)"
+  },
+  {
+    "id": "QA_050",
+    "category": "Religion",
+    "question": "What happened to the metal religious images of Parihaspora in later centuries?",
+    "answer": "Most precious metal images (silver, gold, copper) were melted down by later impoverished or iconoclastic kings like Shankaravarman and Harsha to replenish state treasuries.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini V.156, VII.1095"
+  },
+  {
+    "id": "QA_051",
+    "category": "Art",
+    "question": "What style of sculpture characterizes 8th-century Karkota art at Parihaspora?",
+    "answer": "Karkota sculpture is characterized by athletic proportions, graceful body contours, elaborate crowns, almond-shaped eyes, and crisp drapery lines.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Goetz (1969); Paul (1986)"
+  },
+  {
+    "id": "QA_052",
+    "category": "Art",
+    "question": "Where are sculptures recovered from Parihaspora currently housed?",
+    "answer": "Key sculptural fragments and architectural reliefs are housed at the Sri Pratap Singh (SPS) Museum in Srinagar and the National Museum in New Delhi.",
+    "confidence_level": "High Confidence",
+    "primary_source": "SPS Museum Catalogue; Kak (1933)"
+  },
+  {
+    "id": "QA_053",
+    "category": "Art",
+    "question": "What iconography is depicted on carved blocks found at Cankuna's Stupa?",
+    "answer": "Relief carvings depict seated Buddhas, Bodhisattvas (such as Avalokiteshvara and Maitreya), female donors, and celestial gandharvas.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Sahni (1912-13); Debala Mitra (1971)"
+  },
+  {
+    "id": "QA_054",
+    "category": "Art",
+    "question": "Were metal statues produced at Parihaspora?",
+    "answer": "Yes, 8th-century Kashmir was world-renowned for its sophisticated lost-wax brass, bronze, silver, and copper metallurgy.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Pal (1975) Bronzes of Kashmir"
+  },
+  {
+    "id": "QA_055",
+    "category": "Art",
+    "question": "What decorative stone carving motifs are visible on Parihaspora plinths?",
+    "answer": "Motifs include lotus petalled moldings, beaded garlands, mythical kirtimukhas, lions, geometric rosettes, and scrollwork.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Kak (1933); Meister (1988)"
+  },
+  {
+    "id": "QA_056",
+    "category": "Art",
+    "question": "Is there evidence of painted plaster or murals on Parihaspora's walls?",
+    "answer": "While no exposed frescoes survive today due to severe weathering, comparative evidence from Harwan and Gilgit suggests interiors were originally plastered and painted.",
+    "confidence_level": "Medium Confidence",
+    "primary_source": "Goetz (1969)"
+  },
+  {
+    "id": "QA_057",
+    "category": "Art",
+    "question": "How did Karkota artistic style influence neighboring regions like Western Tibet?",
+    "answer": "Kashmiri artists from Parihaspora and later centers were invited to Western Tibet (e.g., Alchi, Tabo) during the Second Propagation of Buddhism, spreading Kashmiri aesthetics.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Goepper (1996); Pal (1975)"
+  },
+  {
+    "id": "QA_058",
+    "category": "Art",
+    "question": "What is the unique iconographic feature of Kashmiri Vishnu images from this era?",
+    "answer": "Kashmiri Vishnu images (Baikuntha Chaturmurti) feature four heads: human (Vasudeva), Narasimha (lion), Varaha (boar), and Kapila (demonic/fierce rear face).",
+    "confidence_level": "High Confidence",
+    "primary_source": "Shah (1985); Goetz (1969)"
+  },
+  {
+    "id": "QA_059",
+    "category": "Art",
+    "question": "Did Parihaspora sculptures show influence from Gandharan art?",
+    "answer": "Yes, the facial features, heavy drapery folds of monk robes, and stupa architecture show enduring Gandharan sculptural lineage.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Paul (1986) Karkota Art"
+  },
+  {
+    "id": "QA_060",
+    "category": "Art",
+    "question": "What stone material was utilized for carving fine sculptures at Parihaspora?",
+    "answer": "Carvers utilized dense gray limestone sourced from nearby quarries in the Kashmir Valley hills.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Kak (1933)"
+  },
+  {
+    "id": "QA_061",
+    "category": "Literature",
+    "question": "What primary literary source provides information about Parihaspora?",
+    "answer": "Kalhana's 'Rajatarangini' (The River of Kings), composed in Sanskrit around 1148–1149 CE, is the primary chronicle detailing Parihaspora's founding.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Stein (1900) Translation of Rajatarangini"
+  },
+  {
+    "id": "QA_062",
+    "category": "Literature",
+    "question": "In which book (Taranga) of the Rajatarangini is Parihaspora described?",
+    "answer": "Parihaspora and the reign of King Lalitaditya Muktapida are detailed in Book IV (Taranga IV) of the Rajatarangini.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Rajatarangini IV.194-216"
+  },
+  {
+    "id": "QA_063",
+    "category": "Literature",
+    "question": "How reliable is Kalhana's description of Parihaspora's buildings?",
+    "answer": "Kalhana wrote 400 years after Lalitaditya; while his topological and structural descriptions match excavated ruins, his figures for gold/silver quantities contain epic inflation.",
+    "confidence_level": "Scholarly Debate",
+    "primary_source": "Stein (1900); Ray (1957)"
+  },
+  {
+    "id": "QA_064",
+    "category": "Literature",
+    "question": "Who translated the Rajatarangini into English with extensive geographical notes?",
+    "answer": "Sir M. Aurel Stein translated the Rajatarangini in 1900, providing groundbreaking notes identifying ancient sites including Parihaspora.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Stein (1900) Kalhana's Rajatarangini"
+  },
+  {
+    "id": "QA_065",
+    "category": "Literature",
+    "question": "Did later Kashmiri historians mention Parihaspora?",
+    "answer": "Yes, later medieval chroniclers like Jonaraja, Srivara, and Prajyabhatta referred to the site and its decline in their continuations of the Rajatarangini.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Dutt (1898) Kings of Kashmira"
+  },
+  {
+    "id": "QA_066",
+    "category": "Literature",
+    "question": "What language was used in the court literature of Karkota Parihaspora?",
+    "answer": "Sanskrit was the official language of royal charters, poetry, state administration, and philosophical scholarship.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Stein (1900); Ray (1957)"
+  },
+  {
+    "id": "QA_067",
+    "category": "Literature",
+    "question": "Who were famous Sanskrit scholars associated with the Karkota court?",
+    "answer": "Scholars like Ksirasvamin, Udbhatabhatta (court poet of Jayapida), Vamana, and Damodaragupta flourished in the Karkota intellectual milieu.",
+    "confidence_level": "High Confidence",
+    "primary_source": "De (1947) History of Sanskrit Poetics"
+  },
+  {
+    "id": "QA_068",
+    "category": "Literature",
+    "question": "What does Rajatarangini say about the destruction of Parihaspora by fire?",
+    "answer": "Kalhana records a dark legend that Lalitaditya, in a state of drunkenness, ordered Parihaspora to be burned so it wouldn't rival Srinagar, though ruins prove it survived.",
+    "confidence_level": "Legend / Folklore",
+    "primary_source": "Rajatarangini IV.310-322"
+  },
+  {
+    "id": "QA_069",
+    "category": "Literature",
+    "question": "Did Chinese pilgrims mention Parihaspora?",
+    "answer": "Xuanzang visited Kashmir in 631–633 CE before Parihaspora was founded; Yijing and later Tang envoys recorded diplomatic exchanges with King Muktapida.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Chavannes (1903); Stein (1900)"
+  },
+  {
+    "id": "QA_070",
+    "category": "Literature",
+    "question": "What script was used for Kashmiri Sanskrit manuscripts during this period?",
+    "answer": "The Sharada script, which evolved from Western Gupta Brahmi, was the native script of Kashmir used for literary and epigraphic works.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Buhler (1877) Indian Paleography"
+  },
+  {
+    "id": "QA_071",
+    "category": "Geography",
+    "question": "What is a 'karewa' and why is it important for Parihaspora's geography?",
+    "answer": "A 'karewa' is a flat-topped elevated lacustrine plateau unique to Kashmir. Parihaspora was built on a karewa to prevent flooding and afford strategic military defensive commanding views.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Burbank (1990); Kak (1933)"
+  },
+  {
+    "id": "QA_072",
+    "category": "Geography",
+    "question": "What rivers flowed near Parihaspora in ancient times?",
+    "answer": "The Vitasta (Jhelum) and the Sindhu (Nallah Sind) rivers originally converged near the foot of the Parihaspora karewa before their confluence was re-engineered in the 9th century.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Stein (1900); Rajatarangini V.84"
+  },
+  {
+    "id": "QA_073",
+    "category": "Geography",
+    "question": "What is the exact administrative location of Parihaspora today?",
+    "answer": "Parihaspora is located in Pattan Tehsil, Baramulla District, Union Territory of Jammu and Kashmir, India.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Baramulla District Official Website"
+  },
+  {
+    "id": "QA_074",
+    "category": "Geography",
+    "question": "What are the approximate spatial coordinates of Parihaspora?",
+    "answer": "Parihaspora is situated at approximately Latitude 34.1328° N and Longitude 74.6347° E, at an elevation of about 1,580 meters above sea level.",
+    "confidence_level": "High Confidence",
+    "primary_source": "GIS Data / ASI Records"
+  },
+  {
+    "id": "QA_075",
+    "category": "Geography",
+    "question": "How far is Parihaspora from Srinagar?",
+    "answer": "Parihaspora is located approximately 22 to 26 kilometers northwest of the city center of Srinagar, accessible via the Srinagar-Baramulla National Highway (NH-44).",
+    "confidence_level": "High Confidence",
+    "primary_source": "Road Maps / Tourism Data"
+  },
+  {
+    "id": "QA_076",
+    "category": "Geography",
+    "question": "What nearby towns lie adjacent to the Parihaspora site?",
+    "answer": "The nearest towns are Pattan to the west, Divar village at the base of the karewa, and Shadipora to the east.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Survey of India Maps"
+  },
+  {
+    "id": "QA_077",
+    "category": "Geography",
+    "question": "How did the topography of Kashmir Valley protect Parihaspora politically?",
+    "answer": "Surrounded by the Pir Panjal and Great Himalayan ranges, the mountain passes into the Valley allowed Parihaspora to remain an unassailable mountain fortress capital.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Stein (1900)"
+  },
+  {
+    "id": "QA_078",
+    "category": "Geography",
+    "question": "What natural water sources supplied Parihaspora on the dry karewa top?",
+    "answer": "Water was lifted from nearby streams and springs at the foot of the plateau via stone-lined masonry channels and stored in large rainwater tanks.",
+    "confidence_level": "Medium Confidence",
+    "primary_source": "Kak (1933); Stein (1900)"
+  },
+  {
+    "id": "QA_079",
+    "category": "Geography",
+    "question": "What agricultural crops were grown around the Parihaspora plateau?",
+    "answer": "The surrounding lower alluvial soils were cultivated with rice (sali), wheat, barley, and saffron on nearby karewa slopes.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Ray (1957); Rajatarangini IV"
+  },
+  {
+    "id": "QA_080",
+    "category": "Geography",
+    "question": "How did seasonal winter weather affect life in ancient Parihaspora?",
+    "answer": "Heavy winter snowfall isolated the Valley passes, turning Parihaspora into a sheltered winter royal residence with specialized stone heating hearths and roof design.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Stein (1900)"
+  },
+  {
+    "id": "QA_081",
+    "category": "Heritage",
+    "question": "What are the primary threats facing the site of Parihaspora today?",
+    "answer": "Key threats include urban encroachment, uncontrolled vegetation/weed growth, stone weathering from rain and frost, lack of visitor amenities, and past quarrying damage.",
+    "confidence_level": "High Confidence",
+    "primary_source": "ASI Condition Reports; Heritage Studies"
+  },
+  {
+    "id": "QA_082",
+    "category": "Heritage",
+    "question": "What government agency is responsible for conserving Parihaspora?",
+    "answer": "The Archaeological Survey of India (ASI), Srinagar Circle, is the official government custodian responsible for protection and structural maintenance.",
+    "confidence_level": "High Confidence",
+    "primary_source": "ASI Official Website"
+  },
+  {
+    "id": "QA_083",
+    "category": "Heritage",
+    "question": "Has 3D digital scanning or photogrammetry been conducted at Parihaspora?",
+    "answer": "Initial digital documentation and spatial mapping projects have been initiated under digital humanities and cultural heritage initiatives in J&K.",
+    "confidence_level": "Medium Confidence",
+    "primary_source": "J&K Tourism / Digital Heritage Initiatives"
+  },
+  {
+    "id": "QA_084",
+    "category": "Heritage",
+    "question": "Why is stone quarrying a historical disaster for Parihaspora?",
+    "answer": "In the late 19th century, contractors were allowed to break down ancient limestone plinths to construct the Jhelum Valley cart road, causing irreparable structural loss.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Stein (1900); Kak (1933)"
+  },
+  {
+    "id": "QA_085",
+    "category": "Heritage",
+    "question": "How can local community participation improve Parihaspora's preservation?",
+    "answer": "Involving local residents as heritage guides, preventing illegal cattle grazing, and fostering heritage education creates sustainable community stewardship.",
+    "confidence_level": "High Confidence",
+    "primary_source": "UNESCO Heritage Guidelines"
+  },
+  {
+    "id": "QA_086",
+    "category": "Heritage",
+    "question": "What site interpretation facilities currently exist at Parihaspora?",
+    "answer": "ASI maintains basic informational signboards, boundary fencing, and manicured lawn enclosures around the Stupa, Chaitya, and Vihara ruins.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Site Field Observations"
+  },
+  {
+    "id": "QA_087",
+    "category": "Heritage",
+    "question": "Is Parihaspora included in any modern tourism revival scheme?",
+    "answer": "Parihaspora has been selected under the Swadesh Darshan 2.0 scheme for heritage circuit enhancement and visitor center development.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Ministry of Tourism Govt of India Press Release"
+  },
+  {
+    "id": "QA_088",
+    "category": "Heritage",
+    "question": "Why is digital archive creation critical for Parihaspora?",
+    "answer": "Digital archives preserve high-resolution spatial models, historical photos from Stein/Sahni, and 3D reconstructions before natural stone weathering degrades details.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Digital Humanities Best Practices"
+  },
+  {
+    "id": "QA_089",
+    "category": "Heritage",
+    "question": "What role can virtual reality (VR) play in interpreting Parihaspora?",
+    "answer": "VR allows visitors to view digital 3D reconstructions of the original grand multi-tiered stupa and temples, overcoming the loss of upper stone structures.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Heritage Technology Research"
+  },
+  {
+    "id": "QA_090",
+    "category": "Heritage",
+    "question": "How does Parihaspora contribute to Kashmir's cultural identity?",
+    "answer": "It stands as a testament to Kashmir's 8th-century golden age of sovereign statecraft, artistic excellence, and peaceful Buddhist-Hindu co-existence.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Cultural Heritage Analysis"
+  },
+  {
+    "id": "QA_091",
+    "category": "Tourism & Critical Thinking",
+    "question": "How can tourists visit Parihaspora from Srinagar?",
+    "answer": "Visitors can travel by road via the Srinagar-Muzaffarabad Highway (NH-44), turning off near Pattan toward Divar Parihaspora (approx. 45-minute drive).",
+    "confidence_level": "High Confidence",
+    "primary_source": "J&K Tourism Travel Advisory"
+  },
+  {
+    "id": "QA_092",
+    "category": "Tourism & Critical Thinking",
+    "question": "What is the best time of year to visit the Parihaspora ruins?",
+    "answer": "The ideal visiting period is between April and October, when the weather is pleasant and the green karewa offers panoramic views of snow-capped mountains.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Tourism Guides"
+  },
+  {
+    "id": "QA_093",
+    "category": "Tourism & Critical Thinking",
+    "question": "What should visitors expect to see upon arriving at the main archaeological site?",
+    "answer": "Visitors will see manicured green ASI complexes containing massive grey limestone plinths, carved staircases, pillar bases, and foundation walls.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Travel Guides / ASI Visitor Info"
+  },
+  {
+    "id": "QA_094",
+    "category": "Tourism & Critical Thinking",
+    "question": "Are there entry tickets or fees to visit Parihaspora?",
+    "answer": "As of current ASI guidelines, Parihaspora is open to the public, though nominal ticketing standard for ASI monuments applies where ticket counters operate.",
+    "confidence_level": "High Confidence",
+    "primary_source": "ASI Ticketing Rules"
+  },
+  {
+    "id": "QA_095",
+    "category": "Tourism & Critical Thinking",
+    "question": "What nearby heritage monuments can be combined with a trip to Parihaspora?",
+    "answer": "Tourists can easily combine Parihaspora with visits to the 9th-century Sugandhesa and Avantisvamin temples in Pattan and the historic springs of Baramulla.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Heritage Trail Itineraries"
+  },
+  {
+    "id": "QA_096",
+    "category": "Tourism & Critical Thinking",
+    "question": "Is photography permitted at the Parihaspora site?",
+    "answer": "Still photography and non-commercial video recording are permitted for visitors; drone photography requires prior official security clearance.",
+    "confidence_level": "High Confidence",
+    "primary_source": "ASI Photography Policy"
+  },
+  {
+    "id": "QA_097",
+    "category": "Tourism & Critical Thinking",
+    "question": "How should historians evaluate Kalhana's claims of 84,000 tolas of gold for statues?",
+    "answer": "Historians view the number '84,000' as a traditional Buddhist/Indian symbolic literary figure denoting vast royal wealth rather than an exact literal weight.",
+    "confidence_level": "Scholarly Debate",
+    "primary_source": "Stein (1900); Ray (1957)"
+  },
+  {
+    "id": "QA_098",
+    "category": "Tourism & Critical Thinking",
+    "question": "Why is it an overgeneralization to attribute all ancient Kashmiri temple design solely to Parihaspora?",
+    "answer": "Parihaspora developed upon earlier Kashmiri architectural styles seen at Harwan and Pandrethan, and synthesized regional techniques that evolved further at Avantipora.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Percy Brown (1942); Kak (1933)"
+  },
+  {
+    "id": "QA_099",
+    "category": "Tourism & Critical Thinking",
+    "question": "Did Lalitaditya really conquer regions as far as Central Asia and Bengal?",
+    "answer": "While Rajatarangini claims conquests from Bengal to Central Asia, historians verify his military control over Northern Punjab, Kabul, and Tibet, treating distant claims as poetic panegyric.",
+    "confidence_level": "Scholarly Debate",
+    "primary_source": "Goetz (1969); Ray (1957); Stein (1900)"
+  },
+  {
+    "id": "QA_100",
+    "category": "Tourism & Critical Thinking",
+    "question": "How do we distinguish confirmed archaeological facts from literary narratives at Parihaspora?",
+    "answer": "Confirmed facts rely on excavated plinths, stone joinery, coins, and physical stone dimensions, whereas literary narratives rely on unverified textual stories in chronicles.",
+    "confidence_level": "High Confidence",
+    "primary_source": "Archaeological Methodology"
+  }
+]

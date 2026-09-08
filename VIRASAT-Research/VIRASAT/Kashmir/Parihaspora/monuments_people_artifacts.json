@@ -1,0 +1,81 @@
+{
+  "monuments": [
+    {
+      "monument_name": "Stupa of Cankuna",
+      "alternative_names": "Cankuna Stupa, Chankuna Stupa",
+      "location": "Parihaspora Karewa Plateau, Baramulla, Kashmir",
+      "coordinates": "34.1332° N, 74.6342° E",
+      "historical_period": "Karkota Dynasty (8th c. CE)",
+      "approximate_date": "c. 730–740 CE",
+      "patron": "Cankuna (Prime Minister of Lalitaditya)",
+      "dynasty": "Karkota Dynasty",
+      "religious_association": "Mahayana Buddhism",
+      "architectural_style": "Kashmiri Classical Stupa Architecture",
+      "materials": "Gray limestone masonry, dry stone joinery, iron cramps",
+      "description": "Double-tiered square plinth stupa with four corner projections and central staircases on all four sides.",
+      "archaeological_evidence": "Excavated by Daya Ram Sahni in 1912-13; preserved base plinths and stone finial fragments.",
+      "historical_references": "Rajatarangini IV.211",
+      "current_condition": "Foundations and lower tiered plinth preserved within ASI fenced enclosure.",
+      "confidence_level": "High Confidence"
+    },
+    {
+      "monument_name": "Chaitya of Cankuna",
+      "alternative_names": "Cankuna Chaitya, Parihaspora Devotional Hall",
+      "location": "Parihaspora Karewa Plateau, Baramulla, Kashmir",
+      "coordinates": "34.1338° N, 74.6348° E",
+      "historical_period": "Karkota Dynasty (8th c. CE)",
+      "approximate_date": "c. 730–740 CE",
+      "patron": "Cankuna",
+      "dynasty": "Karkota Dynasty",
+      "religious_association": "Mahayana Buddhism",
+      "architectural_style": "Kashmiri Stone Chaitya Hall",
+      "materials": "Limestone blocks, monolithic floor slab",
+      "description": "Square stone shrine hall housing a sanctum with an 80-ton monolithic stone floor slab surrounded by an ambulatory passage.",
+      "archaeological_evidence": "Excavated by Sahni 1912-13; recorded by Kak 1933.",
+      "historical_references": "Rajatarangini IV.211",
+      "current_condition": "Plinth and cella monolithic slab intact; upper walls missing.",
+      "confidence_level": "High Confidence"
+    }
+  ],
+  "people": [
+    {
+      "name": "Lalitaditya Muktapida",
+      "alternative_names": "Muktapida, King Lalitaditya, Mu-to-pi (Chinese Annals)",
+      "period": "8th Century CE (r. c. 724–760 CE)",
+      "role": "Emperor of Kashmir & Imperial Conqueror",
+      "dynasty": "Karkota Dynasty",
+      "relationship_with_parihaspora": "Founder and patron of Parihaspora as imperial capital city",
+      "major_contributions": "Military expansion across North-Western India, founding Parihaspora, commissioning Martand Sun Temple & Parihaskeshava",
+      "historical_sources": "Rajatarangini IV.126-367; Tang-shu Chinese Annals",
+      "archaeological_evidence": "Foundational monuments at Parihaspora, Martand, and Ushkur",
+      "confidence_level": "High Confidence"
+    },
+    {
+      "name": "Cankuna (Chankuna)",
+      "alternative_names": "Shang-kiu-na",
+      "period": "8th Century CE",
+      "role": "Prime Minister (Mahapratihara) & General",
+      "dynasty": "Karkota Dynasty (Court of Lalitaditya)",
+      "relationship_with_parihaspora": "Patron of Buddhist Stupa, Chaitya, and Vihara at Parihaspora",
+      "major_contributions": "Key Buddhist architectural patron and Central Asian diplomat",
+      "historical_sources": "Rajatarangini IV.211-218",
+      "archaeological_evidence": "Stupa and Chaitya plinths at Parihaspora",
+      "confidence_level": "High Confidence"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_name": "Carved Relief Block depicting Seated Buddha",
+      "type": "Stone Architectural Relief",
+      "material": "Gray Limestone",
+      "period": "8th Century CE",
+      "estimated_date": "c. 735 CE",
+      "discovery_location": "Stupa of Cankuna, Parihaspora",
+      "current_location": "Sri Pratap Singh (SPS) Museum, Srinagar",
+      "museum_collection": "SPS Museum Archaeology Gallery",
+      "description": "High relief stone block portraying a seated Buddha in dhyanamudra flanked by attendants.",
+      "historical_significance": "Key visual proof of Kashmiri-Gandharan artistic synthesis during Karkota era.",
+      "confidence_level": "High Confidence"
+    }
+  ]
+}

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIRASAT — Regional Heritage Explorer | The Heritage of India</title>
-    <meta name="description" content="Explore India's regional heritage — history, festivals, art, cuisine, clothing, languages, monuments and tribal practices through Virasat's interactive cultural guide.">
+    <title>VIRASAT — Maharashtra Heritage | The Heritage of India</title>
+    <meta name="description" content="Explore Maharashtra's regional heritage — history, festivals, art, cuisine, clothing, languages, monuments and tribal practices through Virasat's interactive cultural guide.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="regional-content.css?v=earthy1">
+    <link rel="stylesheet" href="regional-content.css?v=mh2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/emblem_clean.png">
 </head>
@@ -19,10 +19,14 @@
             <div class="virasat-logo">
                 <img src="assets/logo_source.jpg" alt="Virasat — Heritage of India" class="virasat-full-logo">
             </div>
+            <div class="region-selector-pills">
+                <button class="region-pill-btn active" data-region="maharashtra">Maharashtra</button>
+                <button class="region-pill-btn" data-region="odisha">Odisha (Puri)</button>
+            </div>
         </div>
 
         <nav class="cultural-navigation">
-            <h3 class="nav-title">Explore This Region</h3>
+            <h3 class="nav-title">Explore Maharashtra</h3>
             
             <ul class="nav-list">
                 <li class="nav-item active">
@@ -84,15 +88,15 @@
     </aside>
 
     <!-- Main Content Area -->
-    <main class="main-content">
+    <main class="main-content" id="main-content">
         <!-- Regional Header -->
         <section class="regional-header">
             <div class="header-content">
-                <h1 class="region-name">[Region Name]</h1>
-                <p class="region-tagline">Discover the heritage, traditions and living culture of this region</p>
+                <h1 class="region-name">Maharashtra</h1>
+                <p class="region-tagline">Land of the Marathas — where ancient caves, hill forts, and living traditions meet</p>
             </div>
             <div class="header-image">
-                <img src="[Regional Hero Image]" alt="[Region Name]">
+                <img src="assets/maharashtra/hero_maharashtra.jpg" alt="Panoramic view of Ajanta Caves and Sahyadri landscape">
                 <div class="image-overlay"></div>
             </div>
             <div class="category-chips">
@@ -101,6 +105,8 @@
                 <span class="chip">Art</span>
                 <span class="chip">Cuisine</span>
                 <span class="chip">Clothing</span>
+                <span class="chip">5 UNESCO Sites</span>
+                <span class="chip">36 Districts</span>
             </div>
         </section>
 
@@ -108,12 +114,137 @@
         <section class="cultural-intro">
             <div class="intro-card">
                 <p class="intro-text">
-                    [Cultural introduction text will be displayed here based on provided regional data]
+                    Maharashtra, India's third-largest state, is a land of extraordinary diversity — from the lush Sahyadri mountains and the 720-km Konkan coastline to the expansive Deccan plateau. Formed on May 1, 1960, it carries the legacy of the great Maratha warrior Chhatrapati Shivaji Maharaj, a rich tradition of saint-poets like Dnyaneshwar and Tukaram, and five UNESCO World Heritage Sites. Its culture is a dynamic synthesis of ancient cave art, vibrant festivals like Ganesh Chaturthi, martial traditions, and the Bhakti movement's egalitarian philosophy.
                 </p>
             </div>
         </section>
 
-        <!-- History & Historical Significance -->
+        <!-- ═══════ FEATURED HERITAGE — Explore Cards ═══════ -->
+        <section class="explore-heritage-section">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-compass"></i>
+                    Explore Maharashtra's Heritage
+                </h2>
+            </div>
+            <div class="explore-grid">
+
+                <div class="explore-card">
+                    <div class="explore-image-wrapper">
+                        <img src="assets/maharashtra/explore_ajanta_ellora.jpg" alt="Ellora Caves Cave 16 Kailasa Temple" class="explore-img">
+                        <span class="explore-tag">UNESCO Heritage</span>
+                    </div>
+                    <div class="explore-card-body">
+                        <div class="explore-card-header">
+                            <div class="explore-icon"><i class="fas fa-mountain"></i></div>
+                            <h3>Ajanta & Ellora Caves</h3>
+                        </div>
+                        <p>Two UNESCO World Heritage Sites spanning 2nd century BCE to 10th century CE. Ajanta's Buddhist frescoes and Ellora's Kailasa temple — the largest monolithic rock excavation on Earth.</p>
+                    </div>
+                </div>
+
+                <div class="explore-card">
+                    <div class="explore-image-wrapper">
+                        <img src="assets/maharashtra/explore_maratha_forts.jpg" alt="Raigad Fort in the Sahyadri mountains" class="explore-img">
+                        <span class="explore-tag">Martial Heritage</span>
+                    </div>
+                    <div class="explore-card-body">
+                        <div class="explore-card-header">
+                            <div class="explore-icon"><i class="fas fa-chess-rook"></i></div>
+                            <h3>Maratha Hill Forts</h3>
+                        </div>
+                        <p>Over 300 forts across the Sahyadris built by Shivaji Maharaj using guerrilla warfare strategy. Three types: Girikot (hill), Bhuikot (land), and Jalkot (sea) — each engineered for the terrain.</p>
+                    </div>
+                </div>
+
+                <div class="explore-card">
+                    <div class="explore-image-wrapper">
+                        <img src="assets/maharashtra/explore_warli_art.jpg" alt="Warli tribal geometric painting with Tarpa dance" class="explore-img">
+                        <span class="explore-tag">Living Tradition</span>
+                    </div>
+                    <div class="explore-card-body">
+                        <div class="explore-card-header">
+                            <div class="explore-icon"><i class="fas fa-paint-brush"></i></div>
+                            <h3>Warli Art & Tribal Heritage</h3>
+                        </div>
+                        <p>GI-tagged geometric art by the Warli tribe of Palghar — rice paste on mud walls depicting circles, triangles, and the sacred Tarpa dance. Globalized by artist Jivya Soma Mashe.</p>
+                    </div>
+                </div>
+
+                <div class="explore-card">
+                    <div class="explore-image-wrapper">
+                        <img src="assets/maharashtra/explore_wari_pilgrimage.jpg" alt="Varkari pilgrims on the Pandharpur Wari procession" class="explore-img">
+                        <span class="explore-tag">Spiritual Heritage</span>
+                    </div>
+                    <div class="explore-card-body">
+                        <div class="explore-card-header">
+                            <div class="explore-icon"><i class="fas fa-walking"></i></div>
+                            <h3>Wari Pilgrimage</h3>
+                        </div>
+                        <p>Over a million Varkaris walk 250 km from Alandi and Dehu to Pandharpur over 21 days, chanting Abhangs. One of the world's largest peaceful pedestrian pilgrimages, erasing caste and class.</p>
+                    </div>
+                </div>
+
+                <div class="explore-card">
+                    <div class="explore-image-wrapper">
+                        <img src="assets/maharashtra/explore_paithani.jpg" alt="Intricate golden zari border on Paithani silk saree" class="explore-img">
+                        <span class="explore-tag">Textile Heritage</span>
+                    </div>
+                    <div class="explore-card-body">
+                        <div class="explore-card-header">
+                            <div class="explore-icon"><i class="fas fa-scroll"></i></div>
+                            <h3>Paithani Saree</h3>
+                        </div>
+                        <p>A 2,000-year-old silk weaving tradition from Paithan using the Kadiyal tapestry technique. Iconic peacock and lotus motifs in gold zari thread. GI Tagged — the 'Maha-Vastra' of Maharashtra.</p>
+                    </div>
+                </div>
+
+                <div class="explore-card">
+                    <div class="explore-image-wrapper">
+                        <img src="assets/maharashtra/explore_ganesh_chaturthi.jpg" alt="Ganesh Chaturthi celebrations and Dhol Tasha troupe" class="explore-img">
+                        <span class="explore-tag">Festival</span>
+                    </div>
+                    <div class="explore-card-body">
+                        <div class="explore-card-header">
+                            <div class="explore-icon"><i class="fas fa-om"></i></div>
+                            <h3>Ganesh Chaturthi</h3>
+                        </div>
+                        <p>Transformed from a domestic festival into a massive public celebration by Lokmanya Tilak in 1893 to unite the masses. A 10-day spectacle of Dhol-Tasha pathaks, Modak feasts, and community Visarjan.</p>
+                    </div>
+                </div>
+
+                <div class="explore-card">
+                    <div class="explore-image-wrapper">
+                        <img src="assets/maharashtra/explore_kolhapur.jpg" alt="Handcrafted Kolhapuri leather chappals" class="explore-img">
+                        <span class="explore-tag">Craft & Cuisine</span>
+                    </div>
+                    <div class="explore-card-body">
+                        <div class="explore-card-header">
+                            <div class="explore-icon"><i class="fas fa-shoe-prints"></i></div>
+                            <h3>Kolhapuri Heritage</h3>
+                        </div>
+                        <p>A living heritage cluster — GI-tagged Kolhapuri Chappals (hand-stitched, vegetable-dyed leather), fiery Tambda-Pandhra Rassa cuisine, Kushti wrestling akhadas, and the Mahalaxmi Temple.</p>
+                    </div>
+                </div>
+
+                <div class="explore-card">
+                    <div class="explore-image-wrapper">
+                        <img src="assets/maharashtra/explore_lavani_tamasha.jpg" alt="Lavani folk dancer performing in traditional attire" class="explore-img">
+                        <span class="explore-tag">Performance Art</span>
+                    </div>
+                    <div class="explore-card-body">
+                        <div class="explore-card-header">
+                            <div class="explore-icon"><i class="fas fa-theater-masks"></i></div>
+                            <h3>Lavani & Tamasha</h3>
+                        </div>
+                        <p>Lavani's two forms — Nirguni (philosophical) and Shringari (erotic) — set to the 14-beat Dhadya taal. Tamasha is travelling folk theatre featuring Gan, Gondhal, comedy, and drama.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══════ History & Historical Significance ═══════ -->
         <section id="history" class="content-section">
             <div class="section-header">
                 <h2 class="section-title">
@@ -124,30 +255,31 @@
             <div class="section-content">
                 <div class="content-grid">
                     <div class="content-block editorial-block">
-                        <p>[Historical content from provided data]</p>
+                        <p>Maharashtra's history spans over two millennia. The <strong>Satavahana dynasty</strong> (230 BCE–225 CE) established Paithan as their capital and patronized Buddhism, creating rock-cut caves at Karla and Bhaja. The <strong>Vakatakas</strong> followed, commissioning the later caves at Ajanta. The <strong>Rashtrakutas</strong> and <strong>Chalukyas</strong> carved Ellora's masterpieces, while the <strong>Yadavas of Devagiri</strong> oversaw the golden age of Marathi language.</p>
+                        <p style="margin-top:1rem;">The 17th century witnessed the rise of the <strong>Maratha Empire</strong> under Chhatrapati Shivaji Maharaj, who established Hindavi Swarajya using guerrilla warfare from the Sahyadri forts. The Peshwas later expanded Maratha influence "from Attock to Cuttack." After British annexation in 1818, Maharashtra became the epicenter of social reform — led by Mahatma Phule, Savitribai Phule, and Dr. B.R. Ambedkar — and the freedom struggle.</p>
                     </div>
                     <div class="content-block image-block">
-                        <img src="[Historical Image]" alt="Historical significance">
+                        <img src="assets/maharashtra/history_shivaji.jpg" alt="Chhatrapati Shivaji Maharaj memorial at Raigad Fort">
                     </div>
                 </div>
                 <div class="fact-cards">
                     <div class="fact-card">
-                        <h4>Historical Era</h4>
-                        <p>[Era information]</p>
+                        <h4>Historical Eras</h4>
+                        <p>Satavahana → Vakataka → Chalukya → Rashtrakuta → Yadava → Bahmani Sultanate → Maratha Empire → Peshwa → British → Modern State (1960)</p>
                     </div>
                     <div class="fact-card">
                         <h4>Key Figures</h4>
-                        <p>[Historical figures]</p>
+                        <p>Chhatrapati Shivaji Maharaj, Peshwa Bajirao I, Lokmanya Tilak, Mahatma Phule, Savitribai Phule, Dr. B.R. Ambedkar, Sant Dnyaneshwar, Sant Tukaram</p>
                     </div>
                     <div class="fact-card">
                         <h4>Legacy</h4>
-                        <p>[Cultural legacy]</p>
+                        <p>Over 300 hill forts, the Bhakti movement's egalitarian philosophy, India's social reform epicenter, five UNESCO World Heritage Sites, and the Samyukta Maharashtra movement (1960)</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Festivals & Customs -->
+        <!-- ═══════ Festivals & Customs ═══════ -->
         <section id="festivals" class="content-section">
             <div class="section-header">
                 <h2 class="section-title">
@@ -157,22 +289,78 @@
             </div>
             <div class="section-content">
                 <div class="festival-grid">
+
                     <div class="festival-card">
                         <div class="festival-image">
-                            <img src="[Festival Image]" alt="Festival">
+                            <img src="assets/maharashtra/fest_ganesh.jpg" alt="Ganesh festival celebration with Dhol Tasha">
                         </div>
                         <div class="festival-info">
-                            <h3>[Festival Name]</h3>
-                            <p>[Festival description from provided data]</p>
-                            <span class="festival-time">[Time/Season]</span>
+                            <h3>Ganesh Chaturthi</h3>
+                            <p>Originally domestic, transformed into a massive public event by Lokmanya Tilak in 1893 to unite people during the freedom struggle. Features Dhol-Tasha pathaks, Lezim dance, Modak feasts, and the spectacular Visarjan (immersion) procession after 1.5 to 10 days.</p>
+                            <span class="festival-time">August – September</span>
                         </div>
                     </div>
-                    <!-- More festival cards will be generated from provided data -->
+
+                    <div class="festival-card">
+                        <div class="festival-image">
+                            <img src="assets/maharashtra/fest_wari.jpg" alt="Varkaris on the Pandharpur Wari pilgrimage">
+                        </div>
+                        <div class="festival-info">
+                            <h3>Ashadhi Ekadashi & Wari</h3>
+                            <p>Culmination of the Pandharpur Wari — over a million Varkaris walk 250 km carrying the Padukas (sandals) of saints Dnyaneshwar and Tukaram. The procession features Dindi groups, Abhang chanting, and the rhythmic Mridanga-Chipri-Talya ensemble.</p>
+                            <span class="festival-time">June – July (Ashadha)</span>
+                        </div>
+                    </div>
+
+                    <div class="festival-card">
+                        <div class="festival-image">
+                            <img src="assets/maharashtra/fest_gudi_padwa.jpg" alt="Gudi Padwa traditional New Year celebration">
+                        </div>
+                        <div class="festival-info">
+                            <h3>Gudi Padwa</h3>
+                            <p>The Maharashtrian New Year. Families hoist the "Gudi" — a bamboo stick adorned with silk cloth, neem leaves, a garland, and an inverted copper or silver pot — outside their homes. Celebrated with Shrikhand, Puran Poli, and a symbolic bitter-sweet mixture of neem and jaggery.</p>
+                            <span class="festival-time">March – April (Chaitra)</span>
+                        </div>
+                    </div>
+
+                    <div class="festival-card">
+                        <div class="festival-image">
+                            <img src="assets/maharashtra/fest_dahi_handi.jpg" alt="Govinda pathak forming human pyramid for Dahi Handi">
+                        </div>
+                        <div class="festival-info">
+                            <h3>Dahi Handi</h3>
+                            <p>Celebrating Krishna Janmashtami — Govinda pathaks (youth groups) form towering human pyramids to break an earthen pot of curd and butter strung high above the streets. Highly competitive, with large prizes. Prominent in Mumbai and Thane.</p>
+                            <span class="festival-time">August – September</span>
+                        </div>
+                    </div>
+
+                    <div class="festival-card">
+                        <div class="festival-image">
+                            <img src="assets/maharashtra/fest_sankranti.jpg" alt="Makar Sankranti celebration and kites">
+                        </div>
+                        <div class="festival-info">
+                            <h3>Makar Sankranti</h3>
+                            <p>Marking the sun's transition into Capricorn. Maharashtrians exchange Tilgul (sesame-jaggery sweets) saying "Tilgul ghya, goad goad bola" — take this tilgul and speak sweet words. Haldi-Kunku ceremonies for married women. Black clothes traditionally worn.</p>
+                            <span class="festival-time">January 14–15</span>
+                        </div>
+                    </div>
+
+                    <div class="festival-card">
+                        <div class="festival-image">
+                            <img src="assets/maharashtra/fest_pola.jpg" alt="Decorated bulls during Bail Pola festival">
+                        </div>
+                        <div class="festival-info">
+                            <h3>Pola (Bail Pola)</h3>
+                            <p>A thanksgiving festival for bulls and oxen, celebrated across Vidarbha, Marathwada, and Khandesh. Farmers bathe and decorate their bulls, paint their horns, and offer them special food. No agricultural work is performed on this day.</p>
+                            <span class="festival-time">Shravan (August)</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Art Forms -->
+        <!-- ═══════ Art Forms ═══════ -->
         <section id="art-forms" class="content-section">
             <div class="section-header">
                 <h2 class="section-title">
@@ -186,15 +374,19 @@
                 <h3 class="subsection-title">Dance</h3>
                 <div class="art-showcase">
                     <div class="showcase-image">
-                        <img src="[Dance Image]" alt="Traditional Dance">
+                        <img src="assets/maharashtra/dance_lavani.jpg" alt="Lavani folk dance performance in traditional Nauvari attire">
                     </div>
                     <div class="showcase-content">
-                        <p>[Dance form description from provided data]</p>
+                        <p>Maharashtra's dance traditions range from the sophisticated <strong>Lavani</strong> to devotional ritual performances. Lavani has two forms: <em>Nirguni</em> (philosophical, rooted in spiritual discourse) and <em>Shringari</em> (expressive, celebratory). It is performed in two formats — <em>Dholki Farad</em> (fast-paced, public) and <em>Baithakichi</em> (seated, intimate, expression-focused). <strong>Tamasha</strong>, the travelling folk theatre, combines the Gan (invocation), Gondhal, Batavya (comedy), and Vag (main play) — traditionally performed by Mahar, Mang, and Kolhati communities.</p>
                         <div class="highlight-box">
-                            <strong>Key Characteristics:</strong>
+                            <strong>Key Dance Forms:</strong>
                             <ul>
-                                <li>[Characteristic 1]</li>
-                                <li>[Characteristic 2]</li>
+                                <li><strong>Lavani & Tamasha</strong> — Maharashtra's signature performance art (performers: Mangala Bansode, Yamunabai Waikar)</li>
+                                <li><strong>Koli Dance</strong> — Fisherfolk dance from Konkan; movements mimic rowing and fishing</li>
+                                <li><strong>Dhangari Gaja</strong> — Shepherd dance honoring deity Biruba, featuring heavy drumming</li>
+                                <li><strong>Lezim</strong> — Group exercise-dance with a jingling wooden instrument; core to Ganesh festival processions</li>
+                                <li><strong>Gondhal</strong> — Ritual performance dedicated to Goddesses Tulja Bhavani and Renuka</li>
+                                <li><strong>Tarpa Dance</strong> — Warli tribal dance; men and women spiral around the Tarpa player</li>
                             </ul>
                         </div>
                     </div>
@@ -206,14 +398,14 @@
                 <h3 class="subsection-title">Music</h3>
                 <div class="art-showcase reverse">
                     <div class="showcase-content">
-                        <p>[Music tradition description from provided data]</p>
+                        <p>Maharashtra's musical heritage spans from ancient devotional poetry to Hindustani classical traditions. <strong>Abhang</strong> — devotional verses by Varkari saints like Tukaram and Dnyaneshwar — remain central to the cultural identity. <strong>Powada</strong> are warrior ballads celebrating Maratha heroism, composed by Shahirs (bards). <strong>Natya Sangeet</strong>, unique to Marathi theatre, integrates classical and semi-classical music into plays. The state has been a stronghold for the <strong>Kirana Gharana</strong> (Bhimsen Joshi) and <strong>Jaipur-Atrauli Gharana</strong> (Kishori Amonkar).</p>
                         <div class="cultural-quote">
                             <i class="fas fa-quote-left"></i>
-                            <p>[Cultural significance quote]</p>
+                            <p>Instruments of Maharashtra: Dholki, Sambal, Halgi, Tasha, Tutari, Ektara, Taal, Mridanga, Tarpa, Chipri, and Talya (cymbals) — each tied to a specific tradition, from the battlefield Powada to the pilgrim's Abhang.</p>
                         </div>
                     </div>
                     <div class="showcase-image">
-                        <img src="[Music Image]" alt="Traditional Music">
+                        <img src="assets/maharashtra/music_dhol_tasha.jpg" alt="Dhol Tasha troupe performance in Pune">
                     </div>
                 </div>
             </div>
@@ -223,10 +415,17 @@
                 <h3 class="subsection-title">Painting</h3>
                 <div class="art-gallery">
                     <div class="gallery-item">
-                        <img src="[Painting Image 1]" alt="Traditional Painting">
-                        <p class="gallery-caption">[Painting style from provided data]</p>
+                        <img src="assets/maharashtra/paint_warli.jpg" alt="Warli tribal wall painting from Palghar">
+                        <p class="gallery-caption"><strong>Warli Painting</strong> — GI-tagged geometric art by the Warli tribe of Palghar. Rice paste on mud walls; motifs include circles (sun/moon), triangles (mountains), squares (chauk — sacred enclosure), and the Tarpa dance. Originally ritualistic, globalized by Jivya Soma Mashe.</p>
                     </div>
-                    <!-- More gallery items from provided data -->
+                    <div class="gallery-item">
+                        <img src="assets/maharashtra/paint_ajanta_fresco.jpg" alt="Ajanta Cave 1 Padmapani Bodhisattva mural">
+                        <p class="gallery-caption"><strong>Ajanta Frescoes</strong> — Buddhist mural masterpieces (2nd century BCE – 6th century CE) depicting Jataka tales and the iconic Padmapani and Vajrapani figures. UNESCO World Heritage Site.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/maharashtra/paint_gond.jpg" alt="Gond tribal art painting">
+                        <p class="gallery-caption"><strong>Gond Art</strong> — Vibrant paintings by the Gond tribe of Vidarbha, characterized by intricate dots, dashes, and bold colors depicting flora, fauna, and folklore. Distinct from Warli in both style and cultural origin.</p>
+                    </div>
                 </div>
             </div>
 
@@ -235,16 +434,35 @@
                 <h3 class="subsection-title">Crafts</h3>
                 <div class="craft-grid">
                     <div class="craft-card">
-                        <img src="[Craft Image]" alt="Traditional Craft">
-                        <h4>[Craft Name]</h4>
-                        <p>[Craft description from provided data]</p>
+                        <img src="assets/maharashtra/craft_paithani.jpg" alt="Traditional Paithani silk handloom weaving">
+                        <h4>Paithani Weaving</h4>
+                        <p>Silk + zari tapestry weaving (Kadiyal technique) from Paithan and Yeola. Peacock (Bangadi-mor), lotus (Kamal), and parrot (Tota-maina) motifs. GI Tagged. Satavahana-era origins.</p>
                     </div>
-                    <!-- More craft cards from provided data -->
+                    <div class="craft-card">
+                        <img src="assets/maharashtra/craft_kolhapuri.jpg" alt="Handcrafted Kolhapuri leather chappals">
+                        <h4>Kolhapuri Chappals</h4>
+                        <p>Hand-crafted leather footwear dyed with vegetable dyes and stitched with leather cords — no nails used. GI Tagged, shared between Maharashtra and Karnataka.</p>
+                    </div>
+                    <div class="craft-card">
+                        <img src="assets/maharashtra/craft_sawantwadi.jpg" alt="Traditional Sawantwadi lacquered wooden craft">
+                        <h4>Sawantwadi Crafts</h4>
+                        <p>Wooden toys, Ganjifa (circular hand-painted playing cards), and lacquerware from Sindhudurg. Once royally patronized, Ganjifa cards are now near extinction.</p>
+                    </div>
+                    <div class="craft-card">
+                        <img src="assets/maharashtra/craft_himroo.jpg" alt="Intricate Himroo weaving from Aurangabad">
+                        <h4>Himroo Weaving</h4>
+                        <p>Cotton-silk blend with intricate floral designs from Aurangabad, linked to the Tughlaq era. A luxury textile tradition that once competed with Persian brocades.</p>
+                    </div>
+                    <div class="craft-card">
+                        <img src="assets/maharashtra/craft_chitrakatha.jpg" alt="Pinguli Chitrakatha traditional storytelling art">
+                        <h4>Pinguli Chitrakatha</h4>
+                        <p>Endangered storytelling art using handmade paintings and puppetry depicting Ramayana/Mahabharata. Practiced by the Thakar community in Pinguli village, Sindhudurg — now only a few families remain.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Cuisine -->
+        <!-- ═══════ Cuisine ═══════ -->
         <section id="cuisine" class="content-section">
             <div class="section-header">
                 <h2 class="section-title">
@@ -254,28 +472,99 @@
             </div>
             <div class="section-content">
                 <div class="cuisine-intro">
-                    <p>[Culinary tradition introduction from provided data]</p>
+                    <p>Maharashtra's cuisine is shaped by its five distinct regions — the coconut-and-seafood-rich Konkan coast, the peanut-and-jaggery flavors of the western Desh plateau, the fiery spice of Kolhapur and Vidarbha, the millet-based Marathwada diet, and the Khandeshi love of dry coconut and peanuts. Street food culture thrives in Mumbai, while festival foods carry deep ritual significance.</p>
                 </div>
                 <div class="food-grid">
+
                     <div class="food-card">
                         <div class="food-image">
-                            <img src="[Food Image]" alt="Traditional Dish">
+                            <img src="assets/maharashtra/food_vada_pav.jpg" alt="Mumbai Vada Pav with spicy chutneys">
                         </div>
                         <div class="food-details">
-                            <h4>[Dish Name]</h4>
-                            <p>[Dish description from provided data]</p>
+                            <h4>Vada Pav</h4>
+                            <p>Mumbai's iconic street food — originated in the 1960s–70s as a quick, affordable meal for mill workers. A spiced potato fritter in a pav bun with chutneys.</p>
                             <div class="food-tags">
-                                <span class="tag">[Category]</span>
-                                <span class="tag">[Type]</span>
+                                <span class="tag">Street Food</span>
+                                <span class="tag">Mumbai</span>
                             </div>
                         </div>
                     </div>
-                    <!-- More food cards from provided data -->
+
+                    <div class="food-card">
+                        <div class="food-image">
+                            <img src="assets/maharashtra/food_misal_pav.jpg" alt="Traditional Misal Pav served with farsan and lemon">
+                        </div>
+                        <div class="food-details">
+                            <h4>Misal Pav</h4>
+                            <p>Spicy sprouted lentil curry served with pav. Three regional styles: Puneri (milder, sweeter), Kolhapuri (very spicy), and Nashik. Both Pune and Kolhapur claim the authentic origin.</p>
+                            <div class="food-tags">
+                                <span class="tag">Spicy</span>
+                                <span class="tag">Desh Region</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <div class="food-image">
+                            <img src="assets/maharashtra/food_modak.jpg" alt="Steamed Ukdiche Modak with coconut-jaggery filling">
+                        </div>
+                        <div class="food-details">
+                            <h4>Ukdiche Modak</h4>
+                            <p>Steamed sweet dumplings — rice flour shell with a filling of fresh coconut and jaggery, flavored with cardamom. Central to the Ganesh Chaturthi festival.</p>
+                            <div class="food-tags">
+                                <span class="tag">Festival Food</span>
+                                <span class="tag">Sweet</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <div class="food-image">
+                            <img src="assets/maharashtra/food_puran_poli.jpg" alt="Puran Poli sweet flatbread served with ghee">
+                        </div>
+                        <div class="food-details">
+                            <h4>Puran Poli</h4>
+                            <p>Sweet flatbread stuffed with chana dal and jaggery filling, flavored with cardamom. Essential festival food for Holi and Gudi Padwa celebrations.</p>
+                            <div class="food-tags">
+                                <span class="tag">Festival Food</span>
+                                <span class="tag">Statewide</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <div class="food-image">
+                            <img src="assets/maharashtra/food_kolhapuri_rassa.jpg" alt="Kolhapuri Tambda and Pandhra Rassa">
+                        </div>
+                        <div class="food-details">
+                            <h4>Tambda & Pandhra Rassa</h4>
+                            <p>Kolhapur's signature duo — Tambda Rassa is a fiery red spicy mutton broth, while Pandhra Rassa is a milder white broth. Served together, they define Kolhapuri cuisine.</p>
+                            <div class="food-tags">
+                                <span class="tag">Non-Veg</span>
+                                <span class="tag">Kolhapur</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="food-card">
+                        <div class="food-image">
+                            <img src="assets/maharashtra/food_sol_kadhi.jpg" alt="Sol Kadhi kokum and coconut milk beverage">
+                        </div>
+                        <div class="food-details">
+                            <h4>Sol Kadhi & Malvani Cuisine</h4>
+                            <p>Konkan's refreshing coconut milk and kokum drink, served alongside fiery Malvani fish curries, Bombil (Bombay duck) fry, and Kombdi Wade (chicken curry with multi-flour puris).</p>
+                            <div class="food-tags">
+                                <span class="tag">Coastal</span>
+                                <span class="tag">Konkan</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Traditional Clothing -->
+        <!-- ═══════ Traditional Clothing ═══════ -->
         <section id="clothing" class="content-section">
             <div class="section-header">
                 <h2 class="section-title">
@@ -285,32 +574,75 @@
             </div>
             <div class="section-content">
                 <div class="clothing-showcase">
+
                     <div class="clothing-card">
                         <div class="clothing-visual">
-                            <img src="[Traditional Clothing Image]" alt="Traditional Attire">
+                            <img src="assets/maharashtra/attire_paithani.jpg" alt="Paithani silk saree with golden zari pallu">
                         </div>
                         <div class="clothing-info">
-                            <h3>[Garment Name]</h3>
-                            <p>[Clothing description from provided data]</p>
+                            <h3>Paithani Saree</h3>
+                            <p>A 2,000-year-old handloom treasure from the Satavahana dynasty, woven in Paithan and Yeola using the Kadiyal tapestry technique. Pure silk with gold and silver zari thread, featuring iconic motifs — Bangadi-mor (peacock in bangle), Tota-maina (parrot-mynah), Asawali (vine), and Kamal (lotus).</p>
                             <div class="detail-list">
                                 <div class="detail-item">
-                                    <strong>Fabric:</strong> [Fabric type]
+                                    <strong>Fabric:</strong> Pure silk with gold/silver zari (tapestry weave)
                                 </div>
                                 <div class="detail-item">
-                                    <strong>Occasion:</strong> [When worn]
+                                    <strong>Occasion:</strong> Weddings, festivals — essential bridal trousseau
                                 </div>
                                 <div class="detail-item">
-                                    <strong>Significance:</strong> [Cultural meaning]
+                                    <strong>Significance:</strong> GI Tagged; called the 'Maha-Vastra' of Maharashtra — massive commercial revival in recent years
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- More clothing cards from provided data -->
+
+                    <div class="clothing-card">
+                        <div class="clothing-visual">
+                            <img src="assets/maharashtra/attire_nauvari.jpg" alt="Maharashtrian Nauvari 9-yard kashta saree">
+                        </div>
+                        <div class="clothing-info">
+                            <h3>Nauvari Saree (Kashta)</h3>
+                            <p>The iconic 9-yard saree draped in a trouser-like style (kashta). Historically worn by Maratha women to allow freedom of movement — enabling them to ride horses and participate in battles. Today worn during festivals, weddings, and cultural events as a symbol of Maharashtrian pride.</p>
+                            <div class="detail-list">
+                                <div class="detail-item">
+                                    <strong>Fabric:</strong> Cotton or silk, 9 yards (longer than standard 6-yard sarees)
+                                </div>
+                                <div class="detail-item">
+                                    <strong>Occasion:</strong> Festivals, weddings, Lavani performances
+                                </div>
+                                <div class="detail-item">
+                                    <strong>Significance:</strong> Embodies the martial spirit and practical ingenuity of Maratha women
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clothing-card">
+                        <div class="clothing-visual">
+                            <img src="assets/maharashtra/attire_pheta.jpg" alt="Traditional Puneri Pheta turban">
+                        </div>
+                        <div class="clothing-info">
+                            <h3>Pheta, Dhotar & Jewelry</h3>
+                            <p>The <strong>Pheta</strong> (turban) comes in several styles — the Puneri Pheta (symbol of dignity, worn by dignitaries), Kolhapuri Pheta, and Mawali Pheta. Men traditionally wear the <strong>Dhotar</strong>, an unstitched lower garment. The <strong>Gandhi Topi</strong> (white khadi cap) is a freedom-struggle icon. Traditional women's jewelry includes the <strong>Thushi</strong> (choker necklace), <strong>Kolhapuri Saaj</strong> (necklace with 21 pendant leaves), and the <strong>Nath</strong> (pearl nose ring).</p>
+                            <div class="detail-list">
+                                <div class="detail-item">
+                                    <strong>Fabric:</strong> Pheta — silk or cotton cloth; Dhotar — unstitched cotton
+                                </div>
+                                <div class="detail-item">
+                                    <strong>Occasion:</strong> Ceremonies, festivals, formal occasions
+                                </div>
+                                <div class="detail-item">
+                                    <strong>Significance:</strong> The Puneri Pheta is a mark of cultural pride; the Nath and Thushi are essential bridal jewelry
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Languages / Dialects -->
+        <!-- ═══════ Languages / Dialects ═══════ -->
         <section id="languages" class="content-section">
             <div class="section-header">
                 <h2 class="section-title">
@@ -320,19 +652,60 @@
             </div>
             <div class="section-content">
                 <div class="language-cards">
+
                     <div class="language-card">
-                        <h4>[Language/Dialect Name]</h4>
-                        <p>[Language information from provided data]</p>
+                        <h4>Marathi (मराठी)</h4>
+                        <p>Official state language with ~83 million speakers. An Indo-Aryan language written in Devanagari script (formerly Modi script), with a literary tradition dating to the 11th century. Features the distinctive retroflex 'ळ' sound.</p>
                         <div class="language-sample">
-                            <em>[Sample phrase or greeting]</em>
+                            <em>"Namaskar" (नमस्कार) — the standard greeting</em>
                         </div>
                     </div>
-                    <!-- More language cards from provided data -->
+
+                    <div class="language-card">
+                        <h4>Varhadi & Zadi Boli</h4>
+                        <p>Spoken in Vidarbha (Amravati, Akola, Wardha). Lacks the retroflex 'ळ', replacing it with 'य' or 'ल'. Retains archaic words from early Mahanubhav literature. Zadi boli powers the unique Zadipatti folk theatre tradition.</p>
+                        <div class="language-sample">
+                            <em>Region: Vidarbha — Eastern Maharashtra</em>
+                        </div>
+                    </div>
+
+                    <div class="language-card">
+                        <h4>Malvani / Konkani</h4>
+                        <p>Spoken along the south Konkan coast (Sindhudurg, Ratnagiri). Melodic intonation with Portuguese and Kannada loanwords. The soul of Malvani theatre and the Dashavatar folk drama tradition.</p>
+                        <div class="language-sample">
+                            <em>Region: Konkan Coast</em>
+                        </div>
+                    </div>
+
+                    <div class="language-card">
+                        <h4>Khandeshi / Ahirani</h4>
+                        <p>Spoken in Jalgaon, Dhule, and Nandurbar — a bridge between Marathi and Gujarati/Bhili. Rich oral tradition of Ovi songs praising agriculture and family, prominently by poet Bahinabai Chaudhari.</p>
+                        <div class="language-sample">
+                            <em>Region: North Maharashtra (Khandesh)</em>
+                        </div>
+                    </div>
+
+                    <div class="language-card">
+                        <h4>Gondi</h4>
+                        <p>A Dravidian language spoken by the Gond people in Gadchiroli and Chandrapur — completely distinct from Marathi. Contains epic oral histories like the Gond Ramayani. Status: Vulnerable, with its own script undergoing revival.</p>
+                        <div class="language-sample">
+                            <em>Family: Dravidian (not Indo-Aryan)</em>
+                        </div>
+                    </div>
+
+                    <div class="language-card">
+                        <h4>Other Languages</h4>
+                        <p><strong>Bhili & Warli</strong> (Nandurbar/Palghar) — Indo-Aryan but distinct; Warli is unwritten, passed orally. <strong>Katkari</strong> (Raigad) — highly endangered. <strong>Kolami</strong> (Yavatmal) — endangered Central Dravidian. <strong>Dakhni Urdu</strong> (Marathwada) — incorporates Marathi syntax.</p>
+                        <div class="language-sample">
+                            <em>Source: People's Linguistic Survey of India</em>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Historical Places & Monuments -->
+        <!-- ═══════ Historical Places & Monuments ═══════ -->
         <section id="monuments" class="content-section">
             <div class="section-header">
                 <h2 class="section-title">
@@ -342,26 +715,90 @@
             </div>
             <div class="section-content">
                 <div class="monument-timeline">
+
                     <div class="monument-card">
                         <div class="monument-image">
-                            <img src="[Monument Image]" alt="Historical Monument">
+                            <img src="assets/maharashtra/monument_ellora.jpg" alt="Cave 16 Kailasa Temple monolithic rock excavation at Ellora">
                         </div>
                         <div class="monument-details">
-                            <h3>[Monument Name]</h3>
-                            <span class="monument-era">[Time Period]</span>
-                            <p>[Monument description from provided data]</p>
+                            <h3>Ellora Caves</h3>
+                            <span class="monument-era">600 – 1000 CE</span>
+                            <p>34 caves representing Buddhist (Caves 1–12), Hindu (Caves 13–29), and Jain (Caves 30–34) traditions. Cave 16 — the Kailasanatha Temple — is the largest monolithic rock excavation in the world, carved top-down from a single basalt cliff.</p>
                             <div class="monument-facts">
-                                <span class="fact-badge">UNESCO Heritage</span>
-                                <span class="fact-badge">[Architectural Style]</span>
+                                <span class="fact-badge">UNESCO Heritage (1983)</span>
+                                <span class="fact-badge">Rock-Cut Architecture</span>
+                                <span class="fact-badge">Three Religions</span>
                             </div>
                         </div>
                     </div>
-                    <!-- More monument cards from provided data -->
+
+                    <div class="monument-card">
+                        <div class="monument-image">
+                            <img src="assets/maharashtra/monument_ajanta.jpg" alt="Ajanta Caves horseshoe cliff panoramic view">
+                        </div>
+                        <div class="monument-details">
+                            <h3>Ajanta Caves</h3>
+                            <span class="monument-era">2nd Century BCE – 6th Century CE</span>
+                            <p>30 Buddhist caves featuring world-renowned mural paintings (frescoes) depicting Jataka tales, with the iconic Padmapani and Vajrapani figures. Created under Satavahana and Vakataka patronage. Ongoing threats from water seepage and micro-climatic tourist impact.</p>
+                            <div class="monument-facts">
+                                <span class="fact-badge">UNESCO Heritage (1983)</span>
+                                <span class="fact-badge">Buddhist Frescoes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="monument-card">
+                        <div class="monument-image">
+                            <img src="assets/maharashtra/monument_elephanta.jpg" alt="Elephanta Caves three-headed Maheshmurti Trimurti">
+                        </div>
+                        <div class="monument-details">
+                            <h3>Elephanta Caves</h3>
+                            <span class="monument-era">5th – 8th Century CE</span>
+                            <p>Located on Gharapuri Island off Mumbai harbor, famous for the monumental Trimurti Shiva sculpture (Maheshmurti). Accessible via ferry from Gateway of India. Faces ongoing salinity, sea-breeze erosion, and tourism pressure.</p>
+                            <div class="monument-facts">
+                                <span class="fact-badge">UNESCO Heritage (1987)</span>
+                                <span class="fact-badge">Hindu (Shaivism)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="monument-card">
+                        <div class="monument-image">
+                            <img src="assets/maharashtra/monument_raigad.jpg" alt="Historic Raigad Fort ramparts in the Sahyadri mountains">
+                        </div>
+                        <div class="monument-details">
+                            <h3>Raigad Fort</h3>
+                            <span class="monument-era">Maratha Empire — 17th Century</span>
+                            <p>Capital of Chhatrapati Shivaji Maharaj's Swarajya, perched at 820 meters in the Sahyadris. A Girikot (hill fort) featuring layered fortification, the Maha Darwaja, rainwater cisterns, and the coronation durbar. ASI Protected, with state government restoration in progress.</p>
+                            <div class="monument-facts">
+                                <span class="fact-badge">ASI Protected</span>
+                                <span class="fact-badge">Girikot (Hill Fort)</span>
+                                <span class="fact-badge">Maratha Capital</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="monument-card">
+                        <div class="monument-image">
+                            <img src="assets/maharashtra/monument_csmt.jpg" alt="Chhatrapati Shivaji Maharaj Terminus Victorian Gothic architecture">
+                        </div>
+                        <div class="monument-details">
+                            <h3>CSMT & Mumbai's Architectural Ensemble</h3>
+                            <span class="monument-era">19th – 20th Century</span>
+                            <p>Chhatrapati Shivaji Maharaj Terminus (formerly Victoria Terminus) is a Victorian Gothic Revival masterpiece blended with Indian themes. Alongside it, Mumbai's Victorian and Art Deco Ensemble along Oval Maidan and Marine Drive forms a unique architectural heritage — both are UNESCO World Heritage Sites.</p>
+                            <div class="monument-facts">
+                                <span class="fact-badge">UNESCO Heritage (2004 & 2018)</span>
+                                <span class="fact-badge">Victorian Gothic</span>
+                                <span class="fact-badge">Art Deco</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Indigenous / Tribal Practices -->
+        <!-- ═══════ Indigenous / Tribal Practices ═══════ -->
         <section id="tribal" class="content-section">
             <div class="section-header">
                 <h2 class="section-title">
@@ -372,17 +809,36 @@
             <div class="section-content">
                 <div class="tribal-content">
                     <div class="tribal-block">
-                        <img src="[Tribal Image]" alt="Indigenous Practices">
+                        <img src="assets/maharashtra/tribal_warli_heritage.jpg" alt="Warli indigenous tribal cultural tradition and dance">
                         <div class="tribal-text">
-                            <p>[Tribal practices information from provided data]</p>
+                            <p>Maharashtra is home to numerous distinct indigenous communities — Warli, Gond, Bhil, Katkari, Thakar, Mahadev Koli, Kolam, Pardhi, Dhangars, and Andh — each with unique linguistic, cultural, and historical identities. These communities preserve rich oral traditions, animistic belief systems (worshipping nature spirits, Waghoba the tiger deity, ancestral spirits), distinct art forms (Warli and Gond painting), indigenous agricultural knowledge, and traditional occupations. The Katkari and Kolam communities are classified as Particularly Vulnerable Tribal Groups (PVTGs).</p>
                         </div>
                     </div>
                     <div class="practice-cards">
                         <div class="practice-card">
-                            <h4>[Practice Name]</h4>
-                            <p>[Practice description]</p>
+                            <h4>Warli Tribe — Palghar</h4>
+                            <p>Famous for geometric Warli painting (rice paste on mud walls). The Tarpa instrument drives spiral dances. Worship Waghoba (tiger deity) and celebrate the Hirwa (green) harvest festival and Bohada mask festival.</p>
                         </div>
-                        <!-- More practice cards from provided data -->
+                        <div class="practice-card">
+                            <h4>Gond Tribe — Vidarbha</h4>
+                            <p>Speak Gondi (Dravidian language). Practice vibrant Gond art. The Ghotul institution among Madia Gonds of Gadchiroli is a traditional youth dormitory where community values, music, and the Rela dance are taught.</p>
+                        </div>
+                        <div class="practice-card">
+                            <h4>Sacred Groves (Devrai)</h4>
+                            <p>Tracts of virgin forest preserved by local communities, dedicated to deities. Hunting and logging are strictly prohibited — an indigenous conservation system predating modern environmentalism.</p>
+                        </div>
+                        <div class="practice-card">
+                            <h4>Phad Irrigation System</h4>
+                            <p>A community-managed irrigation system in the Tapi river basin using check dams (bandharas) to divert river water into canals. An example of traditional water management knowledge still in use.</p>
+                        </div>
+                        <div class="practice-card">
+                            <h4>Traditional Games</h4>
+                            <p>Maharashtra codified the modern rules of Kabaddi (1920s, Pune) and Kho-Kho. Mallakhamb (pole gymnastics) originated as wrestler training under the Peshwas. Kushti (wrestling) thrives in Kolhapur's royal-patronized akhadas.</p>
+                        </div>
+                        <div class="practice-card">
+                            <h4>Bhil & Katkari Communities</h4>
+                            <p>Bhils (Dhule, Nandurbar) are known for archery tradition and the Bhagoria spring festival. The Katkari (Raigad, Thane) — a PVTG — are traditional forest dwellers known for catechu extraction and bamboo work.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -394,10 +850,10 @@
         <!-- Regional Avatar -->
         <div class="regional-avatar-container">
             <div class="avatar-display">
-                <img src="[Regional Avatar Image]" alt="Regional Cultural Guide" class="regional-avatar">
+                <img src="assets/avatars/avatar-gpt.png" alt="Maharashtra Cultural Guide" class="regional-avatar">
             </div>
             <div class="avatar-info">
-                <h3 class="avatar-region">[Region Name]</h3>
+                <h3 class="avatar-region">Maharashtra</h3>
                 <p class="avatar-subtitle">Your Cultural Guide</p>
             </div>
         </div>
@@ -406,7 +862,7 @@
         <div class="ai-guide-container">
             <div class="ai-guide-header">
                 <div class="ai-avatar">
-                    <i class="fas fa-spa"></i>
+                    <img src="assets/avatars/avatar-gpt.png" alt="Shrishti AI Guide" class="ai-avatar-img">
                 </div>
                 <div class="ai-title">
                     <h3>SHRISHTI</h3>
@@ -416,7 +872,7 @@
 
             <div class="ai-chat-area">
                 <div class="chat-intro">
-                    <p>Namaste! I'm Shrishti, your cultural companion. Ask me anything about this region's heritage, traditions, and culture.</p>
+                    <p>Namaskar! I'm Shrishti, your cultural companion. Ask me anything about Maharashtra's heritage, traditions, and culture.</p>
                 </div>
 
                 <div class="chat-messages">
@@ -427,28 +883,28 @@
                     <p class="suggestions-label">Try asking:</p>
                     <button class="suggestion-btn">
                         <i class="fas fa-comment-dots"></i>
-                        Tell me something interesting about this region
+                        What makes the Wari pilgrimage unique?
                     </button>
                     <button class="suggestion-btn">
                         <i class="fas fa-comment-dots"></i>
-                        Why is this festival important?
+                        Tell me about Warli painting
                     </button>
                     <button class="suggestion-btn">
                         <i class="fas fa-comment-dots"></i>
-                        What food should I try?
+                        What food should I try in Maharashtra?
                     </button>
                     <button class="suggestion-btn">
                         <i class="fas fa-comment-dots"></i>
-                        Tell me about the traditional art
+                        Why is Ganesh Chaturthi so important here?
                     </button>
                     <button class="suggestion-btn">
                         <i class="fas fa-comment-dots"></i>
-                        What are the famous historical places?
+                        What are the famous forts and caves?
                     </button>
                 </div>
 
                 <div class="chat-input-container">
-                    <input type="text" class="chat-input" placeholder="Ask Shrishti about this region...">
+                    <input type="text" class="chat-input" placeholder="Ask Shrishti about Maharashtra...">
                     <button class="send-btn">
                         <i class="fas fa-paper-plane"></i>
                     </button>

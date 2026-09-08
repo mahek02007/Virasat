@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <p style="font-size: 0.78rem; line-height: 1.45; color: var(--color-parchment-muted); margin-bottom: 0.85rem;">
         ${region.summary}
       </p>
-      <a href="explore.html?region=${region.id}" class="popover-explore-cta" id="popoverCtaLink">
+      <a href="${['maharashtra','odisha'].includes(region.id) ? `regional-content.html?region=${region.id}` : `explore.html?region=${region.id}`}" class="popover-explore-cta" id="popoverCtaLink">
         <span>Explore ${region.name}</span>
         <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
           <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -161,7 +161,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function navigateToRegion(regionId) {
-    // Route to explore.html?region=[id]
+    // Regions with fully-populated regional content pages
+    const regionalContentRegions = ['maharashtra', 'odisha'];
+    if (regionalContentRegions.includes(regionId)) {
+      window.location.href = `regional-content.html?region=${encodeURIComponent(regionId)}`;
+      return;
+    }
+    // All other regions route to explore.html?region=[id]
     window.location.href = `explore.html?region=${encodeURIComponent(regionId)}`;
   }
 

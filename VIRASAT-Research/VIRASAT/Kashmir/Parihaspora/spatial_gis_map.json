@@ -1,0 +1,92 @@
+{
+  "spatial_nodes": [
+    {
+      "id": "GIS_001",
+      "name": "Stupa of Cankuna (Parihaspora)",
+      "category": "Core Archaeological Structure",
+      "latitude": 34.1332,
+      "longitude": 74.6342,
+      "elevation_m": 1582,
+      "historical_period": "Karkota Dynasty (8th c. CE)",
+      "description": "Massive stone foundation plinth of the grand Buddhist stupa built by Lalitaditya's Turkic minister Cankuna.",
+      "source": "Sahni (1912-13); Kak (1933)"
+    },
+    {
+      "id": "GIS_002",
+      "name": "Chaitya of Cankuna (Parihaspora)",
+      "category": "Core Archaeological Structure",
+      "latitude": 34.1338,
+      "longitude": 74.6348,
+      "elevation_m": 1584,
+      "historical_period": "Karkota Dynasty (8th c. CE)",
+      "description": "Remains of the square Buddhist Chaitya hall featuring an enormous 80-ton monolithic stone floor slab.",
+      "source": "Sahni (1912-13); Kak (1933)"
+    },
+    {
+      "id": "GIS_003",
+      "name": "Rajavihara Monastery (Parihaspora)",
+      "category": "Core Archaeological Structure",
+      "latitude": 34.1325,
+      "longitude": 74.6355,
+      "elevation_m": 1580,
+      "historical_period": "Karkota Dynasty (8th c. CE)",
+      "description": "Cellular quadrangle monastery layout with central open courtyard and surrounding monk cells.",
+      "source": "Sahni (1912-13); Kak (1933)"
+    },
+    {
+      "id": "GIS_004",
+      "name": "Parihaskeshava Vishnu Temple Plinth",
+      "category": "Core Archaeological Structure",
+      "latitude": 34.1315,
+      "longitude": 74.633,
+      "elevation_m": 1578,
+      "historical_period": "Karkota Dynasty (8th c. CE)",
+      "description": "Ruined plinth of the imperial state Vishnu temple commissioned by Emperor Lalitaditya Muktapida.",
+      "source": "Rajatarangini IV.195; Kak (1933)"
+    },
+    {
+      "id": "GIS_005",
+      "name": "Sugandhesa & Avantisvamin Temples (Pattan)",
+      "category": "Related Historical Site",
+      "latitude": 34.1678,
+      "longitude": 74.5561,
+      "elevation_m": 1565,
+      "historical_period": "Utpala Dynasty (9th c. CE)",
+      "description": "Royal temple complex built by King Shankaravarman partly using quarried stone from Parihaspora.",
+      "source": "Kak (1933)"
+    },
+    {
+      "id": "GIS_006",
+      "name": "Martand Sun Temple",
+      "category": "Related Historical Site",
+      "latitude": 33.7461,
+      "longitude": 75.2208,
+      "elevation_m": 1700,
+      "historical_period": "Karkota Dynasty (8th c. CE)",
+      "description": "Masterpiece Kashmiri Sun Temple built by Lalitaditya Muktapida contemporaneously with Parihaspora.",
+      "source": "Kak (1933); Goetz (1969)"
+    },
+    {
+      "id": "GIS_007",
+      "name": "Pandrethan Temple (Srinagar)",
+      "category": "Related Historical Site",
+      "latitude": 34.0489,
+      "longitude": 74.8464,
+      "elevation_m": 1590,
+      "historical_period": "10th c. CE",
+      "description": "Well-preserved Kashmiri style stone temple situated in a tank, reflecting evolved Parihaspora style masonry.",
+      "source": "Kak (1933)"
+    },
+    {
+      "id": "GIS_008",
+      "name": "Sri Pratap Singh (SPS) Museum (Srinagar)",
+      "category": "Museum & Archival Repository",
+      "latitude": 34.0722,
+      "longitude": 74.8115,
+      "elevation_m": 1585,
+      "historical_period": "Modern / Repository",
+      "description": "State museum housing stone sculptures, relief carvings, and coins recovered from Parihaspora excavations.",
+      "source": "SPS Museum Records"
+    }
+  ]
+}
