@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show celebratory feedback toast
     if (welcomeToast && toastTitle && toastDesc) {
       toastTitle.textContent = `Welcome, Explorer! (Guest Mode)`;
-      toastDesc.textContent = `Access granted to all 28 States & 8 UTs. Unlocking cultural journeys...`;
+      toastDesc.textContent = `Access granted to all 28 States & 8 UTs. Entering Cultural Atlas...`;
       welcomeToast.classList.add('show');
 
       // Auto-hide toast after 4.5 seconds
@@ -123,6 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Play subtle chime if audio is enabled
     playChimeEffect();
+
+    // Smooth transition into Cultural Atlas Home Page
+    setTimeout(() => {
+      window.location.href = 'home.html';
+    }, 1200);
   }
 
   // Bind all "Continue as Guest" triggers
@@ -145,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (welcomeToast && toastTitle && toastDesc) {
         toastTitle.textContent = `Welcome back to Virasat!`;
-        toastDesc.textContent = `Signed in as ${email}. Syncing your cultural journey...`;
+        toastDesc.textContent = `Signed in as ${email}. Entering Cultural Atlas...`;
         welcomeToast.classList.add('show');
 
         setTimeout(() => {
@@ -153,6 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4500);
       }
       playChimeEffect();
+
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 1200);
     });
   }
 
