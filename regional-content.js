@@ -10,10 +10,11 @@ const REGIONAL_DATA = {
         heroImageAlt: "Panoramic view of Ajanta Caves and Sahyadri landscape",
         categoryChips: ["History", "Festivals", "Art", "Cuisine", "Clothing", "5 UNESCO Sites", "36 Districts"],
         navTitle: "Explore Maharashtra",
+        exploreHeading: "Explore Maharashtra's Heritage",
         intro: "Maharashtra, India's third-largest state, is a land of extraordinary diversity — from the lush Sahyadri mountains and the 720-km Konkan coastline to the expansive Deccan plateau. Formed on May 1, 1960, it carries the legacy of the great Maratha warrior Chhatrapati Shivaji Maharaj, a rich tradition of saint-poets like Dnyaneshwar and Tukaram, and five UNESCO World Heritage Sites. Its culture is a dynamic synthesis of ancient cave art, vibrant festivals like Ganesh Chaturthi, martial traditions, and the Bhakti movement's egalitarian philosophy.",
         
         avatar: {
-            image: "assets/avatars/avatar-gpt.png",
+            image: "assets/maharashtra/avatar_maharashtra.jpg",
             title: "Maharashtra",
             subtitle: "Your Cultural Guide"
         },
@@ -421,10 +422,11 @@ const REGIONAL_DATA = {
         heroImageAlt: "Panoramic view of Shree Jagannath Temple and Puri coastline",
         categoryChips: ["History", "Festivals", "Art", "Cuisine", "Clothing", "Kalinga Architecture", "Puri District Focus"],
         navTitle: "Explore Odisha (Puri)",
+        exploreHeading: "Explore Odisha's Heritage",
         intro: "Puri, the sacred coastal headquarters of Puri district in eastern Odisha, is one of Hinduism's cardinal Char Dham pilgrimage centers and the spiritual vortex of the realm historically known as Purushottama Kshetra. Centered upon the monumental 12th-century Shree Jagannath Temple, the region is internationally celebrated for the annual Rath Yatra (Chariot Festival), the world's largest traditional temple kitchen (Roshaghara), classical Odissi dance, and master artisan settlements like the heritage village of Raghurajpur. Its culture represents an ancient, living continuum where Vedic, Shakta, and indigenous Sabara tribal traditions merge under the sovereign canopy of Lord Jagannath. (Note: Research grounded in available Puri district corpus).",
         
         avatar: {
-            image: "assets/avatars/avatar-gpt.png",
+            image: "assets/odisha/avatar_odisha.jpg",
             title: "Odisha (Puri)",
             subtitle: "Your Cultural Guide"
         },
@@ -882,6 +884,17 @@ function initializeRegionSwitcher() {
             }
         });
     });
+
+    // Handle browser back/forward navigation
+    window.addEventListener('popstate', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const regionParam = (urlParams.get('region') || urlParams.get('state') || '').toLowerCase();
+        const targetRegion = (regionParam === 'odisha' || regionParam === 'puri') ? 'odisha' : 'maharashtra';
+        if (targetRegion !== currentRegionKey && REGIONAL_DATA[targetRegion]) {
+            currentRegionKey = targetRegion;
+            loadRegionalContent(targetRegion);
+        }
+    });
 }
 
 // ==================== REGIONAL DATA RENDERER ==================== //
@@ -930,6 +943,11 @@ function loadRegionalContent(regionKey) {
     if (introTextEl) introTextEl.textContent = data.intro;
     
     // 5. Explore Heritage Cards
+    const exploreSectionTitle = document.querySelector('.explore-heritage-section .section-title');
+    if (exploreSectionTitle) {
+        exploreSectionTitle.innerHTML = `<i class="fas fa-compass"></i> ${data.exploreHeading || "Explore " + data.name + "'s Heritage"}`;
+    }
+
     const exploreGrid = document.querySelector('.explore-grid');
     if (exploreGrid && data.exploreCards) {
         exploreGrid.innerHTML = data.exploreCards.map(card => `
@@ -1183,6 +1201,13 @@ function loadRegionalContent(regionKey) {
         initializeSuggestions();
     }
     
+    // Update Chatbot input placeholder & clear input
+    const chatInput = document.querySelector('.chat-input');
+    if (chatInput) {
+        chatInput.placeholder = `Ask Shrishti about ${data.name}...`;
+        chatInput.value = '';
+    }
+
     // Clear previous chat messages when switching region
     const chatMessages = document.querySelector('.chat-messages');
     if (chatMessages) {
