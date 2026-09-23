@@ -1,0 +1,27 @@
+@import url('../regional-content.css');
+
+body:not(.regional-route) {
+  display: block;
+  grid-template-columns: none;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body.regional-route {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr var(--right-panel-width);
+}
+
+body.regional-route > #root {
+  display: contents;
+}
+
+@media (max-width: 1150px) {
+  body.regional-route {
+    grid-template-columns: 1fr;
+  }
+}
+
+.regional-page {
+  display: contents;
+}

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Virasat — System Architecture</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #E8E2D8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 32px;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .slide {
+    /* 16:9 aspect ratio */
+    width: 1280px;
+    height: 720px;
+    background: #F7F2EA;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  svg {
+    display: block;
+    width: 1280px;
+    height: 720px;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1280 720"
+     font-family="'Inter', system-ui, sans-serif">
+
+<!-- ═══════════════════════════════════════════════════════════════
+  PALETTE
+  bg            #F7F2EA   warm ivory
+  card-cream    #FDFAF5
+  card-warm     #FAF6EE
+  card-blue     #EDF5FB
+  hdr-tan       #D9CFBA
+  hdr-brn       #C8BC A4  (accent for backend/vercel)
+  hdr-blue      #A4C9DE
+  hdr-blue-dk   #7AAFC8
+  pill-tan      #E8DFCC
+  pill-blue     #C0D9EC
+  brd-lt        #C7B89E
+  brd-brn       #9C8361
+  brd-blue      #2B5F7A
+  txt-brn       #38291A
+  txt-pill      #4C3B28
+  txt-blue      #0C2D44
+  arr-brn       #8A6F4C
+  arr-blue      #2B5F7A
+  gold          #C3A85A
+  muted         #8A7D6E
+  vercel-brd    #4A4035   dashed boundary
+═══════════════════════════════════════════════════════════════ -->
+
+<defs>
+  <!-- Brown arrowhead -->
+  <marker id="ab"  viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0,1 L9,5 L0,9 Z" fill="#8A6F4C"/>
+  </marker>
+  <marker id="abs" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M0,1 L9,5 L0,9 Z" fill="#8A6F4C"/>
+  </marker>
+  <!-- Blue arrowhead -->
+  <marker id="abl"  viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0,1 L9,5 L0,9 Z" fill="#2B5F7A"/>
+  </marker>
+  <marker id="abls" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M0,1 L9,5 L0,9 Z" fill="#2B5F7A"/>
+  </marker>
+
+  <!-- Card shadow -->
+  <filter id="sh" x="-5%" y="-5%" width="110%" height="118%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1A0E04" flood-opacity=".09"/>
+  </filter>
+
+  <!-- Vercel boundary dash pattern handled inline -->
+</defs>
+
+<!-- ── PAGE FILL ─────────────────────────────────────────────── -->
+<rect width="1280" height="720" fill="#F7F2EA"/>
+
+<!-- ══ TOP LABEL: diagram title ═══════════════════════════════ -->
+<text x="640" y="34" text-anchor="middle"
+      font-size="13" font-weight="700" letter-spacing="3.5" fill="#38291A">VIRASAT</text>
+<text x="640" y="50" text-anchor="middle"
+      font-size="8.5" fill="#8A7D6E" letter-spacing=".6">System Architecture  ·  Interactive Cultural Discovery Platform  ·  SIH 2026</text>
+<line x1="80" y1="58" x2="1200" y2="58" stroke="#C3A85A" stroke-width=".8" opacity=".55"/>
+
+
+<!-- ════════════════════════════════════════════════════════════
+  LAYOUT MAP (all x,y refer to top-left of each element)
+
+  Total usable area:  x=80..1200,  y=68..700
+
+  Column centres (landscape, 5-column spine):
+    USER        cx = 150
+    VERCEL BOX  x=80,  w=1120,  y=68,  h=560   (dashed boundary)
+    FRONTEND    cx = 400   x=280  w=240
+    BACKEND     cx = 640   x=520  w=240
+    SUPABASE    cx = 880   x=780  w=180  (branch left)
+    RAG+GEMINI  cx = 1110  x=1020 w=180  (branch right)
+    EXPERIENCES cx = 1110  (below RAG)
+
+  Wait — the spec asks for a TOP-TO-BOTTOM flow in a 16:9 canvas.
+  Better strategy: use the full width for a centred single spine,
+  then branch at the backend level into LEFT (Supabase) and RIGHT (RAG→Gemini→AI).
+
+  CENTRED SPINE:
+    cx = 640
+    USER        cy = 100
+    VERCEL box  y = 118   h = 544   x = 200  w = 880
+    REACT       y = 140   h = 106   x = 380  w = 520   (cx=640)
+    ↓ arrow     y = 246→274
+    FASTAPI     y = 278   h = 106   x = 380  w = 520   (cx=640)
+    ↓ fork      y = 384→420
+
+    LEFT BRANCH — Supabase
+      x = 220   w = 250   y = 424   h = 134   cx = 345
+
+    RIGHT BRANCH — RAG+Gemini
+      x = 810   w = 250   y = 424   h = 134   cx = 935
+      ↓ arrow   y = 558→582
+      Gemini    x = 810   w = 250   y = 586   h = 100   cx = 935
+      ↓ arrow   y = 686→(output)
+
+    EXPERIENCES (full width under right branch)
+      x = 380   w = 520   y = 610   h = 80    cx = 640
+      (experiences are connected from Gemini only — centred under right branch + spine)
+════════════════════════════════════════════════════════════ -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+  USER NODE  (cx=640, cy=96)
+══════════════════════════════════════════════════════════ -->
+<circle cx="640" cy="94" r="20" fill="#38291A" filter="url(#sh)"/>
+<!-- head -->
+<circle cx="640" cy="87" r="6.5" fill="#F7F2EA"/>
+<!-- torso arc -->
+<path d="M629,101 Q640,96 651,101"
+      fill="none" stroke="#F7F2EA" stroke-width="2.2" stroke-linecap="round"/>
+<!-- label -->
+<text x="640" y="127" text-anchor="middle"
+      font-size="8" font-weight="700" letter-spacing="1.8" fill="#38291A">USER</text>
+
+
+<!-- ══════════════════════════════════════════════════════════
+  VERCEL DEPLOYMENT BOUNDARY
+  Dashed rounded rect, very subtle
+  x=190, y=136, w=900, h=530
+══════════════════════════════════════════════════════════ -->
+<rect x="190" y="136" width="900" height="572"
+      rx="14" fill="none"
+      stroke="#9C8361" stroke-width="1.4" stroke-dasharray="8,5"
+      opacity=".55"/>
+
+<!-- Vercel badge top-left of boundary -->
+<rect x="190" y="126" width="144" height="20" rx="4" fill="#F7F2EA"/>
+<rect x="192" y="127" width="140" height="18" rx="3"
+      fill="#38291A"/>
+<text x="262" y="139.5" text-anchor="middle"
+      font-size="8" font-weight="700" letter-spacing="1.5" fill="#F7F2EA">▲  VERCEL DEPLOYMENT</text>
+
+<!-- arrow: User → Vercel/React -->
+<line x1="640" y1="115" x2="640" y2="152"
+      stroke="#8A6F4C" stroke-width="1.8" marker-end="url(#ab)"/>
+
+
+<!-- ══════════════════════════════════════════════════════════
+  REACT FRONTEND  (x=390, y=156, w=500, h=110)
+  bottom = 266
+══════════════════════════════════════════════════════════ -->
+<rect x="390" y="156" width="500" height="110" rx="10"
+      fill="#FDFAF5" stroke="#C7B89E" stroke-width="1.5" filter="url(#sh)"/>
+<!-- header -->
+<rect x="390" y="156" width="500" height="34" rx="10" fill="#D9CFBA"/>
+<rect x="390" y="176" width="500" height="14" fill="#D9CFBA"/>
+<!-- header text -->
+<text x="524" y="178" text-anchor="middle"
+      font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#38291A">REACT FRONTEND</text>
+<!-- tech label right-aligned in header -->
+<text x="878" y="178" text-anchor="end"
+      font-size="7.5" fill="#6A5C4C" letter-spacing=".3">JavaScript  ·  HTML  ·  CSS</text>
+
+<!-- feature pills — 3 columns × 2 rows
+     pill w=138, h=20, gap-x=12, gap-y=8
+     row1 y=200, row2 y=228
+     col1 x=406, col2 x=556, col3 x=706 -->
+<rect x="406" y="200" width="138" height="20" rx="4" fill="#E8DFCC"/>
+<text x="475" y="214" text-anchor="middle" font-size="8" fill="#4C3B28">Regional Exploration</text>
+
+<rect x="556" y="200" width="138" height="20" rx="4" fill="#E8DFCC"/>
+<text x="625" y="214" text-anchor="middle" font-size="8" fill="#4C3B28">Cultural Pages</text>
+
+<rect x="706" y="200" width="138" height="20" rx="4" fill="#E8DFCC"/>
+<text x="775" y="214" text-anchor="middle" font-size="8" fill="#4C3B28">Stories &amp; Context</text>
+
+<rect x="406" y="228" width="138" height="20" rx="4" fill="#E8DFCC"/>
+<text x="475" y="242" text-anchor="middle" font-size="8" fill="#4C3B28">Guide  ·  Chat</text>
+
+<rect x="556" y="228" width="138" height="20" rx="4" fill="#E8DFCC"/>
+<text x="625" y="242" text-anchor="middle" font-size="8" fill="#4C3B28">Quizzes</text>
+
+<rect x="706" y="228" width="138" height="20" rx="4" fill="#E8DFCC"/>
+<text x="775" y="242" text-anchor="middle" font-size="8" fill="#4C3B28">AI Discovery</text>
+
+
+<!-- arrow: Frontend → Backend -->
+<line x1="640" y1="267" x2="640" y2="289"
+      stroke="#8A6F4C" stroke-width="1.8" marker-end="url(#ab)"/>
+<text x="654" y="281" font-size="7" fill="#8A7D6E">API Request</text>
+<line x1="630" y1="289" x2="630" y2="267"
+      stroke="#2B5F7A" stroke-width="1" stroke-dasharray="3.5,2.5" marker-end="url(#abls)"/>
+
+
+<!-- ══════════════════════════════════════════════════════════
+  FASTAPI BACKEND  (x=390, y=294, w=500, h=104)
+  bottom = 398
+══════════════════════════════════════════════════════════ -->
+<rect x="390" y="294" width="500" height="104" rx="10"
+      fill="#FAF6EE" stroke="#9C8361" stroke-width="1.7" filter="url(#sh)"/>
+<!-- header -->
+<rect x="390" y="294" width="500" height="34" rx="10" fill="#C8BCA4"/>
+<rect x="390" y="314" width="500" height="14" fill="#C8BCA4"/>
+<text x="524" y="316" text-anchor="middle"
+      font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#38291A">FASTAPI BACKEND</text>
+<text x="878" y="316" text-anchor="end"
+      font-size="7.5" fill="#5C4E3A" letter-spacing=".3">Python  ·  REST APIs</text>
+
+<!-- 3 pills in a row (y=336) -->
+<rect x="406" y="336" width="150" height="20" rx="4" fill="#E4DBCA"/>
+<text x="481" y="350" text-anchor="middle" font-size="8" fill="#4C3B28">REST APIs</text>
+
+<rect x="570" y="336" width="150" height="20" rx="4" fill="#E4DBCA"/>
+<text x="645" y="350" text-anchor="middle" font-size="8" fill="#4C3B28">Application Logic</text>
+
+<rect x="734" y="336" width="150" height="20" rx="4" fill="#E4DBCA"/>
+<text x="809" y="350" text-anchor="middle" font-size="8" fill="#4C3B28">Request Routing</text>
+
+<!-- note strip -->
+<rect x="406" y="364" width="478" height="18" rx="4" fill="#DDD3BC"/>
+<text x="645" y="376.5" text-anchor="middle"
+      font-size="7.5" fill="#6A5A48" letter-spacing=".2">Handles all client requests  ·  Routes to Supabase (data) and RAG pipeline (AI)</text>
+
+
+<!-- ══════════════════════════════════════════════════════════
+  FORK ROUTING from Backend bottom (y=398)
+  Backend cx = 640
+
+  Fork splits to:
+    LEFT  → Supabase   cx = 370   (x=240, w=260)
+    RIGHT → RAG        cx = 910   (x=780, w=260)
+
+  Routing:
+    vertical stem:   (640, 398) → (640, 426)
+    horizontal bar:  (370, 426) → (910, 426)
+    left drop:       (370, 426) → (370, 444)   solid brown
+    right drop:      (910, 426) → (910, 444)   dashed blue
+══════════════════════════════════════════════════════════ -->
+
+<!-- stem -->
+<line x1="640" y1="398" x2="640" y2="426"
+      stroke="#8A6F4C" stroke-width="1.6"/>
+<!-- bar -->
+<line x1="370" y1="426" x2="910" y2="426"
+      stroke="#8A6F4C" stroke-width="1.6"/>
+<!-- left drop -->
+<line x1="370" y1="426" x2="370" y2="444"
+      stroke="#8A6F4C" stroke-width="1.6" marker-end="url(#ab)"/>
+<text x="310" y="420" text-anchor="middle" font-size="7" fill="#8A7D6E">Data</text>
+<!-- right drop (dashed blue) -->
+<line x1="910" y1="426" x2="910" y2="444"
+      stroke="#2B5F7A" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#abl)"/>
+<text x="964" y="420" text-anchor="middle" font-size="7" fill="#2B5F7A">AI Context</text>
+
+
+<!-- ══════════════════════════════════════════════════════════
+  SUPABASE  (x=240, y=448, w=260, h=130)
+  cx = 370   bottom = 578
+══════════════════════════════════════════════════════════ -->
+<rect x="240" y="448" width="260" height="130" rx="10"
+      fill="#FDFAF5" stroke="#C7B89E" stroke-width="1.5" filter="url(#sh)"/>
+<!-- header -->
+<rect x="240" y="448" width="260" height="32" rx="10" fill="#D9CFBA"/>
+<rect x="240" y="466" width="260" height="14" fill="#D9CFBA"/>
+<text x="370" y="468.5" text-anchor="middle"
+      font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#38291A">SUPABASE</text>
+
+<!-- pills -->
+<rect x="256" y="492" width="228" height="22" rx="4" fill="#E8DFCC"/>
+<text x="370" y="507" text-anchor="middle" font-size="8.5" fill="#4C3B28">PostgreSQL</text>
+
+<rect x="256" y="520" width="228" height="22" rx="4" fill="#E8DFCC"/>
+<text x="370" y="535" text-anchor="middle" font-size="8.5" fill="#4C3B28">Authentication</text>
+
+<!-- external badge -->
+<rect x="256" y="550" width="228" height="18" rx="4" fill="#EAE0CE"/>
+<text x="370" y="562.5" text-anchor="middle"
+      font-size="7" fill="#7A6A54" letter-spacing=".3">External hosted service</text>
+
+
+<!-- ══════════════════════════════════════════════════════════
+  RAG + GEMINI (stacked, right branch)
+
+  RAG  (x=780, y=448, w=260, h=130)   cx=910   bottom=578
+══════════════════════════════════════════════════════════ -->
+<rect x="780" y="448" width="260" height="130" rx="10"
+      fill="#EDF5FB" stroke="#2B5F7A" stroke-width="1.7" filter="url(#sh)"/>
+<!-- header -->
+<rect x="780" y="448" width="260" height="32" rx="10" fill="#A4C9DE"/>
+<rect x="780" y="466" width="260" height="14" fill="#A4C9DE"/>
+<text x="910" y="468.5" text-anchor="middle"
+      font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#0C2D44">RAG LAYER</text>
+
+<!-- pills -->
+<rect x="796" y="492" width="228" height="22" rx="4" fill="#C0D9EC"/>
+<text x="910" y="507" text-anchor="middle" font-size="8.5" fill="#0C2D44">Retrieval</text>
+
+<rect x="796" y="520" width="228" height="22" rx="4" fill="#C0D9EC"/>
+<text x="910" y="535" text-anchor="middle" font-size="8.5" fill="#0C2D44">Curated Cultural Knowledge</text>
+
+<rect x="796" y="550" width="228" height="18" rx="4" fill="#AECFE6"/>
+<text x="910" y="562.5" text-anchor="middle"
+      font-size="7" fill="#0C2D44" letter-spacing=".2">Relevant context retrieved for each query</text>
+
+
+<!-- arrow: RAG → Gemini -->
+<line x1="910" y1="579" x2="910" y2="599"
+      stroke="#2B5F7A" stroke-width="1.8" marker-end="url(#abl)"/>
+<text x="930" y="592" font-size="7" fill="#2B5F7A">Retrieved Context</text>
+
+
+<!-- ══════════════════════════════════════════════════════════
+  GEMINI API  (x=780, y=603, w=260, h=100)   cx=910   bottom=703
+══════════════════════════════════════════════════════════ -->
+<rect x="780" y="603" width="260" height="100" rx="10"
+      fill="#E4F1F9" stroke="#2B5F7A" stroke-width="2" filter="url(#sh)"/>
+<!-- header -->
+<rect x="780" y="603" width="260" height="32" rx="10" fill="#7AAFC8"/>
+<rect x="780" y="623" width="260" height="12" fill="#7AAFC8"/>
+<text x="910" y="623.5" text-anchor="middle"
+      font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#04202E">GEMINI API</text>
+<!-- sub-label -->
+<text x="910" y="636" text-anchor="middle"
+      font-size="7.5" fill="#164B62" letter-spacing=".4">Context-aware AI  ·  Google Gemini</text>
+
+<!-- pills -->
+<rect x="796" y="647" width="228" height="20" rx="4" fill="#AED4E8"/>
+<text x="910" y="661" text-anchor="middle" font-size="8" fill="#0C2D44">Response Generation</text>
+
+<rect x="796" y="674" width="228" height="20" rx="4" fill="#AED4E8"/>
+<text x="910" y="688" text-anchor="middle" font-size="8" fill="#0C2D44">Grounded Cultural Answers</text>
+
+<!-- external badge -->
+<!-- (no extra badge needed; label says Google Gemini) -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+  VIRASAT AI EXPERIENCES
+  Sits below Gemini, slightly wider to feel like the output layer
+
+  arrow from Gemini → Experiences
+  Gemini bottom = 703
+  Experiences y = 618 (left column, below split)
+
+  Actually let's align Experiences as a box that spans
+  from centre to right — same column as Gemini, slightly wider.
+  Then add a curved or elbowed line from Gemini output
+  looping back to a centred output box.
+
+  BETTER: place output box centred at cx=640 y=618..686
+  Connect Gemini (right, cx=910, y=703) via elbow to output.
+  Also connect Supabase (left, cx=370, y=578) via a short
+  elbow to output (for data responses).
+
+  Experiences: x=390 y=622 w=500 h=76
+══════════════════════════════════════════════════════════ -->
+
+<!-- Gemini → Experiences  (elbow: bottom of Gemini=703 → down to 714 → left to cx=640 → down into card top=622) -->
+<path d="M910,703 L910,716 L640,716 L640,624"
+      fill="none" stroke="#2B5F7A" stroke-width="1.8" marker-end="url(#abl)"/>
+<text x="796" y="713" text-anchor="middle" font-size="7" fill="#2B5F7A">AI Response</text>
+
+<!-- Supabase data → Experiences (soft dashed elbow: bottom 578 → down to 606 → right to cx=480 → into card) -->
+<path d="M370,578 L370,606 L480,606 L480,622"
+      fill="none" stroke="#8A6F4C" stroke-width="1.2"
+      stroke-dasharray="4,3" marker-end="url(#abs)"/>
+<text x="302" y="603" font-size="7" fill="#8A7D6E">Data</text>
+
+<!-- ══════════════════════════════════════════════════════════
+  VIRASAT AI EXPERIENCES  (x=390, y=622, w=500, h=76)   cx=640
+  bottom = 698
+══════════════════════════════════════════════════════════ -->
+<rect x="390" y="622" width="500" height="76" rx="10"
+      fill="#FAF6EE" stroke="#9C8361" stroke-width="1.7" filter="url(#sh)"/>
+<!-- header -->
+<rect x="390" y="622" width="500" height="32" rx="10" fill="#C8BCA4"/>
+<rect x="390" y="640" width="500" height="14" fill="#C8BCA4"/>
+<text x="640" y="642.5" text-anchor="middle"
+      font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#38291A">VIRASAT AI EXPERIENCES</text>
+
+<!-- 3 output tiles  (y=658, h=28) -->
+<!-- tile w=142, gap=15; 3×142+2×15=456; margin=(500-456)/2=22; col1 x=412 col2 x=569 col3 x=726 -->
+<rect x="412" y="658" width="142" height="28" rx="5" fill="#E4DBCA" stroke="#C7B89E" stroke-width="1"/>
+<text x="483" y="676" text-anchor="middle" font-size="8.5" font-weight="600" fill="#38291A">Virasat Guide</text>
+
+<rect x="569" y="658" width="142" height="28" rx="5" fill="#E4DBCA" stroke="#C7B89E" stroke-width="1"/>
+<text x="640" y="676" text-anchor="middle" font-size="8.5" font-weight="600" fill="#38291A">Contextual Chat</text>
+
+<rect x="726" y="658" width="142" height="28" rx="5" fill="#E4DBCA" stroke="#C7B89E" stroke-width="1"/>
+<text x="797" y="676" text-anchor="middle" font-size="8.5" font-weight="600" fill="#38291A">Recommendations</text>
+
+
+<!-- ══════════════════════════════════════════════════════════
+  LEGEND  (bottom-left, outside boundary)
+══════════════════════════════════════════════════════════ -->
+<!-- legend group background -->
+<rect x="80" y="676" width="320" height="28" rx="5" fill="#EDE6D6" opacity=".8"/>
+<line x1="93"  y1="690" x2="114" y2="690" stroke="#8A6F4C" stroke-width="1.6" marker-end="url(#ab)"/>
+<text x="118" y="694" font-size="7.5" fill="#8A7D6E">HTTP / Data flow</text>
+
+<line x1="208" y1="690" x2="229" y2="690" stroke="#2B5F7A" stroke-width="1.6" marker-end="url(#abl)"/>
+<text x="233" y="694" font-size="7.5" fill="#2B5F7A">AI / Context flow</text>
+
+<line x1="314" y1="690" x2="335" y2="690" stroke="#8A6F4C" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#abs)"/>
+<text x="339" y="694" font-size="7.5" fill="#8A7D6E">Response</text>
+
+<!-- Vercel label note bottom right -->
+<text x="1200" y="694" text-anchor="end"
+      font-size="7.5" fill="#9C8361" letter-spacing=".3">--- Vercel deployment boundary</text>
+
+<!-- brand mark bottom-right corner -->
+<text x="1200" y="708" text-anchor="end"
+      font-size="9" font-weight="700" letter-spacing="2.5" fill="#C3A85A">VIRASAT</text>
+
+</svg>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+@import url('../style.css');
+@import url('../home.css');
+
+.react-page {
+  min-height: 100vh;
+}
+
+.react-link-button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.home-page-body {
+  margin: 0;
+}
