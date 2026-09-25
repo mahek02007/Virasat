@@ -1,5 +1,9 @@
 @import url('../regional-content.css');
 
+/* =========================================================
+   REGIONAL ROUTE BASE LAYOUT (DESKTOP & TABLET STICKY)
+   ========================================================= */
+
 body:not(.regional-route) {
   display: block;
   grid-template-columns: none;
@@ -10,18 +14,345 @@ body:not(.regional-route) {
 body.regional-route {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr var(--right-panel-width);
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body.regional-route > #root {
   display: contents;
 }
 
-@media (max-width: 1150px) {
+.regional-page {
+  display: contents;
+}
+
+/* On desktop & large tablet (> 1150px):
+   Lock the viewport at body level so only the center column scrolls.
+   The sidebar and right-panel become naturally full-height fixed columns. */
+@media (min-width: 1151px) {
+  /* Constrain the body to the viewport so scrolling happens per-column */
   body.regional-route {
-    grid-template-columns: 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Left sidebar: full viewport height, scrolls its own content */
+  body.regional-route .cultural-sidebar {
+    position: relative;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    flex-shrink: 0;
+  }
+
+  /* Right panel: full viewport height, scrolls its own content */
+  body.regional-route .right-panel {
+    position: relative;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    flex-shrink: 0;
+  }
+
+  /* Center column: the only scrollable area on desktop */
+  body.regional-route .main-content {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 
-.regional-page {
-  display: contents;
+/* =========================================================
+   REGIONAL PAGE RESPONSIVE COLLAPSIBLE / DRAWER SYSTEM (<= 1150px)
+   Keeps both left navigation and right cultural assistant accessible
+   without cluttering or breaking the single-column content flow
+   ========================================================= */
+
+@media (max-width: 1150px) {
+  body.regional-route {
+    display: block;
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Left sidebar drawer */
+  body.regional-route .cultural-sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 290px;
+    max-width: 85vw;
+    height: 100vh;
+    z-index: 1200;
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.4);
+    transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    background: linear-gradient(180deg, var(--ei-olive-dark) 0%, var(--ei-olive) 100%);
+  }
+
+  body.regional-route .cultural-sidebar.open {
+    left: 0;
+  }
+
+  /* Right Cultural Assistant / Chatbot drawer */
+  body.regional-route .right-panel {
+    position: fixed;
+    top: 0;
+    right: -360px;
+    width: 330px;
+    max-width: 88vw;
+    height: 100vh;
+    z-index: 1200;
+    box-shadow: -4px 0 25px rgba(0, 0, 0, 0.4);
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    background: linear-gradient(180deg, var(--ei-bg-cream) 0%, var(--ei-bg-parchment) 100%);
+    border-left: 2px solid var(--ei-taupe);
+    border-top: none;
+    overflow-y: auto;
+  }
+
+  body.regional-route .right-panel.open {
+    right: 0;
+  }
+
+  /* Prevent body scrolling when a drawer is open */
+  body.regional-drawer-open {
+    overflow: hidden;
+  }
+}
+
+/* ── Mobile Action Bar & Backdrop ── */
+.mobile-regional-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 20, 14, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1150;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.mobile-regional-backdrop.active {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-regional-bar {
+  display: none;
+}
+
+@media (max-width: 1150px) {
+  .mobile-regional-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    position: fixed;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1100;
+    background: rgba(26, 21, 16, 0.92);
+    border: 1px solid var(--ei-taupe);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+    border-radius: var(--radius-full);
+    padding: 0.35rem 0.65rem;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .mobile-bar-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0.95rem;
+    border-radius: var(--radius-full);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-bar-btn-sidebar {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--ei-taupe-light);
+    border: 1px solid rgba(214, 204, 179, 0.25);
+  }
+
+  .mobile-bar-btn-sidebar:hover,
+  .mobile-bar-btn-sidebar:active {
+    background: var(--ei-olive);
+    color: #fff;
+    border-color: var(--ei-taupe);
+  }
+
+  .mobile-bar-btn-chat {
+    background: linear-gradient(135deg, var(--ei-terracotta) 0%, var(--ei-ochre) 100%);
+    color: #fff;
+    border: 1px solid rgba(255, 230, 160, 0.4);
+    box-shadow: 0 2px 10px rgba(151, 87, 44, 0.35);
+  }
+
+  .mobile-bar-btn-chat:hover,
+  .mobile-bar-btn-chat:active {
+    transform: scale(1.03);
+    box-shadow: 0 4px 14px rgba(151, 87, 44, 0.5);
+  }
+
+  /* Hide default floating toggle in favor of cohesive dual-action pill bar */
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   REGIONAL PAGE MOBILE RESPONSIVE ENHANCEMENTS
+   (Targeting 360px, 390px, 412px, up to 768px tablet)
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .regional-page,
+  .main-content {
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .main-content {
+    padding: 1.25rem 0.85rem 5.5rem; /* bottom padding so content isn't obscured by mobile action bar */
+  }
+
+  .regional-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .header-content {
+    padding: 1.8rem 1.2rem 1.4rem;
+  }
+
+  .region-name {
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+    letter-spacing: 0.08em;
+  }
+
+  .region-tagline {
+    font-size: 0.95rem;
+  }
+
+  .header-image {
+    height: 200px;
+  }
+
+  .category-chips {
+    padding: 0.8rem 0.6rem;
+    gap: 0.4rem;
+  }
+
+  .chip {
+    padding: 0.25rem 0.7rem;
+    font-size: 0.72rem;
+  }
+
+  .intro-card {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .explore-heritage-section,
+  .content-section {
+    padding: 1.4rem 1rem 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .section-title {
+    font-size: 1.35rem;
+  }
+
+  .explore-grid,
+  .festival-grid,
+  .food-grid,
+  .craft-grid,
+  .practice-cards,
+  .language-cards,
+  .art-gallery,
+  .content-grid,
+  .art-showcase,
+  .clothing-card,
+  .monument-card,
+  .tribal-block {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  /* Right Assistant Panel inside mobile drawer adjustments */
+  .right-panel {
+    padding: 1.4rem 1rem;
+  }
+
+  .ai-assistant-container,
+  .ai-guide-container {
+    padding: 1rem 0.8rem;
+  }
+
+  .chat-box,
+  .chat-messages {
+    max-height: 280px;
+  }
+}
+
+@media (max-width: 412px) {
+  .main-content {
+    padding: 1rem 0.65rem 5.5rem;
+  }
+
+  .header-content {
+    padding: 1.4rem 0.8rem 1.2rem;
+  }
+
+  .region-name {
+    font-size: 1.65rem;
+  }
+
+  .region-tagline {
+    font-size: 0.86rem;
+  }
+
+  .intro-card {
+    padding: 1.1rem 0.9rem;
+  }
+
+  .explore-heritage-section,
+  .content-section {
+    padding: 1.2rem 0.8rem 1.4rem;
+  }
+
+  .right-panel {
+    padding: 1.2rem 0.75rem;
+  }
+
+  .mobile-regional-bar {
+    bottom: 0.85rem;
+    padding: 0.25rem 0.45rem;
+    gap: 0.45rem;
+  }
+
+  .mobile-bar-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.75rem;
+  }
 }

@@ -14,3 +14,699 @@
 .home-page-body {
   margin: 0;
 }
+
+/* =========================================================
+   VIRASAT RESPONSIVE ENHANCEMENTS FOR MOBILE VIEWPORTS
+   (Targeting 360px, 390px, 412px, up to 768px tablet)
+   Does not alter desktop UI or styling
+   ========================================================= */
+
+/* Prevent horizontal overflow globally across root and pages */
+html,
+body,
+#root,
+.react-page {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ── HEADER RESPONSIVE BEHAVIORS ── */
+@media (max-width: 768px) {
+  /* Landing Header */
+  .virasat-header {
+    padding: 0;
+  }
+
+  .virasat-header .header-container {
+    padding: 0.65rem 1rem;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  /* Keep brand logo and wordmark nicely aligned and sized */
+  .brand-link {
+    gap: 0.65rem;
+    min-width: 0;
+  }
+
+  .brand-link .home-brand-logo-frame {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .brand-link .home-brand-emblem {
+    width: 26px;
+    height: 26px;
+  }
+
+  .brand-link .home-brand-name {
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+  }
+
+  .brand-link .home-brand-sub {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+  }
+
+  .virasat-header .main-nav {
+    display: none;
+  }
+
+  .virasat-header .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .virasat-header .audio-pill-btn {
+    padding: 0.38rem 0.65rem;
+    font-size: 0.72rem;
+    gap: 0.35rem;
+  }
+
+  .virasat-header .btn-guest-quick {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+    gap: 0.35rem;
+  }
+
+  .virasat-header .btn-signin-nav {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+    gap: 0.3rem;
+  }
+
+  /* Atlas Header */
+  .home-header-container {
+    padding: 0.65rem 1rem;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .home-brand-link {
+    gap: 0.65rem;
+    min-width: 0;
+  }
+
+  .home-brand-logo-frame {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .home-brand-emblem {
+    width: 26px;
+    height: 26px;
+  }
+
+  .home-brand-name {
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+  }
+
+  .home-brand-sub {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+  }
+
+  .home-nav-links {
+    display: none;
+  }
+
+  .home-header-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    order: 3;
+    margin-top: 0.2rem;
+  }
+
+  .home-header-actions .audio-pill-btn {
+    align-self: flex-end;
+    margin-top: -2.7rem;
+    padding: 0.38rem 0.65rem;
+    font-size: 0.72rem;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .search-wrapper:focus-within {
+    width: 100%;
+  }
+
+  .search-input-box {
+    width: 100%;
+    padding: 0.45rem 0.85rem;
+  }
+
+  .search-results-dropdown {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .virasat-header .header-actions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.4rem;
+    margin-top: 0.2rem;
+  }
+
+  .virasat-header .header-actions .btn-guest-quick {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .virasat-header .header-actions .btn-signin-nav {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* ── LANDING HERO SECTION RESPONSIVE BEHAVIORS ── */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1.5rem 1rem 4.5rem;
+    min-height: calc(100vh - 65px);
+  }
+
+  .hero-content-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-sky-identity {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .devanagari-sky-badge {
+    padding: 0.25rem 0.8rem;
+    gap: 0.4rem;
+  }
+
+  .devanagari-sky-badge .devanagari-text {
+    font-size: 1.05rem;
+  }
+
+  .sky-badge-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-title-virasat {
+    font-size: clamp(2.3rem, 11vw, 3.2rem);
+    letter-spacing: 0.14em;
+    margin: 0.3rem 0;
+  }
+
+  .hero-tagline-text {
+    font-size: 0.88rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero-cta-group {
+    width: 100%;
+    max-width: 100%;
+    gap: 0.85rem;
+  }
+
+  .btn-primary-cta {
+    width: 100%;
+    padding: 0.85rem 1.2rem;
+    justify-content: space-between;
+    gap: 0.8rem;
+    box-sizing: border-box;
+  }
+
+  .btn-primary-cta .cta-title {
+    font-size: 1.15rem;
+  }
+
+  .btn-primary-cta .cta-subtitle {
+    font-size: 0.72rem;
+  }
+
+  .btn-primary-cta .cta-icon-wrapper {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  .cta-secondary-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.55rem;
+  }
+
+  .btn-guest-subtle {
+    width: 100%;
+    justify-content: center;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.82rem;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    text-align: center;
+  }
+
+  .badge-free {
+    font-size: 0.62rem;
+    padding: 0.12rem 0.45rem;
+  }
+
+  .or-separator {
+    display: none;
+  }
+
+  .btn-signin-link {
+    font-size: 0.82rem;
+    padding: 0.2rem 0;
+  }
+
+  .scroll-cue {
+    bottom: 0.8rem;
+  }
+}
+
+/* ── LANDING PILLARS SECTION ── */
+@media (max-width: 768px) {
+  .pillars-section {
+    padding: 3.5rem 1rem 3rem;
+  }
+
+  .section-ornament-header {
+    max-width: 280px;
+    margin-bottom: 1.5rem;
+  }
+
+  .pillars-container {
+    gap: 2rem;
+  }
+
+  .pillars-intro {
+    max-width: 100%;
+  }
+
+  .section-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+
+  .section-desc {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 100%;
+  }
+
+  .pillar-card {
+    padding: 1.8rem 1.4rem 1.6rem;
+  }
+
+  .pillar-title {
+    font-size: 1.45rem;
+  }
+
+  .pillar-highlight {
+    font-size: 0.9rem;
+  }
+
+  .pillar-text {
+    font-size: 0.86rem;
+  }
+}
+
+/* ── LANDING PHILOSOPHY / SHOWCASE SECTION ── */
+@media (max-width: 768px) {
+  .project-overview-section {
+    padding: 3.5rem 1rem 3rem;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .overview-title {
+    font-size: 1.7rem;
+  }
+
+  .overview-quote {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    padding-left: 0.9rem;
+  }
+
+  .overview-paragraph {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .features-checklist {
+    gap: 0.6rem;
+  }
+
+  .check-item {
+    font-size: 0.86rem;
+    line-height: 1.4;
+  }
+
+  .overview-cta-box {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .overview-cta-box .btn-primary-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-guest-inline {
+    text-align: center;
+  }
+
+  .heritage-showcase-frame {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+  }
+
+  .frame-inner-border {
+    padding: 1.6rem 1.1rem;
+    gap: 0.9rem;
+  }
+
+  .showcase-logo-badge {
+    width: 76px;
+    height: 76px;
+    border-radius: 16px;
+    margin-bottom: 0.4rem;
+  }
+
+  .showcase-title {
+    font-size: 1.5rem;
+  }
+
+  .showcase-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+
+  .summary-pill {
+    font-size: 0.76rem;
+    padding: 0.4rem 0.65rem;
+  }
+}
+
+/* ── FOOTER RESPONSIVE BEHAVIORS ── */
+@media (max-width: 768px) {
+  .virasat-footer {
+    padding: 2.8rem 1rem 1.8rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links-group {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-mission {
+    max-width: 100%;
+    font-size: 0.84rem;
+  }
+
+  .footer-bottom-bar {
+    padding-top: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .footer-devanagari {
+    font-size: 0.88rem;
+  }
+}
+
+/* ── ATLAS / HOME PAGE RESPONSIVE BEHAVIORS ── */
+@media (max-width: 992px) {
+  .cultural-atlas-section {
+    padding: 1.5rem 1rem 2.5rem;
+    max-width: 100%;
+  }
+
+  .atlas-section-header {
+    margin-bottom: 1.2rem;
+  }
+
+  .atlas-title {
+    font-size: clamp(1.8rem, 6vw, 2.3rem);
+  }
+
+  .atlas-subtitle {
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+  }
+
+  .zone-filters-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  .zone-filter-pill {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.76rem;
+  }
+
+  .atlas-composition-layout {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 1.4rem;
+  }
+
+  .atlas-map-card {
+    padding: 1rem 0.85rem;
+    border-radius: var(--radius-md);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .map-frame-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .map-instructions-pill {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.55rem;
+  }
+
+  .map-canvas-container {
+    width: 100%;
+    border-radius: var(--radius-sm);
+  }
+
+  .map-base-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Make map beacons scale and touch-friendly on mobile viewports */
+  .beacon-core {
+    width: 26px;
+    height: 26px;
+  }
+
+  .beacon-dot {
+    width: 13px;
+    height: 13px;
+  }
+
+  .beacon-label {
+    font-size: 0.64rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  /* Region popover card constraint on mobile */
+  .region-popover-card {
+    width: min(290px, 90vw);
+    max-width: 90vw;
+    box-sizing: border-box;
+    padding: 0.9rem;
+  }
+
+  .popover-region-name {
+    font-size: 1.05rem;
+  }
+
+  .popover-tagline {
+    font-size: 0.82rem;
+  }
+
+  .popover-summary {
+    font-size: 0.78rem;
+  }
+
+  /* Pilot regions quick pills */
+  .map-quick-regions-bar {
+    gap: 0.35rem;
+  }
+
+  .quick-regions-label {
+    width: 100%;
+    margin-bottom: 0.2rem;
+  }
+
+  .quick-region-pill {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.55rem;
+  }
+
+  /* Atlas Right Column (Guides & Journey) reflow */
+  .atlas-journey-column {
+    width: 100%;
+    gap: 1.25rem;
+  }
+
+  .cultural-guides-card,
+  .journey-progress-card {
+    padding: 1.2rem 1rem;
+    border-radius: var(--radius-md);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Did You Know section reflow */
+  .did-you-know-section {
+    padding: 1.5rem 1rem 2rem;
+    max-width: 100%;
+  }
+
+  .dyk-card {
+    padding: 1.5rem 1.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .dyk-quote {
+    font-size: 1.15rem;
+  }
+
+  .dyk-description {
+    font-size: 0.88rem;
+  }
+
+  .dyk-actions {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .dyk-visual-side {
+    align-self: center;
+  }
+
+  .dyk-diya-badge {
+    width: 72px;
+    height: 72px;
+    font-size: 2.1rem;
+  }
+
+  /* Featured Heritage section reflow */
+  .featured-heritage-section {
+    padding: 1.8rem 1rem 3rem;
+    max-width: 100%;
+  }
+
+  .featured-section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .featured-title {
+    font-size: 1.7rem;
+  }
+
+  .featured-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .featured-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .heritage-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ── SMALL SCREEN FINE-TUNING (360px - 412px) ── */
+@media (max-width: 412px) {
+  .hero-title-virasat {
+    font-size: 2.25rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-tagline-text {
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+  }
+
+  .btn-primary-cta {
+    padding: 0.75rem 1rem;
+  }
+
+  .btn-primary-cta .cta-title {
+    font-size: 1.05rem;
+  }
+
+  .btn-guest-subtle {
+    font-size: 0.78rem;
+  }
+
+  .pillar-card {
+    padding: 1.5rem 1.1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+}
