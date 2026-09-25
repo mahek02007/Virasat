@@ -121,14 +121,13 @@ Virasat/
    ```
 
 2. **Open in browser**
-   - Simply open `index.html` in your browser, **or**
    - Use a local dev server for the best experience:
      ```bash
      # Using Python
      python -m http.server 8000
 
-     # Using Node.js
-     npx serve .
+     # Using ReactJs
+     npm run dev
 
      # Using VS Code
      # Install "Live Server" extension → Right-click index.html → "Open with Live Server"
