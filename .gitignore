@@ -1,3 +1,23 @@
 node_modules/
 dist/
 .vite/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.venv/
+venv/
+env/
+.env
+
+# Database files (SQLite local dev — never commit)
+*.db
+*.sqlite
+*.sqlite3
+
+# Alembic
+backend/alembic/versions/__pycache__/
