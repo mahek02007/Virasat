@@ -4,11 +4,11 @@ import data from '../data';
 import SiteHeader from '../components/SiteHeader';
 import Footer from '../components/Footer';
 import SearchBox from '../components/SearchBox';
+import useAmbience from '../hooks/useAmbience';
 
 const zones = [['all', 'All Regions'], ['north', 'Northern Valleys'], ['west', 'Western Desert & Coast'], ['central', 'Central Heartland'], ['east', 'Eastern Delta'], ['south', 'Southern Peninsula'], ['northeast', 'Northeastern Hills']];
 const pilotRegionIds = ['rajasthan', 'maharashtra', 'tamil-nadu', 'kerala', 'jammu-kashmir', 'west-bengal', 'gujarat', 'madhya-pradesh', 'odisha', 'assam'];
 
-function useAmbience() { const [playing, setPlaying] = useState(false); const context = useRef(null); const gain = useRef(null); const toggle = () => { const AudioContext = window.AudioContext || window.webkitAudioContext; if (!AudioContext) return; if (!context.current) { context.current = new AudioContext(); gain.current = context.current.createGain(); gain.current.gain.value = 0.04; gain.current.connect(context.current.destination); [138.59, 207.65, 277.18, 554.37].forEach(frequency => { const oscillator = context.current.createOscillator(); oscillator.type = 'triangle'; oscillator.frequency.value = frequency; oscillator.connect(gain.current); oscillator.start(); }); } if (context.current.state === 'suspended') context.current.resume(); gain.current.gain.value = playing ? 0.0001 : 0.04; setPlaying(value => !value); }; return [playing, toggle]; }
 
 function RegionPopover({ region, onExplore }) { if (!region) return null; let left = region.coords.x; if (left < 22) left = 22; if (left > 78) left = 78; return <div className="region-popover-card active" style={{ left: `${left}%`, top: `${region.coords.y}%` }}><div className="popover-header"><div className="popover-name-block"><span className="popover-region-name">{region.name}</span><span className="popover-devanagari">{region.devanagari || ''}</span></div><span className="popover-status-badge">{region.badge || 'Available'}</span></div><p className="popover-tagline">{region.tagline}</p><div className="popover-categories-chips">{region.categories.map(category => <span className="popover-category-chip" key={category}>{category}</span>)}</div><p className="popover-summary">{region.summary}</p><button className="popover-explore-cta" onClick={() => onExplore(region.id)}>Explore {region.name} →</button></div>; }
 
