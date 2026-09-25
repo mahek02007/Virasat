@@ -325,7 +325,8 @@ body {
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
 }
 
-.brand-link:hover .brand-full-logo {
+.brand-link:hover .brand-full-logo,
+.brand-link:hover .home-brand-logo-frame {
   transform: scale(1.04);
   filter: drop-shadow(0 4px 14px rgba(0,0,0,0.5));
 }
@@ -398,6 +399,7 @@ body {
   font-size: 0.84rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  white-space: nowrap;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
@@ -436,6 +438,7 @@ body {
   font-size: 0.84rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  white-space: nowrap;
   cursor: pointer;
   transition: all var(--transition-fast);
 }
@@ -467,7 +470,7 @@ body {
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  padding: 1.2rem 1.5rem 2.8rem;
+  padding: 1.2rem 1.5rem 5.6rem;
 }
 
 .hero-content-wrapper {
@@ -560,7 +563,7 @@ body {
 /* Hero CTA Group Positioned in Lower Foreground (Leaves Background Image & Flag Clear) */
 .hero-cta-group {
   margin-top: auto;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -737,6 +740,7 @@ body {
   color: var(--color-parchment-muted);
   transition: all var(--transition-fast);
   cursor: pointer;
+  z-index: 15;
 }
 
 .scroll-cue:hover {
@@ -921,7 +925,7 @@ body {
 .pillar-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 0.85rem;
   margin-bottom: 1.4rem;
 }
 
@@ -1906,8 +1910,14 @@ body {
     display: none; /* Keep header clean on mobile */
   }
 
+  .btn-guest-quick,
+  .btn-signin-nav {
+    font-size: 0.75rem;
+    padding: 0.45rem 0.85rem;
+  }
+
   .hero-section {
-    padding: 2.5rem 1rem 4rem;
+    padding: 2.5rem 1rem 5.5rem;
   }
 
   .hero-intro-text {

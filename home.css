@@ -189,6 +189,7 @@ body.home-page-body {
   height: 16px;
   color: var(--color-gold);
   flex-shrink: 0;
+  display: block;
 }
 
 .search-input {
@@ -199,6 +200,8 @@ body.home-page-body {
   font-family: var(--font-body);
   font-size: 0.84rem;
   outline: none;
+  padding: 0;
+  line-height: 1.25;
 }
 
 .search-input::placeholder {

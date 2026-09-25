@@ -4,20 +4,14 @@ export default function SiteHeader({ atlas = false, onAudioToggle, audioPlaying 
   return (
     <header className={atlas ? 'home-header' : 'virasat-header'} id={atlas ? 'atlasHeader' : 'mainHeader'}>
       <div className={atlas ? 'home-header-container' : 'header-container'}>
-        <Link to="/" className={atlas ? 'home-brand-link' : 'brand-link'} id="brandHomeLink" aria-label="Virasat Home">
-          {atlas ? (
-            <>
-              <div className="home-brand-logo-frame">
-                <img src="/assets/emblem_clean.png" alt="Virasat Emblem" className="home-brand-emblem" />
-              </div>
-              <div className="home-brand-text">
-                <span className="home-brand-name">VIRASAT</span>
-                <span className="home-brand-sub">The Heritage of India</span>
-              </div>
-            </>
-          ) : (
-            <img src="/assets/logo_source.jpg" alt="Virasat — Heritage of India" className="brand-full-logo" />
-          )}
+        <Link to="/" className={atlas ? 'home-brand-link' : 'brand-link home-brand-link'} id="brandHomeLink" aria-label="Virasat Home">
+          <div className="home-brand-logo-frame">
+            <img src="/assets/emblem_clean.png" alt="Virasat Emblem" className="home-brand-emblem" />
+          </div>
+          <div className="home-brand-text">
+            <span className="home-brand-name">VIRASAT</span>
+            <span className="home-brand-sub">The Heritage of India</span>
+          </div>
         </Link>
 
         <nav className={atlas ? 'home-nav-links' : 'main-nav'} aria-label="Primary Navigation">
