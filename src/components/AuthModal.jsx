@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export default function AuthModal() {
@@ -11,6 +12,9 @@ export default function AuthModal() {
     continueAsGuest,
     isConfigured
   } = useAuth();
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const [mode, setMode] = useState('signin'); // 'signin' | 'signup'
   const [email, setEmail] = useState('');
@@ -55,6 +59,11 @@ export default function AuthModal() {
         const { error } = await signInWithPassword({ email, password });
         if (error) {
           setErrorMsg(error.message || 'Failed to sign in. Please verify your credentials.');
+        } else {
+          // Redirect to atlas after successful sign-in from the landing page
+          if (location.pathname === '/') {
+            navigate('/atlas');
+          }
         }
       } else {
         const { data, error } = await signUpWithPassword({

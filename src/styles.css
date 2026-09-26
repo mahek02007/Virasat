@@ -1030,10 +1030,54 @@ body,
   color: #ffffff;
 }
 
-/* UserProfileMenu signed in avatar badge */
+/* UserProfileMenu desktop header alignment & sizing */
+/* position: relative is required so the absolute dropdown is anchored
+   to this container (right: 0 = dropdown right-edge ≡ avatar right-edge)
+   preventing right-side viewport overflow on inner / atlas pages. */
+.profile-menu-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+
+
+
+.profile-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.profile-avatar-circle {
+  flex-shrink: 0;
+}
+
 .profile-avatar-circle.signed-in {
   background: linear-gradient(135deg, #2b6cb0, #d4af37);
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.profile-label-group {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.profile-label-group .profile-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.profile-label-group .profile-role-badge {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.profile-btn svg {
+  flex-shrink: 0;
 }
 
 .profile-auth-actions {
