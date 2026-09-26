@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import maharashtraHtml from '../../maharashtra.html?raw';
 import odishaHtml from '../../odisha.html?raw';
-import { fetchRegions, fetchRegion, fetchRegionContent } from '../lib/api';
+import { fetchRegions, fetchRegion, fetchRegionContent, fetchPlaces } from '../lib/api';
+import HeritageDetailModal from '../components/HeritageDetailModal';
 import '../region.css';
 
 function extractBody(html) {
@@ -16,7 +17,7 @@ function extractBody(html) {
  * Updates regional header, devanagari title, tagline, category chips,
  * cultural intro summary, and featured explore cards.
  */
-function applyApiDataToDom(container, regionData, contentData) {
+function applyApiDataToDom(container, regionData, contentData, placesData, onOpenDetail) {
   if (!container || !regionData) return;
 
   // 1. Regional title & Devanagari script
@@ -62,15 +63,52 @@ function applyApiDataToDom(container, regionData, contentData) {
       const item = contentData[idx];
       if (!item) return;
 
-      const title = cardEl.querySelector('.card-title');
-      const desc = cardEl.querySelector('.card-desc');
-      const tag = cardEl.querySelector('.card-tag');
+      const title = cardEl.querySelector('.card-title') || cardEl.querySelector('h3');
+      const desc = cardEl.querySelector('.card-desc') || cardEl.querySelector('p');
+      const tag = cardEl.querySelector('.card-tag') || cardEl.querySelector('.explore-tag');
+      const img = cardEl.querySelector('.explore-img') || cardEl.querySelector('img');
 
       if (title && item.title) title.textContent = item.title;
       if (desc && item.summary) desc.textContent = item.summary;
       if (tag && (item.content_type || item.subtype)) {
         tag.textContent = (item.subtype || item.content_type).replace(/_/g, ' ').toUpperCase();
       }
+      if (img && item.primary_image) {
+        img.src = item.primary_image;
+      }
+
+      cardEl.style.cursor = 'pointer';
+      cardEl.onclick = (e) => {
+        e.preventDefault();
+        if (onOpenDetail) {
+          onOpenDetail({ type: 'content', slug: item.slug, initialData: item });
+        }
+      };
+    });
+  }
+
+  // 7. Historical Places & Monuments
+  if (Array.isArray(placesData) && placesData.length > 0) {
+    const monumentEls = container.querySelectorAll('.monument-card');
+    monumentEls.forEach((cardEl, idx) => {
+      const place = placesData[idx];
+      if (!place) return;
+
+      const title = cardEl.querySelector('h3');
+      const era = cardEl.querySelector('.monument-era');
+      const desc = cardEl.querySelector('p');
+
+      if (title && place.name) title.textContent = place.name;
+      if (era && place.address) era.textContent = place.address;
+      if (desc && place.description) desc.textContent = place.description;
+
+      cardEl.style.cursor = 'pointer';
+      cardEl.onclick = (e) => {
+        e.preventDefault();
+        if (onOpenDetail) {
+          onOpenDetail({ type: 'place', slug: place.slug, initialData: place });
+        }
+      };
     });
   }
 }
@@ -89,14 +127,35 @@ export default function RegionPage() {
   const [error, setError] = useState(null);
   const [regionData, setRegionData] = useState(null);
   const [contentData, setContentData] = useState([]);
+  const [placesData, setPlacesData] = useState([]);
   const [allRegions, setAllRegions] = useState([]);
+
+  const [activeDetail, setActiveDetail] = useState({
+    isOpen: false,
+    type: 'content',
+    slug: '',
+    initialData: null,
+  });
+
+  const handleOpenDetail = ({ type, slug, initialData }) => {
+    setActiveDetail({
+      isOpen: true,
+      type: type || 'content',
+      slug,
+      initialData: initialData || null,
+    });
+  };
+
+  const handleCloseDetail = () => {
+    setActiveDetail(prev => ({ ...prev, isOpen: false }));
+  };
 
   const isStaticKnown = normalizedId === 'odisha' || normalizedId === 'maharashtra';
   const source = normalizedId === 'odisha' ? odishaHtml : maharashtraHtml;
   const controller = normalizedId === 'odisha' ? '/odisha.js' : '/maharashtra.js';
   const body = useMemo(() => extractBody(source), [source]);
 
-  // Fetch backend data using GET /api/v1/regions, GET /api/v1/regions/{slug}, and GET /api/v1/regions/{slug}/content
+  // Fetch backend data using GET /api/v1/regions, GET /api/v1/regions/{slug}, GET /api/v1/regions/{slug}/content, and GET /api/v1/places
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
@@ -106,11 +165,16 @@ export default function RegionPage() {
       fetchRegions(),
       fetchRegion(normalizedId),
       fetchRegionContent(normalizedId, { limit: 50 }),
-    ]).then(([regionsRes, regionRes, contentRes]) => {
+      fetchPlaces({ region_id: normalizedId }),
+    ]).then(([regionsRes, regionRes, contentRes, placesRes]) => {
       if (cancelled) return;
 
       if (regionsRes.status === 'fulfilled') {
         setAllRegions(regionsRes.value);
+      }
+
+      if (placesRes.status === 'fulfilled' && Array.isArray(placesRes.value)) {
+        setPlacesData(placesRes.value);
       }
 
       if (regionRes.status === 'fulfilled') {
@@ -150,9 +214,9 @@ export default function RegionPage() {
   // Synchronize API data into rendered DOM elements whenever API data is ready
   useEffect(() => {
     if (!loading && !error && containerRef.current && regionData) {
-      applyApiDataToDom(containerRef.current, regionData, contentData);
+      applyApiDataToDom(containerRef.current, regionData, contentData, placesData, handleOpenDetail);
     }
-  }, [loading, error, regionData, contentData, body]);
+  }, [loading, error, regionData, contentData, placesData, body]);
 
   // Controller script and mobile responsive bar setup
   useEffect(() => {
@@ -345,10 +409,21 @@ export default function RegionPage() {
   }
 
   return (
-    <div
-      ref={containerRef}
-      className="regional-page"
-      dangerouslySetInnerHTML={{ __html: body }}
-    />
+    <>
+      <div
+        ref={containerRef}
+        className="regional-page"
+        dangerouslySetInnerHTML={{ __html: body }}
+      />
+      <HeritageDetailModal
+        isOpen={activeDetail.isOpen}
+        onClose={handleCloseDetail}
+        type={activeDetail.type}
+        slug={activeDetail.slug}
+        initialData={activeDetail.initialData}
+        onNavigatePlace={(placeSlug) => handleOpenDetail({ type: 'place', slug: placeSlug })}
+        onNavigateContent={(contentSlug) => handleOpenDetail({ type: 'content', slug: contentSlug })}
+      />
+    </>
   );
 }

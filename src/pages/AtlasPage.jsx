@@ -5,7 +5,8 @@ import SiteHeader from '../components/SiteHeader';
 import Footer from '../components/Footer';
 import SearchBox from '../components/SearchBox';
 import useAmbience from '../hooks/useAmbience';
-import { fetchRegions } from '../lib/api';
+import { fetchRegions, fetchContent, fetchPlaces } from '../lib/api';
+import HeritageDetailModal from '../components/HeritageDetailModal';
 
 const zones = [['all', 'All Regions'], ['north', 'Northern Valleys'], ['west', 'Western Desert & Coast'], ['central', 'Central Heartland'], ['east', 'Eastern Delta'], ['south', 'Southern Peninsula'], ['northeast', 'Northeastern Hills']];
 const pilotRegionIds = ['rajasthan', 'maharashtra', 'tamil-nadu', 'kerala', 'jammu-kashmir', 'west-bengal', 'gujarat', 'madhya-pradesh', 'odisha', 'assam'];
@@ -16,11 +17,14 @@ const pilotRegionIds = ['rajasthan', 'maharashtra', 'tamil-nadu', 'kerala', 'jam
 // nested `coords` object.  We keep both representations compatible here so
 // every downstream component can use the same field access pattern.
 // ---------------------------------------------------------------------------
-function normaliseRegion(r) {
+function normaliseRegion(r, fallbackRegion) {
   return {
     ...r,
     // coords object expected by AtlasMap / RegionPopover
-    coords: { x: r.coord_x ?? 50, y: r.coord_y ?? 50 },
+    coords: {
+      x: r.coord_x ?? r.coords?.x ?? fallbackRegion?.coords?.x ?? 50,
+      y: r.coord_y ?? r.coords?.y ?? fallbackRegion?.coords?.y ?? 50,
+    },
     // camelCase aliases for colour accent
     colorAccent: r.color_accent ?? null,
   };
@@ -32,9 +36,13 @@ function normaliseRegion(r) {
 // the backend is unavailable (so the atlas still renders in offline dev).
 // ---------------------------------------------------------------------------
 function useRegionsData() {
-  const staticRegions = useMemo(
-    () => (data?.regions ?? []).map(normaliseRegion),
+  const staticById = useMemo(
+    () => new Map((data?.regions ?? []).map((region) => [region.id, region])),
     []
+  );
+  const staticRegions = useMemo(
+    () => (data?.regions ?? []).map((region) => normaliseRegion(region, region)),
+    [staticById]
   );
   const [regions, setRegions] = useState(staticRegions);
   const [loading, setLoading] = useState(true);
@@ -45,7 +53,9 @@ function useRegionsData() {
     fetchRegions()
       .then((apiRegions) => {
         if (cancelled) return;
-        const normalised = apiRegions.map(normaliseRegion);
+        const normalised = apiRegions.map((region) =>
+          normaliseRegion(region, staticById.get(region.id) || staticById.get(region.slug))
+        );
         // Merge API data with static data so any region missing from the
         // backend (e.g. not yet seeded) still appears on the map.
         const apiIds = new Set(normalised.map((r) => r.id));
@@ -61,7 +71,7 @@ function useRegionsData() {
         // Keep staticRegions already set as the fallback
       });
     return () => { cancelled = true; };
-  }, []);
+  }, [staticById, staticRegions]);
 
   return { regions, loading, error };
 }
@@ -256,33 +266,198 @@ function FactSection() {
   );
 }
 
-function FeaturedSection() {
+function FeaturedSection({ onOpenDetail }) {
+  const [tab, setTab] = useState('content'); // 'content' | 'places'
+  const [contentList, setContentList] = useState([]);
+  const [placesList, setPlacesList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [usingFallback, setUsingFallback] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+
+    Promise.allSettled([
+      fetchContent({ limit: 12 }),
+      fetchPlaces(),
+    ])
+      .then(([contentRes, placesRes]) => {
+        if (cancelled) return;
+        let hasData = false;
+        if (contentRes.status === 'fulfilled' && Array.isArray(contentRes.value) && contentRes.value.length > 0) {
+          setContentList(contentRes.value);
+          hasData = true;
+        }
+        if (placesRes.status === 'fulfilled' && Array.isArray(placesRes.value) && placesRes.value.length > 0) {
+          setPlacesList(placesRes.value);
+          hasData = true;
+        }
+        if (!hasData) {
+          setUsingFallback(true);
+        }
+        setLoading(false);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setUsingFallback(true);
+        setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const renderContentCards = () => {
+    if (usingFallback || contentList.length === 0) {
+      return data.featuredHeritage.map(card => (
+        <div
+          key={card.id}
+          className="heritage-card react-heritage-clickable"
+          onClick={() => onOpenDetail({ type: 'content', slug: card.id, initialData: card })}
+          role="button"
+          tabIndex={0}
+          onKeyDown={e => {
+            if (e.key === 'Enter') onOpenDetail({ type: 'content', slug: card.id, initialData: card });
+          }}
+        >
+          <div className="card-image-box">
+            <img src={`/${card.image}`} alt={card.title} className="card-img" />
+            <span className="card-category-badge">{card.category}</span>
+          </div>
+          <div className="card-body">
+            <h3 className="card-title">{card.title}</h3>
+            <span className="card-subtitle">{card.subtitle}</span>
+            <p className="card-summary">{card.summary}</p>
+            <div className="card-footer-row">
+              <span className="card-read-time">{card.readTime}</span>
+              <span className="card-explore-arrow">Explore Details →</span>
+            </div>
+          </div>
+        </div>
+      ));
+    }
+
+    return contentList.map(item => {
+      const fallbackImg = '/assets/featured_dance.jpg';
+      const imgUrl = item.primary_image || fallbackImg;
+      return (
+        <div
+          key={item.id || item.slug}
+          className="heritage-card react-heritage-clickable"
+          onClick={() => onOpenDetail({ type: 'content', slug: item.slug, initialData: item })}
+          role="button"
+          tabIndex={0}
+          onKeyDown={e => {
+            if (e.key === 'Enter') onOpenDetail({ type: 'content', slug: item.slug, initialData: item });
+          }}
+        >
+          <div className="card-image-box">
+            <img
+              src={imgUrl.startsWith('http') || imgUrl.startsWith('/') ? imgUrl : `/${imgUrl}`}
+              alt={item.title}
+              className="card-img"
+            />
+            <span className="card-category-badge">
+              {(item.subtype || item.content_type).replace(/_/g, ' ')}
+            </span>
+          </div>
+          <div className="card-body">
+            <h3 className="card-title">{item.title}</h3>
+            <span className="card-subtitle">
+              {item.subtitle || item.period || (item.region_id && item.region_id.toUpperCase())}
+            </span>
+            <p className="card-summary">{item.summary}</p>
+            <div className="card-footer-row">
+              <span className="card-read-time">
+                {item.unesco_status ? '🏛️ UNESCO' : item.is_gi_tagged ? '🏷️ GI Tagged' : 'Living Heritage'}
+              </span>
+              <span className="card-explore-arrow">Explore Details →</span>
+            </div>
+          </div>
+        </div>
+      );
+    });
+  };
+
+  const renderPlaceCards = () => {
+    if (placesList.length === 0) {
+      return (
+        <p style={{ gridColumn: '1 / -1', textAlign: 'center', color: '#c5b49e', padding: '2rem' }}>
+          No heritage places listed yet.
+        </p>
+      );
+    }
+
+    return placesList.map(place => (
+      <div
+        key={place.id || place.slug}
+        className="heritage-card react-heritage-clickable"
+        onClick={() => onOpenDetail({ type: 'place', slug: place.slug, initialData: place })}
+        role="button"
+        tabIndex={0}
+        onKeyDown={e => {
+          if (e.key === 'Enter') onOpenDetail({ type: 'place', slug: place.slug, initialData: place });
+        }}
+      >
+        <div className="card-image-box place-card-image-box">
+          <div className="place-card-banner">
+            <span className="place-card-pin">🏛️</span>
+            <span className="place-card-region">{place.region_id?.toUpperCase()}</span>
+          </div>
+          <span className="card-category-badge">HERITAGE SITE</span>
+        </div>
+        <div className="card-body">
+          <h3 className="card-title">{place.name}</h3>
+          <span className="card-subtitle">
+            {place.address || (place.latitude != null ? `${place.latitude.toFixed(2)}° N, ${place.longitude.toFixed(2)}° E` : '')}
+          </span>
+          <p className="card-summary">{place.description || 'Sacred landmark and heritage site.'}</p>
+          <div className="card-footer-row">
+            <span className="card-read-time">Monument & Site</span>
+            <span className="card-explore-arrow">View Site Archive →</span>
+          </div>
+        </div>
+      </div>
+    ));
+  };
+
   return (
     <section className="featured-heritage-section" id="featuredHeritageSection">
       <div className="featured-section-header">
         <span className="featured-eyebrow">CURATED EXPLORATIONS</span>
-        <h2 className="featured-title">Featured Heritage</h2>
-        <p className="featured-subtitle">Explore living arts, ancient sanctums, and timeless celebrations.</p>
+        <h2 className="featured-title">Featured Heritage & Places</h2>
+        <p className="featured-subtitle">Explore living arts, ancient sanctums, and timeless celebrations from live archives.</p>
+        
+        {/* API Switcher Tabs */}
+        <div className="featured-tabs-strip">
+          <button
+            type="button"
+            className={`featured-tab-pill ${tab === 'content' ? 'active' : ''}`}
+            onClick={() => setTab('content')}
+          >
+            Living Traditions & Arts ({usingFallback ? 'Offline Archive' : contentList.length || '...'})
+          </button>
+          <button
+            type="button"
+            className={`featured-tab-pill ${tab === 'places' ? 'active' : ''}`}
+            onClick={() => setTab('places')}
+          >
+            Sacred Places & Monuments ({placesList.length || '...'})
+          </button>
+        </div>
       </div>
-      <div className="featured-cards-grid">
-        {data.featuredHeritage.map(card => (
-          <a href={card.exploreUrl} className="heritage-card" key={card.id}>
-            <div className="card-image-box">
-              <img src={`/${card.image}`} alt={card.title} className="card-img" />
-              <span className="card-category-badge">{card.category}</span>
-            </div>
-            <div className="card-body">
-              <h3 className="card-title">{card.title}</h3>
-              <span className="card-subtitle">{card.subtitle}</span>
-              <p className="card-summary">{card.summary}</p>
-              <div className="card-footer-row">
-                <span className="card-read-time">{card.readTime}</span>
-                <span className="card-explore-arrow">→</span>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
+
+      {loading ? (
+        <div style={{ textAlign: 'center', color: '#c8943b', padding: '3rem' }}>
+          <div className="heritage-loading-spinner" style={{ margin: '0 auto 1rem' }} />
+          <p>Retrieving curated heritage items from Virasat API…</p>
+        </div>
+      ) : (
+        <div className="featured-cards-grid">
+          {tab === 'content' ? renderContentCards() : renderPlaceCards()}
+        </div>
+      )}
     </section>
   );
 }
@@ -360,6 +535,26 @@ export default function AtlasPage() {
       window.location.href = `explore.html?region=${encodeURIComponent(cleanId)}`;
   };
 
+  const [activeDetail, setActiveDetail] = useState({
+    isOpen: false,
+    type: 'content',
+    slug: '',
+    initialData: null,
+  });
+
+  const handleOpenDetail = ({ type, slug, initialData }) => {
+    setActiveDetail({
+      isOpen: true,
+      type: type || 'content',
+      slug,
+      initialData: initialData || null,
+    });
+  };
+
+  const handleCloseDetail = () => {
+    setActiveDetail(prev => ({ ...prev, isOpen: false }));
+  };
+
   return (
     <div className="home-page-body react-page">
       <SiteHeader atlas onAudioToggle={toggleAudio} audioPlaying={audioPlaying} search={<SearchBox data={data} />} />
@@ -399,9 +594,18 @@ export default function AtlasPage() {
           </div>
         </section>
         <FactSection />
-        <FeaturedSection />
+        <FeaturedSection onOpenDetail={handleOpenDetail} />
       </main>
       <Footer />
+      <HeritageDetailModal
+        isOpen={activeDetail.isOpen}
+        onClose={handleCloseDetail}
+        type={activeDetail.type}
+        slug={activeDetail.slug}
+        initialData={activeDetail.initialData}
+        onNavigatePlace={(placeSlug) => handleOpenDetail({ type: 'place', slug: placeSlug })}
+        onNavigateContent={(contentSlug) => handleOpenDetail({ type: 'content', slug: contentSlug })}
+      />
     </div>
   );
 }
