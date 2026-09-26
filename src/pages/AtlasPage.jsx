@@ -5,21 +5,403 @@ import SiteHeader from '../components/SiteHeader';
 import Footer from '../components/Footer';
 import SearchBox from '../components/SearchBox';
 import useAmbience from '../hooks/useAmbience';
+import { fetchRegions } from '../lib/api';
 
 const zones = [['all', 'All Regions'], ['north', 'Northern Valleys'], ['west', 'Western Desert & Coast'], ['central', 'Central Heartland'], ['east', 'Eastern Delta'], ['south', 'Southern Peninsula'], ['northeast', 'Northeastern Hills']];
 const pilotRegionIds = ['rajasthan', 'maharashtra', 'tamil-nadu', 'kerala', 'jammu-kashmir', 'west-bengal', 'gujarat', 'madhya-pradesh', 'odisha', 'assam'];
 
+// ---------------------------------------------------------------------------
+// Normalise API RegionSummary → the shape used by map/popover components.
+// The API returns snake_case; the original static data used camelCase and a
+// nested `coords` object.  We keep both representations compatible here so
+// every downstream component can use the same field access pattern.
+// ---------------------------------------------------------------------------
+function normaliseRegion(r) {
+  return {
+    ...r,
+    // coords object expected by AtlasMap / RegionPopover
+    coords: { x: r.coord_x ?? 50, y: r.coord_y ?? 50 },
+    // camelCase aliases for colour accent
+    colorAccent: r.color_accent ?? null,
+  };
+}
 
-function RegionPopover({ region, onExplore }) { if (!region) return null; let left = region.coords.x; if (left < 22) left = 22; if (left > 78) left = 78; return <div className="region-popover-card active" style={{ left: `${left}%`, top: `${region.coords.y}%` }}><div className="popover-header"><div className="popover-name-block"><span className="popover-region-name">{region.name}</span><span className="popover-devanagari">{region.devanagari || ''}</span></div><span className="popover-status-badge">{region.badge || 'Available'}</span></div><p className="popover-tagline">{region.tagline}</p><div className="popover-categories-chips">{region.categories.map(category => <span className="popover-category-chip" key={category}>{category}</span>)}</div><p className="popover-summary">{region.summary}</p><button className="popover-explore-cta" onClick={() => onExplore(region.id)}>Explore {region.name} →</button></div>; }
+// ---------------------------------------------------------------------------
+// Hook: useRegionsData
+// Fetches from GET /api/v1/regions and falls back to static window data if
+// the backend is unavailable (so the atlas still renders in offline dev).
+// ---------------------------------------------------------------------------
+function useRegionsData() {
+  const staticRegions = useMemo(
+    () => (data?.regions ?? []).map(normaliseRegion),
+    []
+  );
+  const [regions, setRegions] = useState(staticRegions);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-function AtlasMap({ zone, selected, setSelected, navigate }) { const pilotRegions = pilotRegionIds.map(id => data.regions.find(region => region.id === id)).filter(Boolean); return <div className="atlas-map-card"><div className="map-frame-header"><div className="map-frame-title-group"><span className="map-frame-compass-icon">✧</span><div><h3 className="map-frame-title">Cultural Atlas of Bharat</h3><span className="map-frame-subtitle">भारत का सांस्कृतिक मानचित्र</span></div></div><span className="map-instructions-pill">✦ Hover region to preview • Click to explore</span></div><div className="map-canvas-container"><img src="/assets/india_map_cultural.jpg" alt="Textured cultural map of India" className="map-base-image" /><div className="map-interactive-layer" onClick={event => { if (!event.target.closest('.region-beacon') && !event.target.closest('.region-popover-card')) setSelected(null); }}>{data.regions.map(region => <button key={region.id} className={`region-beacon ${zone !== 'all' && zone !== region.zone ? 'dimmed' : ''} ${selected?.id === region.id ? 'active' : ''}`} style={{ left: `${region.coords.x}%`, top: `${region.coords.y}%` }} onMouseEnter={() => setSelected(region)} onFocus={() => setSelected(region)} onClick={() => navigate(region.id)} aria-label={`Explore ${region.name} - ${region.tagline}`}><span className="beacon-core"><span className="beacon-pulse" style={{ background: region.colorAccent || 'rgba(200,90,50,0.45)' }} /><span className="beacon-dot" style={{ background: region.colorAccent || 'var(--ei-terracotta)' }} /></span><span className="beacon-label">{region.name}</span></button>)}<RegionPopover region={selected} onExplore={navigate} /></div></div><div className="map-quick-regions-bar"><span className="quick-regions-label">Pilot Regions:</span>{pilotRegions.map(region => <button className={`quick-region-pill ${selected?.id === region.id ? 'active' : ''}`} key={region.id} onMouseEnter={() => setSelected(region)} onClick={() => navigate(region.id)}>{region.name}</button>)}</div></div>; }
+  useEffect(() => {
+    let cancelled = false;
+    fetchRegions()
+      .then((apiRegions) => {
+        if (cancelled) return;
+        const normalised = apiRegions.map(normaliseRegion);
+        // Merge API data with static data so any region missing from the
+        // backend (e.g. not yet seeded) still appears on the map.
+        const apiIds = new Set(normalised.map((r) => r.id));
+        const staticOnly = staticRegions.filter((r) => !apiIds.has(r.id));
+        setRegions([...normalised, ...staticOnly]);
+        setLoading(false);
+      })
+      .catch((err) => {
+        if (cancelled) return;
+        console.warn('[Virasat] Could not reach API; falling back to static data.', err.message);
+        setError(err.message);
+        setLoading(false);
+        // Keep staticRegions already set as the fallback
+      });
+    return () => { cancelled = true; };
+  }, []);
 
-function GuidesCard() { const greetings = data.userJourney.avatarGreetings; const [index, setIndex] = useState(0); const [speaking, setSpeaking] = useState(false); const speak = () => { const greeting = greetings[index]; if (!window.speechSynthesis) return; window.speechSynthesis.cancel(); const utterance = new SpeechSynthesisUtterance(greeting.speechText || greeting.text); utterance.lang = greeting.langCode; utterance.onend = () => setSpeaking(false); setSpeaking(true); window.speechSynthesis.speak(utterance); }; return <div className="cultural-guides-card"><div className="guides-header"><h3 className="guides-title">Cultural Guides</h3><span className="guides-badge">Living Bharat</span></div><div className={`avatar-speech-bubble ${speaking ? 'speaking' : ''}`}><div className="bubble-actions-row"><button className="btn-cycle-greeting" onClick={() => { setIndex((index + 1) % greetings.length); speak(); }}>↻ Switch</button><button className="btn-voiceover-greeting" onClick={speak}>🔊 {speaking ? 'Speaking...' : 'Listen'}</button></div><div className="bubble-greeting-native">{greetings[index].text}</div><div className="bubble-greeting-roman">{greetings[index].roman}</div></div><button className="avatar-frame" onClick={() => { setIndex((index + 1) % greetings.length); speak(); }}><img src="/assets/namaste_avatar.jpg" alt="Cultural guides of India greeting visitors" className="avatar-image" /><span className="avatar-caption-bar">Cultural Harmony • 5 Living Traditions of India</span></button></div>; }
+  return { regions, loading, error };
+}
 
-function JourneyCard() { const journey = data.userJourney; return <div className="journey-progress-card"><div className="journey-card-header"><div className="journey-title-group"><span className="journey-compass-icon">✧</span><h3 className="journey-title">Your Journey</h3></div><span className="journey-rank-badge">{journey.rank}</span></div><div className="journey-stat-row"><div><span className="journey-count-text">{journey.exploredCount} / {journey.totalRegions}</span><span className="journey-count-sub">regions explored</span></div><span className="journey-percent-text">{journey.progressPercent}% Discovered</span></div><div className="journey-progress-track"><div className="journey-progress-fill" style={{ width: `${journey.progressPercent}%` }} /></div><div className="milestone-reward-box"><div className="reward-icon-badge">🏰</div><div className="reward-info-group"><span className="reward-label">Next Reward Unlocked</span><span className="reward-name">Mehrangarh Royal Seal Card</span><span className="reward-sub">Explore Rajasthan to claim full regalia badge</span></div></div></div>; }
+// ---------------------------------------------------------------------------
+// Components (UI unchanged from original)
+// ---------------------------------------------------------------------------
 
-function FactSection() { const [index, setIndex] = useState(0); const fact = data.facts[index]; return <section className="did-you-know-section" id="didYouKnowSection"><div className="dyk-card"><div className="dyk-content-side"><div className="dyk-badge-row"><span className="dyk-eyebrow">💡 DID YOU KNOW?</span><span className="dyk-region-pill">{fact.region}</span></div><h3 className="dyk-quote">“{fact.quote}”</h3><p className="dyk-description">{fact.description}</p><div className="dyk-actions"><a href={fact.exploreLink} className="dyk-story-link">Explore this story →</a><button className="btn-dyk-next" onClick={() => setIndex((index + 1) % data.facts.length)}>Next Heritage Fact ↻</button></div></div><div className="dyk-visual-side"><div className="dyk-diya-badge">🪔</div></div></div></section>; }
+function RegionPopover({ region, onExplore }) {
+  if (!region) return null;
+  let left = region.coords.x;
+  if (left < 22) left = 22;
+  if (left > 78) left = 78;
+  return (
+    <div className="region-popover-card active" style={{ left: `${left}%`, top: `${region.coords.y}%` }}>
+      <div className="popover-header">
+        <div className="popover-name-block">
+          <span className="popover-region-name">{region.name}</span>
+          <span className="popover-devanagari">{region.devanagari || ''}</span>
+        </div>
+        <span className="popover-status-badge">{region.badge || 'Available'}</span>
+      </div>
+      <p className="popover-tagline">{region.tagline}</p>
+      <div className="popover-categories-chips">
+        {(region.categories || []).map(category => (
+          <span className="popover-category-chip" key={category}>{category}</span>
+        ))}
+      </div>
+      <p className="popover-summary">{region.summary}</p>
+      <button className="popover-explore-cta" onClick={() => onExplore(region.id)}>
+        Explore {region.name} →
+      </button>
+    </div>
+  );
+}
 
-function FeaturedSection() { return <section className="featured-heritage-section" id="featuredHeritageSection"><div className="featured-section-header"><span className="featured-eyebrow">CURATED EXPLORATIONS</span><h2 className="featured-title">Featured Heritage</h2><p className="featured-subtitle">Explore living arts, ancient sanctums, and timeless celebrations.</p></div><div className="featured-cards-grid">{data.featuredHeritage.map(card => <a href={card.exploreUrl} className="heritage-card" key={card.id}><div className="card-image-box"><img src={`/${card.image}`} alt={card.title} className="card-img" /><span className="card-category-badge">{card.category}</span></div><div className="card-body"><h3 className="card-title">{card.title}</h3><span className="card-subtitle">{card.subtitle}</span><p className="card-summary">{card.summary}</p><div className="card-footer-row"><span className="card-read-time">{card.readTime}</span><span className="card-explore-arrow">→</span></div></div></a>)}</div></section>; }
+function AtlasMap({ regions, zone, selected, setSelected, navigate }) {
+  const pilotRegions = pilotRegionIds
+    .map(id => regions.find(r => r.id === id || r.slug === id))
+    .filter(Boolean);
 
-export default function AtlasPage() { const navigate = useNavigate(); const [zone, setZone] = useState('all'); const [selected, setSelected] = useState(null); const [audioPlaying, toggleAudio] = useAmbience(); const selectedFromHash = useMemo(() => data.regions.find(region => region.id === window.location.hash.slice(1)), []); useEffect(() => { if (selectedFromHash) setSelected(selectedFromHash); const dismiss = event => { if (!event.target.closest('.region-popover-card') && !event.target.closest('.region-beacon') && !event.target.closest('.quick-region-pill')) setSelected(null); }; document.addEventListener('click', dismiss); return () => document.removeEventListener('click', dismiss); }, [selectedFromHash]); const goToRegion = id => { const cleanId = String(id).toLowerCase().trim(); if (cleanId === 'maharashtra' || cleanId === 'odisha' || cleanId === 'puri') navigate(`/regions/${cleanId === 'puri' ? 'odisha' : cleanId}`); else window.location.href = `explore.html?region=${encodeURIComponent(cleanId)}`; }; return <div className="home-page-body react-page"><SiteHeader atlas onAudioToggle={toggleAudio} audioPlaying={audioPlaying} search={<SearchBox data={data} />} /><main><section className="cultural-atlas-section" id="culturalAtlasSection"><div className="atlas-section-header"><span className="atlas-eyebrow">INTERACTIVE CULTURAL ATLAS</span><h1 className="atlas-title">Explore India</h1><p className="atlas-subtitle">Choose a region and begin your cultural journey.</p><div className="zone-filters-strip" role="tablist">{zones.map(([id, label]) => <button className={`zone-filter-pill ${zone === id ? 'active' : ''}`} data-zone={id} key={id} onClick={() => { setZone(id); setSelected(null); }} role="tab" aria-selected={zone === id}>{label}</button>)}</div></div><div className="atlas-composition-layout"><AtlasMap zone={zone} selected={selected} setSelected={setSelected} navigate={goToRegion} /><div className="atlas-journey-column"><GuidesCard /><JourneyCard /></div></div></section><FactSection /><FeaturedSection /></main><Footer /></div>; }
+  return (
+    <div className="atlas-map-card">
+      <div className="map-frame-header">
+        <div className="map-frame-title-group">
+          <span className="map-frame-compass-icon">✧</span>
+          <div>
+            <h3 className="map-frame-title">Cultural Atlas of Bharat</h3>
+            <span className="map-frame-subtitle">भारत का सांस्कृतिक मानचित्र</span>
+          </div>
+        </div>
+        <span className="map-instructions-pill">✦ Hover region to preview • Click to explore</span>
+      </div>
+      <div className="map-canvas-container">
+        <img src="/assets/india_map_cultural.jpg" alt="Textured cultural map of India" className="map-base-image" />
+        <div
+          className="map-interactive-layer"
+          onClick={event => {
+            if (!event.target.closest('.region-beacon') && !event.target.closest('.region-popover-card'))
+              setSelected(null);
+          }}
+        >
+          {regions.map(region => (
+            <button
+              key={region.id}
+              className={`region-beacon ${zone !== 'all' && zone !== region.zone ? 'dimmed' : ''} ${selected?.id === region.id ? 'active' : ''}`}
+              style={{ left: `${region.coords.x}%`, top: `${region.coords.y}%` }}
+              onMouseEnter={() => setSelected(region)}
+              onFocus={() => setSelected(region)}
+              onClick={() => navigate(region.id)}
+              aria-label={`Explore ${region.name} - ${region.tagline}`}
+            >
+              <span className="beacon-core">
+                <span className="beacon-pulse" style={{ background: region.colorAccent || 'rgba(200,90,50,0.45)' }} />
+                <span className="beacon-dot" style={{ background: region.colorAccent || 'var(--ei-terracotta)' }} />
+              </span>
+              <span className="beacon-label">{region.name}</span>
+            </button>
+          ))}
+          <RegionPopover region={selected} onExplore={navigate} />
+        </div>
+      </div>
+      <div className="map-quick-regions-bar">
+        <span className="quick-regions-label">Pilot Regions:</span>
+        {pilotRegions.map(region => (
+          <button
+            className={`quick-region-pill ${selected?.id === region.id ? 'active' : ''}`}
+            key={region.id}
+            onMouseEnter={() => setSelected(region)}
+            onClick={() => navigate(region.id)}
+          >
+            {region.name}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function GuidesCard() {
+  const greetings = data.userJourney.avatarGreetings;
+  const [index, setIndex] = useState(0);
+  const [speaking, setSpeaking] = useState(false);
+  const speak = () => {
+    const greeting = greetings[index];
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(greeting.speechText || greeting.text);
+    utterance.lang = greeting.langCode;
+    utterance.onend = () => setSpeaking(false);
+    setSpeaking(true);
+    window.speechSynthesis.speak(utterance);
+  };
+  return (
+    <div className="cultural-guides-card">
+      <div className="guides-header">
+        <h3 className="guides-title">Cultural Guides</h3>
+        <span className="guides-badge">Living Bharat</span>
+      </div>
+      <div className={`avatar-speech-bubble ${speaking ? 'speaking' : ''}`}>
+        <div className="bubble-actions-row">
+          <button className="btn-cycle-greeting" onClick={() => { setIndex((index + 1) % greetings.length); speak(); }}>↻ Switch</button>
+          <button className="btn-voiceover-greeting" onClick={speak}>🔊 {speaking ? 'Speaking...' : 'Listen'}</button>
+        </div>
+        <div className="bubble-greeting-native">{greetings[index].text}</div>
+        <div className="bubble-greeting-roman">{greetings[index].roman}</div>
+      </div>
+      <button className="avatar-frame" onClick={() => { setIndex((index + 1) % greetings.length); speak(); }}>
+        <img src="/assets/namaste_avatar.jpg" alt="Cultural guides of India greeting visitors" className="avatar-image" />
+        <span className="avatar-caption-bar">Cultural Harmony • 5 Living Traditions of India</span>
+      </button>
+    </div>
+  );
+}
+
+function JourneyCard() {
+  const journey = data.userJourney;
+  return (
+    <div className="journey-progress-card">
+      <div className="journey-card-header">
+        <div className="journey-title-group">
+          <span className="journey-compass-icon">✧</span>
+          <h3 className="journey-title">Your Journey</h3>
+        </div>
+        <span className="journey-rank-badge">{journey.rank}</span>
+      </div>
+      <div className="journey-stat-row">
+        <div>
+          <span className="journey-count-text">{journey.exploredCount} / {journey.totalRegions}</span>
+          <span className="journey-count-sub">regions explored</span>
+        </div>
+        <span className="journey-percent-text">{journey.progressPercent}% Discovered</span>
+      </div>
+      <div className="journey-progress-track">
+        <div className="journey-progress-fill" style={{ width: `${journey.progressPercent}%` }} />
+      </div>
+      <div className="milestone-reward-box">
+        <div className="reward-icon-badge">🏰</div>
+        <div className="reward-info-group">
+          <span className="reward-label">Next Reward Unlocked</span>
+          <span className="reward-name">Mehrangarh Royal Seal Card</span>
+          <span className="reward-sub">Explore Rajasthan to claim full regalia badge</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FactSection() {
+  const [index, setIndex] = useState(0);
+  const fact = data.facts[index];
+  return (
+    <section className="did-you-know-section" id="didYouKnowSection">
+      <div className="dyk-card">
+        <div className="dyk-content-side">
+          <div className="dyk-badge-row">
+            <span className="dyk-eyebrow">💡 DID YOU KNOW?</span>
+            <span className="dyk-region-pill">{fact.region}</span>
+          </div>
+          <h3 className="dyk-quote">"{fact.quote}"</h3>
+          <p className="dyk-description">{fact.description}</p>
+          <div className="dyk-actions">
+            <a href={fact.exploreLink} className="dyk-story-link">Explore this story →</a>
+            <button className="btn-dyk-next" onClick={() => setIndex((index + 1) % data.facts.length)}>Next Heritage Fact ↻</button>
+          </div>
+        </div>
+        <div className="dyk-visual-side">
+          <div className="dyk-diya-badge">🪔</div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeaturedSection() {
+  return (
+    <section className="featured-heritage-section" id="featuredHeritageSection">
+      <div className="featured-section-header">
+        <span className="featured-eyebrow">CURATED EXPLORATIONS</span>
+        <h2 className="featured-title">Featured Heritage</h2>
+        <p className="featured-subtitle">Explore living arts, ancient sanctums, and timeless celebrations.</p>
+      </div>
+      <div className="featured-cards-grid">
+        {data.featuredHeritage.map(card => (
+          <a href={card.exploreUrl} className="heritage-card" key={card.id}>
+            <div className="card-image-box">
+              <img src={`/${card.image}`} alt={card.title} className="card-img" />
+              <span className="card-category-badge">{card.category}</span>
+            </div>
+            <div className="card-body">
+              <h3 className="card-title">{card.title}</h3>
+              <span className="card-subtitle">{card.subtitle}</span>
+              <p className="card-summary">{card.summary}</p>
+              <div className="card-footer-row">
+                <span className="card-read-time">{card.readTime}</span>
+                <span className="card-explore-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Atlas loading / error overlays
+// ---------------------------------------------------------------------------
+
+function MapLoadingOverlay() {
+  return (
+    <div className="atlas-map-card" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 420 }}>
+      <div style={{ textAlign: 'center', color: 'var(--ei-gold, #c8943b)', padding: '2rem' }}>
+        <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🗺️</div>
+        <p style={{ margin: 0, fontFamily: 'inherit', fontSize: '0.95rem', opacity: 0.8 }}>Loading cultural atlas…</p>
+      </div>
+    </div>
+  );
+}
+
+function MapErrorBanner({ message }) {
+  return (
+    <div
+      style={{
+        background: 'rgba(200,60,30,0.12)',
+        border: '1px solid rgba(200,60,30,0.35)',
+        borderRadius: '8px',
+        color: '#c83c1e',
+        fontSize: '0.82rem',
+        padding: '0.6rem 1rem',
+        marginBottom: '0.75rem',
+      }}
+      role="alert"
+    >
+      ⚠️ Could not reach the Virasat API — showing cached atlas data. ({message})
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// AtlasPage (main export)
+// ---------------------------------------------------------------------------
+
+export default function AtlasPage() {
+  const navigate = useNavigate();
+  const [zone, setZone] = useState('all');
+  const [selected, setSelected] = useState(null);
+  const [audioPlaying, toggleAudio] = useAmbience();
+
+  const { regions, loading, error } = useRegionsData();
+
+  const selectedFromHash = useMemo(
+    () => regions.find(r => r.id === window.location.hash.slice(1) || r.slug === window.location.hash.slice(1)),
+    [regions]
+  );
+
+  useEffect(() => {
+    if (selectedFromHash) setSelected(selectedFromHash);
+    const dismiss = event => {
+      if (
+        !event.target.closest('.region-popover-card') &&
+        !event.target.closest('.region-beacon') &&
+        !event.target.closest('.quick-region-pill')
+      )
+        setSelected(null);
+    };
+    document.addEventListener('click', dismiss);
+    return () => document.removeEventListener('click', dismiss);
+  }, [selectedFromHash]);
+
+  const goToRegion = id => {
+    const cleanId = String(id).toLowerCase().trim();
+    if (cleanId === 'maharashtra' || cleanId === 'odisha' || cleanId === 'puri')
+      navigate(`/regions/${cleanId === 'puri' ? 'odisha' : cleanId}`);
+    else
+      window.location.href = `explore.html?region=${encodeURIComponent(cleanId)}`;
+  };
+
+  return (
+    <div className="home-page-body react-page">
+      <SiteHeader atlas onAudioToggle={toggleAudio} audioPlaying={audioPlaying} search={<SearchBox data={data} />} />
+      <main>
+        <section className="cultural-atlas-section" id="culturalAtlasSection">
+          <div className="atlas-section-header">
+            <span className="atlas-eyebrow">INTERACTIVE CULTURAL ATLAS</span>
+            <h1 className="atlas-title">Explore India</h1>
+            <p className="atlas-subtitle">Choose a region and begin your cultural journey.</p>
+            <div className="zone-filters-strip" role="tablist">
+              {zones.map(([id, label]) => (
+                <button
+                  className={`zone-filter-pill ${zone === id ? 'active' : ''}`}
+                  data-zone={id}
+                  key={id}
+                  onClick={() => { setZone(id); setSelected(null); }}
+                  role="tab"
+                  aria-selected={zone === id}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="atlas-composition-layout">
+            <div style={{ flex: 1, minWidth: 0 }}>
+              {error && <MapErrorBanner message={error} />}
+              {loading
+                ? <MapLoadingOverlay />
+                : <AtlasMap regions={regions} zone={zone} selected={selected} setSelected={setSelected} navigate={goToRegion} />
+              }
+            </div>
+            <div className="atlas-journey-column">
+              <GuidesCard />
+              <JourneyCard />
+            </div>
+          </div>
+        </section>
+        <FactSection />
+        <FeaturedSection />
+      </main>
+      <Footer />
+    </div>
+  );
+}

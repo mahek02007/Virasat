@@ -1,7 +1,8 @@
-import { useEffect, useMemo } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import maharashtraHtml from '../../maharashtra.html?raw';
 import odishaHtml from '../../odisha.html?raw';
+import { fetchRegions, fetchRegion, fetchRegionContent } from '../lib/api';
 import '../region.css';
 
 function extractBody(html) {
@@ -10,24 +11,153 @@ function extractBody(html) {
     .replace(/(src|href)="assets\//g, '$1="/assets/');
 }
 
+/**
+ * Synchronize live backend API data into the rendered regional DOM.
+ * Updates regional header, devanagari title, tagline, category chips,
+ * cultural intro summary, and featured explore cards.
+ */
+function applyApiDataToDom(container, regionData, contentData) {
+  if (!container || !regionData) return;
+
+  // 1. Regional title & Devanagari script
+  const titleEl = container.querySelector('.region-name');
+  if (titleEl && regionData.name) {
+    if (regionData.devanagari) {
+      titleEl.innerHTML = `${regionData.name} <span class="devanagari-title" style="font-family: 'Cinzel', serif; font-size: 0.65em; opacity: 0.85; margin-left: 8px; font-weight: normal;">(${regionData.devanagari})</span>`;
+    } else {
+      titleEl.textContent = regionData.name;
+    }
+  }
+
+  // 2. Tagline
+  const taglineEl = container.querySelector('.region-tagline');
+  if (taglineEl && regionData.tagline) {
+    taglineEl.textContent = regionData.tagline;
+  }
+
+  // 3. Category chips
+  const chipsContainer = container.querySelector('.category-chips');
+  if (chipsContainer && Array.isArray(regionData.categories) && regionData.categories.length > 0) {
+    chipsContainer.innerHTML = regionData.categories
+      .map(cat => `<span class="chip">${cat}</span>`)
+      .join('');
+  }
+
+  // 4. Cultural introduction summary
+  const introEl = container.querySelector('.intro-text');
+  if (introEl && regionData.summary) {
+    introEl.textContent = regionData.summary;
+  }
+
+  // 5. Sidebar navigation title
+  const navTitleEl = container.querySelector('.nav-title');
+  if (navTitleEl && regionData.name) {
+    navTitleEl.textContent = `Explore ${regionData.name}`;
+  }
+
+  // 6. Featured heritage explore cards
+  if (Array.isArray(contentData) && contentData.length > 0) {
+    const cardEls = container.querySelectorAll('.explore-card');
+    cardEls.forEach((cardEl, idx) => {
+      const item = contentData[idx];
+      if (!item) return;
+
+      const title = cardEl.querySelector('.card-title');
+      const desc = cardEl.querySelector('.card-desc');
+      const tag = cardEl.querySelector('.card-tag');
+
+      if (title && item.title) title.textContent = item.title;
+      if (desc && item.summary) desc.textContent = item.summary;
+      if (tag && (item.content_type || item.subtype)) {
+        tag.textContent = (item.subtype || item.content_type).replace(/_/g, ' ').toUpperCase();
+      }
+    });
+  }
+}
+
 export default function RegionPage() {
   const { regionId } = useParams();
-  const source = regionId === 'odisha' ? odishaHtml : maharashtraHtml;
-  const controller = regionId === 'odisha' ? '/odisha.js' : '/maharashtra.js';
+  const containerRef = useRef(null);
+
+  // Normalize slug ('puri' routes to 'odisha')
+  const normalizedId = useMemo(() => {
+    const id = (regionId || '').toLowerCase().trim();
+    return id === 'puri' ? 'odisha' : id;
+  }, [regionId]);
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [regionData, setRegionData] = useState(null);
+  const [contentData, setContentData] = useState([]);
+  const [allRegions, setAllRegions] = useState([]);
+
+  const isStaticKnown = normalizedId === 'odisha' || normalizedId === 'maharashtra';
+  const source = normalizedId === 'odisha' ? odishaHtml : maharashtraHtml;
+  const controller = normalizedId === 'odisha' ? '/odisha.js' : '/maharashtra.js';
   const body = useMemo(() => extractBody(source), [source]);
 
+  // Fetch backend data using GET /api/v1/regions, GET /api/v1/regions/{slug}, and GET /api/v1/regions/{slug}/content
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    setError(null);
+
+    Promise.allSettled([
+      fetchRegions(),
+      fetchRegion(normalizedId),
+      fetchRegionContent(normalizedId, { limit: 50 }),
+    ]).then(([regionsRes, regionRes, contentRes]) => {
+      if (cancelled) return;
+
+      if (regionsRes.status === 'fulfilled') {
+        setAllRegions(regionsRes.value);
+      }
+
+      if (regionRes.status === 'fulfilled') {
+        setRegionData(regionRes.value);
+        if (contentRes.status === 'fulfilled') {
+          setContentData(contentRes.value);
+        }
+        setLoading(false);
+      } else {
+        // Backend API returned error or unreachable
+        if (isStaticKnown) {
+          // Graceful fallback: Maharashtra & Odisha preserve their content
+          console.warn(`[Virasat] Backend unreachable for ${normalizedId}; displaying offline archive.`);
+          setLoading(false);
+        } else {
+          // Unknown region not in backend
+          setError(`Cultural archive for "${regionId}" was not found or is currently being curated.`);
+          setLoading(false);
+        }
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [normalizedId, isStaticKnown, regionId]);
+
   // Always reset scroll to the top when navigating to or switching regional pages.
-  // On desktop the scroll container is .main-content (not window), so reset both.
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
-    // Also reset the per-column scroll container used on desktop
     const mainContent = document.querySelector('.main-content');
     if (mainContent) mainContent.scrollTop = 0;
-  }, [regionId]);
+  }, [normalizedId]);
 
+  // Synchronize API data into rendered DOM elements whenever API data is ready
   useEffect(() => {
+    if (!loading && !error && containerRef.current && regionData) {
+      applyApiDataToDom(containerRef.current, regionData, contentData);
+    }
+  }, [loading, error, regionData, contentData, body]);
+
+  // Controller script and mobile responsive bar setup
+  useEffect(() => {
+    if (loading || error) return;
+
     document.body.classList.add('regional-route');
     const script = document.createElement('script');
     script.src = controller;
@@ -36,7 +166,6 @@ export default function RegionPage() {
 
     // Setup mobile controls for regional sidebar and cultural assistant
     const setupMobileControls = () => {
-      // Remove any previously created controls
       document.querySelector('.mobile-regional-bar')?.remove();
       document.querySelector('.mobile-regional-backdrop')?.remove();
 
@@ -45,7 +174,6 @@ export default function RegionPage() {
 
       if (!sidebar && !rightPanel) return;
 
-      // Create mobile bottom action bar
       const bar = document.createElement('div');
       bar.className = 'mobile-regional-bar';
       bar.innerHTML = `
@@ -59,7 +187,6 @@ export default function RegionPage() {
         </button>
       `;
 
-      // Backdrop overlay
       const backdrop = document.createElement('div');
       backdrop.className = 'mobile-regional-backdrop';
 
@@ -106,7 +233,6 @@ export default function RegionPage() {
         }
       });
 
-      // Close drawers on sidebar topic link navigation
       sidebar?.querySelectorAll('.cultural-navigation a')?.forEach(link => {
         link.addEventListener('click', () => {
           if (window.innerWidth <= 1150) {
@@ -116,7 +242,6 @@ export default function RegionPage() {
       });
     };
 
-    // Small delay to ensure injected HTML DOM is rendered before querying elements
     const timer = setTimeout(setupMobileControls, 50);
 
     return () => {
@@ -128,7 +253,102 @@ export default function RegionPage() {
       document.querySelector('.mobile-regional-bar')?.remove();
       document.querySelector('.mobile-regional-backdrop')?.remove();
     };
-  }, [controller]);
+  }, [loading, error, controller]);
 
-  return <div className="regional-page" dangerouslySetInnerHTML={{ __html: body }} />;
+  // Loading State View
+  if (loading) {
+    return (
+      <div
+        className="regional-page regional-loading-state"
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '2rem',
+          background: '#0d0a08',
+          color: '#c8943b',
+          textAlign: 'center',
+        }}
+      >
+        <div style={{ fontSize: '3rem', marginBottom: '1.25rem', filter: 'drop-shadow(0 0 16px rgba(200,148,59,0.5))' }}>
+          🪔
+        </div>
+        <h2 style={{ fontFamily: 'Cinzel, Georgia, serif', fontSize: '1.75rem', color: '#f3e5ab', marginBottom: '0.6rem' }}>
+          Unfolding Regional Heritage Archive…
+        </h2>
+        <p style={{ maxWidth: '420px', fontSize: '0.95rem', color: '#d0c2b2', lineHeight: '1.6' }}>
+          Connecting to Virasat archives to retrieve living traditions, sacred monuments, and cultural narratives.
+        </p>
+      </div>
+    );
+  }
+
+  // Error State View
+  if (error) {
+    return (
+      <div
+        className="regional-page regional-error-state"
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '2rem',
+          background: '#0d0a08',
+          color: '#e0d0b8',
+          textAlign: 'center',
+        }}
+      >
+        <div style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>🏛️</div>
+        <h2 style={{ fontFamily: 'Cinzel, Georgia, serif', fontSize: '1.8rem', color: '#e87a5d', marginBottom: '0.75rem' }}>
+          Regional Archive Not Available
+        </h2>
+        <p style={{ maxWidth: '480px', marginBottom: '2rem', lineHeight: '1.6', fontSize: '0.95rem', color: '#c5b49e' }}>
+          {error}
+        </p>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <button
+            onClick={() => window.location.reload()}
+            style={{
+              padding: '0.75rem 1.5rem',
+              borderRadius: '6px',
+              border: '1px solid #c8943b',
+              background: 'transparent',
+              color: '#c8943b',
+              cursor: 'pointer',
+              fontWeight: '600',
+              fontFamily: 'inherit',
+            }}
+          >
+            ↻ Retry Archive
+          </button>
+          <Link
+            to="/atlas"
+            style={{
+              padding: '0.75rem 1.5rem',
+              borderRadius: '6px',
+              background: '#b84e29',
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontWeight: '600',
+              fontFamily: 'inherit',
+            }}
+          >
+            ← Return to Cultural Atlas
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      ref={containerRef}
+      className="regional-page"
+      dangerouslySetInnerHTML={{ __html: body }}
+    />
+  );
 }
