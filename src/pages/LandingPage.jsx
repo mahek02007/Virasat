@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SiteHeader from '../components/SiteHeader';
 import Footer from '../components/Footer';
 import useAmbience from '../hooks/useAmbience';
+import { useAuth } from '../context/AuthContext';
 
 const pillarsData = [
   {
@@ -58,6 +59,7 @@ const pillarsData = [
 
 export default function LandingPage() {
   const [audioPlaying, toggleAudio] = useAmbience();
+  const { openAuthModal, isGuest } = useAuth();
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -217,10 +219,26 @@ export default function LandingPage() {
                 </span>
                 <span className="badge-free">No Sign Up Needed</span>
               </Link>
-              <span className="or-separator">or</span>
-              <Link to="/atlas" className="btn-signin-link" id="heroSignInLink">
-                Sign In to save progress
-              </Link>
+              {isGuest ? (
+                <>
+                  <span className="or-separator">or</span>
+                  <button
+                    type="button"
+                    className="btn-signin-link react-link-button"
+                    id="heroSignInLink"
+                    onClick={() => openAuthModal('signin')}
+                  >
+                    Sign In to save progress
+                  </button>
+                </>
+              ) : (
+                <>
+                  <span className="or-separator">•</span>
+                  <Link to="/atlas" className="btn-signin-link" id="heroSignInLink">
+                    Cultural Profile Synced
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>

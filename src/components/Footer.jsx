@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 export default function Footer() {
+  const { isGuest, openAuthModal } = useAuth();
+
   return (
     <footer className="virasat-footer">
       <div className="footer-container">
@@ -31,7 +34,20 @@ export default function Footer() {
           <div className="footer-col">
             <span className="footer-heading">Access</span>
             <Link to="/atlas" className="f-link" id="footerGuestBtn">Continue as Guest</Link>
-            <Link to="/atlas" className="f-link" id="footerSignInBtn">Sign In</Link>
+            {isGuest ? (
+              <button
+                type="button"
+                className="f-link react-link-button footer-auth-btn"
+                id="footerSignInBtn"
+                onClick={() => openAuthModal('signin')}
+              >
+                Sign In
+              </button>
+            ) : (
+              <Link to="/atlas" className="f-link" id="footerSignInBtn">
+                Cultural Profile
+              </Link>
+            )}
             <a href="/#projectOverview" className="f-link">About Project</a>
           </div>
 
@@ -50,4 +66,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+}

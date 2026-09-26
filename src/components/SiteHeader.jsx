@@ -1,6 +1,19 @@
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import UserProfileMenu from './UserProfileMenu';
 
 export default function SiteHeader({ atlas = false, onAudioToggle, audioPlaying = false, search, onSignIn }) {
+  const { isGuest, user, openAuthModal } = useAuth();
+
+  const handleSignInClick = (e) => {
+    if (onSignIn) {
+      onSignIn(e);
+      return;
+    }
+    e.preventDefault();
+    openAuthModal('signin');
+  };
+
   return (
     <header className={atlas ? 'home-header' : 'virasat-header'} id={atlas ? 'atlasHeader' : 'mainHeader'}>
       <div className={atlas ? 'home-header-container' : 'header-container'}>
@@ -64,21 +77,32 @@ export default function SiteHeader({ atlas = false, onAudioToggle, audioPlaying 
           </button>
 
           {atlas ? (
-            search
-          ) : (
+            <>
+              {search}
+              <UserProfileMenu />
+            </>
+          ) : isGuest ? (
             <>
               <Link to="/atlas" className="btn-guest-quick" id="quickGuestBtn" title="Explore immediately without signing in">
                 <span className="guest-dot" />
                 Continue as Guest
               </Link>
-              <Link to="/atlas" className="btn-signin-nav" id="navSignInBtn" onClick={onSignIn} title="Sign In to save progress">
+              <button
+                type="button"
+                className="btn-signin-nav react-link-button"
+                id="navSignInBtn"
+                onClick={handleSignInClick}
+                title="Sign In to save progress"
+              >
                 <svg className="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                   <circle cx="12" cy="7" r="4" />
                 </svg>
                 Sign In
-              </Link>
+              </button>
             </>
+          ) : (
+            <UserProfileMenu />
           )}
         </div>
       </div>
